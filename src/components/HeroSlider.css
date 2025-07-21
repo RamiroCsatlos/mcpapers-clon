@@ -23,6 +23,7 @@
   padding: 0.2rem 0.7rem;
   cursor: pointer;
   border-radius: 4px;
+  -webkit-user-select: none;
   user-select: none;
   transition: background-color 0.3s ease;
 }

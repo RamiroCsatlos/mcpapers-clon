@@ -1,14 +1,14 @@
 import './Header.css';
 import { useState } from 'react';
 import logoHeader from '../assets/logoHeader.png';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isIdiomaOpen, setIsIdiomaOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleIdioma = () => setIsIdiomaOpen(!isIdiomaOpen);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <header className="header">
@@ -22,33 +22,23 @@ function Header() {
             <li><a href="#">Equipamiento</a></li>
             <li><a href="#">Novedades</a></li>
             <li><a href="#">Responsabilidad Social</a></li>
-
-            {/* Dropdown con toggle */}
-            <li className="dropdown">
-              <button
-                className="dropdown-toggle"
-                onClick={toggleIdioma}
-                aria-expanded={isIdiomaOpen}
-                aria-controls="submenu-idioma"
-              >
-                Idioma ▾
-              </button>
-              <ul
-                id="submenu-idioma"
-                className={`dropdown-menu ${isIdiomaOpen ? 'open' : ''}`}
-              >
-                <li><a href="#">Español</a></li>
-                <li><a href="#">Inglés</a></li>
-                <li><a href="#">Portugués</a></li>
-              </ul>
-            </li>
-
             <li><a href="#">Contacto</a></li>
+            <li className="dropdown">
+              <button onClick={toggleDropdown} className="dropdown-toggle">
+                Idioma
+              </button>
+              {isDropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li><a href="#">Español</a></li>
+                  <li><a href="#">Inglés</a></li>
+                </ul>
+              )}
+            </li>
           </ul>
         </nav>
 
         <button className="menu-toggle" onClick={toggleMenu}>
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu size={28} />
         </button>
       </div>
     </header>
