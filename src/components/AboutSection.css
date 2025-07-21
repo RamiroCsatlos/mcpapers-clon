@@ -1,0 +1,121 @@
+.about-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  overflow: visible;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;     
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  color: #333;
+}
+
+.about-text p{
+  text-align: center;
+}
+
+.empresa-logo {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.ver-mas-btn {
+  padding: 0.75rem 3rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.ver-mas-btn:hover {
+  transform: scale(1.1);
+  background-color: white;
+  border: 1px solid black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.empresa-img-container {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+  max-width: 600px;
+}
+
+.empresa-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.empresa-img-container .badge.top-left {
+  background-color: #20066e;
+  top: -10px;
+  font-size: 1.5em;
+}
+
+.empresa-img-container .badge.bottom-right {
+  background-color: #2985d5;
+  bottom: -10px; 
+  right: -10px;
+}
+
+.badge-number {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.badge-text {
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* Responsive: columnas en móviles */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text,
+  .empresa-img-container {
+    max-width: 100%;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+  }
+}

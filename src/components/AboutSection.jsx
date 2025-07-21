@@ -1,0 +1,32 @@
+import './AboutSection.css';
+import empresaImage from '../assets/foto-empresa.jpg';
+import logoImage from '../assets/logo.png';
+
+const AboutSection = () => {
+  return (
+    <section className="about-section">
+      <div className="about-content">
+        <div className="about-text">
+          <img src={logoImage} alt="Logo" className="empresa-logo" />
+          <p>
+            <strong>Mc Paper’s Argentina S.A.</strong>, es una empresa dedicada a la producción de envases flexibles para la industria de la alimentación.
+            <br>
+            </br>
+            Especializada en fast food packaging y en sugar confectionery.
+          </p>
+          <button className="ver-mas-btn">Ver más</button>
+        </div>
+        <div className="empresa-img-container">
+          <img src={empresaImage} alt="Empresa" className="empresa-img" />
+          <div className="badge top-left">Empresa líder del mercado</div>
+          <div className="badge bottom-right">
+            <span className="badge-number">+33</span>
+            <span className="badge-text">Años de experiencia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
