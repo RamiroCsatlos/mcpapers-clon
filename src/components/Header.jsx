@@ -19,18 +19,110 @@ function Header() {
           <ul>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Productos</a></li>
-            <li><a href="#">Equipamiento</a></li>
+            <li className="dropdown">
+              <button
+                className={`dropdown-toggle ${isDropdownOpen ? 'open' : ''}`}
+                onClick={toggleDropdown}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                Productos
+              </button>
+              {isDropdownOpen && (
+                <ul
+                  className="dropdown-menu"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      Bolsas Flat
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      Bolsas Fondo Cuadrado
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      Laminas
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="dropdown">
+              <button
+                className={`dropdown-toggle ${isDropdownOpen ? 'open' : ''}`}
+                onClick={toggleDropdown}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                Equipamiento
+              </button>
+              {isDropdownOpen && (
+                <ul
+                  className="dropdown-menu"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      Tecnología
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      Tecnica
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      Control de Calidad
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
             <li><a href="#">Novedades</a></li>
             <li><a href="#">Responsabilidad Social</a></li>
             <li><a href="#">Contacto</a></li>
             <li className="dropdown">
-              <button onClick={toggleDropdown} className="dropdown-toggle">
+              <button
+                className={`dropdown-toggle ${isDropdownOpen ? 'open' : ''}`}
+                onClick={toggleDropdown}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
                 Idioma
               </button>
               {isDropdownOpen && (
-                <ul className="dropdown-menu">
-                  <li><a href="#">Español</a></li>
-                  <li><a href="#">Inglés</a></li>
+                <ul
+                  className="dropdown-menu"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      <img
+                        src="/flags/ar.svg"
+                        alt="Bandera de Argentina"
+                        className="flag-icon"
+                      />
+                      Español
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="dropdown-item">
+                      <img
+                        src="/flags/us.svg"
+                        alt="Bandera de Estados Unidos"
+                        className="flag-icon"
+                      />
+                      Inglés
+                    </a>
+                  </li>
                 </ul>
               )}
             </li>
