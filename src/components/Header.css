@@ -7,6 +7,27 @@
   align-items: center;
   border-bottom: 1px solid #ddd;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 2000; /* Asegura que quede por encima del contenido */
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -38px; /* Ajusta según el efecto deseado */
+  height: 36px;  /* Ajusta la altura del difuminado */
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    rgba(32,6,110,0.10) 0%,
+    rgba(255,255,255,0.0) 100%
+  );
+  filter: blur(4px); /* Difumina el degradado */
+  opacity: 0.7;
 }
 
 .header-inner {
