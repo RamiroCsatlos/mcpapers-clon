@@ -17,12 +17,16 @@ const About = () => {
           <button className="ver-mas-btn">Ver más</button>
         </div>
         <div className="empresa-img-container">
-          <img src={empresaImage} alt="Empresa" className="empresa-img" />
-          <div className="badge top-left">Empresa líder del mercado</div>
-          <div className="badge bottom-right">
-            <span className="badge-number">+33</span>
-            <span className="badge-text">Años de experiencia</span>
+          <div className="empresa-img-padding">
+            <img src={empresaImage} alt="Empresa" className="empresa-img" />
           </div>
+          <span className="badge top-left">Empresa líder del mercado</span>
+          <span className="badge bottom-right">
+            <span className="badge-number">
+              <span className="badge-plus">+</span>33
+            </span>
+            <span className="badge-text">Años de experiencia</span>
+          </span>
         </div>
       </div>
     </section>

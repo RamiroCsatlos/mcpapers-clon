@@ -24,6 +24,7 @@
   min-width: 280px;
   max-width: 500px;
   color: #333;
+  padding: 3rem;
 }
 
 .about-text p{
@@ -31,12 +32,12 @@
 }
 
 .empresa-logo {
-  width: 150px;
+  width: 120px;
   margin-bottom: 1rem;
 }
 
 .about-text p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -63,6 +64,7 @@
   min-width: 280px;
   position: relative;
   max-width: 600px;
+  padding: 0; /* Quitar el padding aquí */
 }
 
 .empresa-img {
@@ -74,7 +76,7 @@
 
 .badge {
   position: absolute;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 0.5rem;
   font-weight: bold;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -82,25 +84,42 @@
 
 .empresa-img-container .badge.top-left {
   background-color: #20066e;
-  top: -10px;
+  top: 1.6rem;
+  left: 4rem;
   font-size: 1.5em;
 }
 
 .empresa-img-container .badge.bottom-right {
   background-color: #2985d5;
-  bottom: -10px; 
-  right: -10px;
+  bottom: 1.6rem;
+  right: 2rem;
 }
 
 .badge-number {
-  display: block;
-  font-size: 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 3rem;
   line-height: 1;
+  width: 100%;
 }
 
 .badge-text {
   display: block;
   font-size: 0.9rem;
+}
+
+.empresa-img-padding {
+  padding: 3rem; /* El padding que antes estaba en el contenedor */
+}
+
+.badge-plus {
+  font-size: 1.8rem; 
+  font-weight: bold;  
+  position: relative;
+  top: 0.3em;  
+  margin-right: 2px;
+  flex-shrink: 0;
 }
 
 /* Responsive: columnas en móviles */
