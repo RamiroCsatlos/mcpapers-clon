@@ -44,6 +44,8 @@
   margin: 0;
   padding: 0;
   align-items: center;
+  justify-content: center; /* Centra horizontalmente los links */
+  text-align: center;      /* Centra el texto de los links */
 }
 
 .navbar a {
@@ -121,8 +123,9 @@
   gap: 4px; /* Espacio entre elementos */
   border-radius: 6px;
   top: 100%;
-  left: auto;
-  right: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%); /* Centra el dropdown respecto al botón */
   min-width: 100%;
   width: max-content;
   background-color: white;
@@ -132,6 +135,7 @@
   z-index: 1000;
   white-space: normal; 
   word-break: break-word;
+  text-align: center;          /* Centra el texto de los items */
 }
 
 .dropdown-menu li {
@@ -196,13 +200,23 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    text-align: right;
+    align-items: center;   /* Centra los items en columna */
+    justify-content: center;
+    text-align: center;
   }
 
   .dropdown-menu {
     position: static;
+    width: 100%;
+    min-width: 0;
+    background: transparent;
+    text-align: center;
     border: none;
     box-shadow: none;
-    padding: 0.5rem 0 0 1rem;
+    padding: 0.5rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: unset;
+    transform: unset;
   }
 }
