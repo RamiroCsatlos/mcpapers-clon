@@ -1,8 +1,8 @@
-import './AboutSection.css';
+import './About.css';
 import empresaImage from '../assets/foto-empresa.jpg';
 import logoImage from '../assets/logo.png';
 
-const AboutSection = () => {
+const About = () => {
   return (
     <section className="about-section">
       <div className="about-content">
@@ -29,4 +29,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default About;

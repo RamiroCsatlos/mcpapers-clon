@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/Header'
-import AboutSection from './components/AboutSection';
+import About from './components/About';
 import HeroSlider from './components/HeroSlider'
 import Products from './components/Products'
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <AboutSection />
+      <About />
       {/* <HeroSlider />
       <Products /> */}
     </>
