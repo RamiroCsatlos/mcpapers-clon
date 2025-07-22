@@ -5,10 +5,13 @@ import { Menu } from 'lucide-react';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // 'productos', 'equipamiento', 'idioma', o null
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+
+  const handleDropdown = (dropdown) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
 
   return (
     <header className="header">
@@ -18,21 +21,20 @@ function Header() {
         <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
           <ul>
             <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Productos</a></li>
             <li className="dropdown">
               <button
-                className={`dropdown-toggle ${isDropdownOpen ? 'open' : ''}`}
-                onClick={toggleDropdown}
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+                className={`dropdown-toggle ${openDropdown === 'productos' ? 'open' : ''}`}
+                onClick={() => handleDropdown('productos')}
+                onMouseEnter={() => setOpenDropdown('productos')}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
                 Productos
               </button>
-              {isDropdownOpen && (
+              {openDropdown === 'productos' && (
                 <ul
                   className="dropdown-menu"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  onMouseEnter={() => setOpenDropdown('productos')}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <li>
                     <a href="#" className="dropdown-item">
@@ -54,18 +56,18 @@ function Header() {
             </li>
             <li className="dropdown">
               <button
-                className={`dropdown-toggle ${isDropdownOpen ? 'open' : ''}`}
-                onClick={toggleDropdown}
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+                className={`dropdown-toggle ${openDropdown === 'equipamiento' ? 'open' : ''}`}
+                onClick={() => handleDropdown('equipamiento')}
+                onMouseEnter={() => setOpenDropdown('equipamiento')}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
                 Equipamiento
               </button>
-              {isDropdownOpen && (
+              {openDropdown === 'equipamiento' && (
                 <ul
                   className="dropdown-menu"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  onMouseEnter={() => setOpenDropdown('equipamiento')}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <li>
                     <a href="#" className="dropdown-item">
@@ -74,7 +76,7 @@ function Header() {
                   </li>
                   <li>
                     <a href="#" className="dropdown-item">
-                      Tecnica
+                      Técnica
                     </a>
                   </li>
                   <li>
@@ -90,18 +92,18 @@ function Header() {
             <li><a href="#">Contacto</a></li>
             <li className="dropdown">
               <button
-                className={`dropdown-toggle ${isDropdownOpen ? 'open' : ''}`}
-                onClick={toggleDropdown}
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
+                className={`dropdown-toggle ${openDropdown === 'idioma' ? 'open' : ''}`}
+                onClick={() => handleDropdown('idioma')}
+                onMouseEnter={() => setOpenDropdown('idioma')}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
                 Idioma
               </button>
-              {isDropdownOpen && (
+              {openDropdown === 'idioma' && (
                 <ul
                   className="dropdown-menu"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  onMouseEnter={() => setOpenDropdown('idioma')}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <li>
                     <a href="#" className="dropdown-item">

@@ -37,7 +37,7 @@
   display: flex;
 }
 
-.navbar ul {
+.navbar > ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
@@ -53,7 +53,8 @@
 }
 
 .navbar a:hover {
-  color: #0000EE; /* azul estándar */
+  color: #535bf2;
+  text-decoration: underline; 
 }
 
 /* Dropdown */
@@ -78,8 +79,19 @@
   box-shadow: none;
 }
 
-.dropdown-toggle:hover {
-  color: #0000EE; /* el color que uses para hover en otros links */
+.dropdown-toggle.open {
+  color: #535bf2;
+}
+
+.dropdown-toggle.open:hover {
+  color: #535bf2;
+  text-decoration: underline; /* subrayado al hacer hover */
+}
+
+/* Mostrar el menú cuando el dropdown está abierto */
+.dropdown-toggle.open + .dropdown-menu {
+  display: flex !important;
+  flex-direction: column;
 }
 
 .dropdown-toggle::after {
@@ -100,39 +112,43 @@
   transform: rotate(180deg);
 }
 
-/* Mostrar dropdown-menu al hacer hover en .dropdown */
-.dropdown:hover > .dropdown-menu {
-  display: flex !important;
-  flex-direction: column;
-}
-
 .dropdown-menu {
   display: none;
   position: absolute;
-  padding: 10px 12px;
+  width: max-content;  
+  padding: 4px 0px; /* antes: 10px 12px */
   margin: 0;
+  gap: 4px; /* Espacio entre elementos */
   border-radius: 6px;
   top: 100%;
+  left: auto;
   right: 0;
+  min-width: 100%;
+  width: max-content;
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
   z-index: 1000;
+  white-space: normal; 
+  word-break: break-word;
 }
 
 .dropdown-menu li {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-.dropdown-menu a {
+.dropdown-menu a,
+.dropdown-menu .dropdown-item {
   display: block;
-  padding: 2px 8px;
+  padding: 0px 16px; /* antes: 2px 8px, más compacto pero cómodo */
   margin: 0;
   color: #333;
   text-decoration: none;
+  line-height: 1.2;     /* Reduce la altura de línea */
+  min-height: unset;    /* Por si algún reset global aplica min-height */
+  box-sizing: border-box;
 }
 
 .flag-icon {
@@ -147,6 +163,12 @@
   gap: 8px;
   color: #333;
   text-decoration: none;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu .dropdown-item:hover {
+  color: #535bf2;
+  text-decoration: underline;
 }
 
 /* Responsive */
@@ -170,7 +192,7 @@
     display: block;
   }
 
-  .navbar ul {
+  .navbar > ul {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
