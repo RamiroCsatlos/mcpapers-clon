@@ -1,7 +1,7 @@
 import './Header.css';
 import { useState } from 'react';
 import logoHeader from '../assets/logoHeader.png';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react'; // Agrega X a la importación
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <img src={logoHeader} alt="Logo MC Papers" className="logo-header" />
+        <a href="/">
+          <img src={logoHeader} alt="Logo MC Papers" className="logo-header" />
+        </a>
 
         <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
           <ul>
@@ -28,7 +30,7 @@ function Header() {
                 onMouseEnter={() => setOpenDropdown('productos')}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                Productos
+                <span className="dropdown-text">Productos</span>
               </button>
               {openDropdown === 'productos' && (
                 <ul
@@ -61,7 +63,7 @@ function Header() {
                 onMouseEnter={() => setOpenDropdown('equipamiento')}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                Equipamiento
+                <span className="dropdown-text">Equipamiento</span>
               </button>
               {openDropdown === 'equipamiento' && (
                 <ul
@@ -97,7 +99,7 @@ function Header() {
                 onMouseEnter={() => setOpenDropdown('idioma')}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                Idioma
+                <span className="dropdown-text">Idioma</span>
               </button>
               {openDropdown === 'idioma' && (
                 <ul
@@ -132,7 +134,7 @@ function Header() {
         </nav>
 
         <button className="menu-toggle" onClick={toggleMenu}>
-          <Menu size={28} />
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
     </header>
