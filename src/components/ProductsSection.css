@@ -1,0 +1,214 @@
+.products-section {
+  padding: 3rem 0;
+  background: #f7f7fa;
+  text-align: center;
+}
+
+.products-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #222;
+  font-weight: 700;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.product-card {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-images {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 95vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-end;
+}
+
+.first-image,
+.image-wrapper.first-image {
+  width: 500px;
+  max-width: 90vw;
+  height: auto;
+  flex: 1 1 0%;           /* Permite que crezca y ocupe el espacio disponible */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.first-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: transparent;
+  display: block;
+}
+
+.product-right {
+  width: 420px;           /* Ancho fijo */
+  min-width: 220px;
+  max-width: 90vw;
+  flex: 0 0 420px;        /* No crece, no se achica, ancho fijo */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.product-info {
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Centra título y botón */
+  justify-content: flex-start;
+}
+
+.second-image {
+  width: 300px;      /* Antes 220px */
+  height: 300px;     /* Antes 220px */
+  max-width: 90vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: visible;
+  margin-top: auto;
+}
+
+.second-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  background: transparent;
+  display: block;
+  transform: scale(1.0);
+}
+
+.blue-stripe {
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  width: 160%;
+  height: 32px;
+  background: #2a4fff;
+  opacity: 0.85;
+  transform: rotate(-20deg) translateY(-50%);
+  pointer-events: none;
+  display: none;
+}
+
+.product-card h3 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.see-more-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  background: #2a4fff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1rem;
+}
+
+.see-more-btn:hover {
+  background: #1a2fa0;
+}
+
+.image-link {
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent; /* Fondo blanco solo en el contenedor */
+}
+
+.image-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  /* NO pongas background: #fff aquí */
+  position: relative;
+  z-index: 1;
+}
+
+.image-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+
+.image-link:hover::after,
+.image-link:focus::after {
+  opacity: 1;
+}
+
+/* Oscurece solo la imagen al hacer hover */
+.image-link:hover img,
+.image-link:focus img {
+  filter: brightness(0.9);
+}
+
+/* Responsive: imágenes apiladas en mobile */
+@media (max-width: 900px) {
+  .product-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .first-image,
+  .image-wrapper.first-image {
+    width: 95vw;
+    max-width: 500px;
+    height: auto;
+  }
+  .product-right {
+    width: 95vw;
+    max-width: 500px;
+    align-items: center;
+  }
+  .second-image {
+    width: 180px;
+    height: 180px;
+    margin-top: 1rem;
+  }
+}

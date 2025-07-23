@@ -8,6 +8,7 @@ const About = lazy(() => import('./components/About'));
 const HeroSlider = lazy(() => import('./components/HeroSlider'));
 const Products = lazy(() => import('./components/Products'));
 import GreenerPack from './components/GreenerPack';
+import ProductsSection from './components/ProductsSection';
 
 function App() {
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -33,6 +34,7 @@ function App() {
         <div ref={productsRef}>
           {productsInView && <Products />}
         </div> */}
+        <ProductsSection />
         <GreenerPack />
       </Suspense>
     </>
