@@ -163,27 +163,18 @@
   z-index: 1;
 }
 
-.image-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.35);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 2;
-  transition: opacity 0.3s;
-}
+/* Removemos el overlay ::after ya que oscurece las áreas transparentes */
 
-.image-link:hover::after,
-.image-link:focus::after {
-  opacity: 1;
-}
-
-/* Oscurece solo la imagen al hacer hover */
+/* Efecto hover solo en el contenido visible de la imagen */
 .image-link:hover img,
 .image-link:focus img {
-  filter: brightness(0.9);
+  filter: brightness(0.7) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+/* Añadimos transición suave también al estado normal */
+.image-link img {
+  transition: filter 0.3s ease;
 }
 
 /* Responsive: imágenes apiladas en mobile */
