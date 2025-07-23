@@ -34,7 +34,9 @@ const products = [
 function ProductsSection() {
   return (
     <section className="products-section">
-      <h2 className="products-title">Productos</h2>
+      <a href="/ruta-del-producto" className="title-link">
+       <h2 className="products-title">Productos</h2>
+      </a>
       <div className="products-list">
         {products.map((prod, idx) => (
           <div className={`product-card product-${idx}`} key={prod.title}>

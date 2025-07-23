@@ -1,14 +1,15 @@
 .products-section {
-  padding: 3rem 0;
+  padding: 1rem 0;
   background: #f7f7fa;
   text-align: center;
 }
 
 .products-title {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: #222;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: rgb(24, 62, 103);
   font-weight: 700;
+  text-decoration: underline;
 }
 
 .products-list {
@@ -256,6 +257,37 @@
 
   .product-0 .second-image-0 {
     padding-bottom: 20px;
+  }
+
+  /* Franjas azules para mobile - una por cada imagen */
+  .product-card::before {
+    display: none; /* Ocultar la franja principal en mobile */
+  }
+
+  .first-image::before,
+  .second-image::before {
+    content: '';
+    position: absolute;
+    left: calc(-50vw + 50%); /* Centrar la franja de 100vw respecto al viewport */
+    width: 100vw;
+    height: 60px;
+    background: #2a4fff;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .first-image::before {
+    top: 65%; /* Para las primeras imágenes (imágenes grandes) */
+  }
+
+  .second-image::before {
+    top: 50%; /* Para las segundas imágenes (imágenes en contenedor con botón) */
+  }
+
+  .first-image,
+  .second-image {
+    position: relative;
+    overflow: visible; /* Permitir que la franja se extienda fuera del contenedor */
   }
 
 }
