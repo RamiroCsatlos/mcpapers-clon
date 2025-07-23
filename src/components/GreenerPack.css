@@ -69,6 +69,10 @@
   .greenerpack-text {
     max-width: 100%;
   }
+  
+  .greenerpack-img-container {
+    width: 70vw; /* Escalar la imagen a 80% del viewport width en mobile */
+  }
 }
 
 @media (max-width: 600px) {
