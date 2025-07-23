@@ -178,7 +178,7 @@
   .product-images {
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.2rem;
     width: 100vw;
     max-width: 100vw;
   }
@@ -188,7 +188,8 @@
     max-width: 500px;
     align-items: center;
     order: -1; /* Título y botón van primero */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+    max-height: fit-content;
   }
   
   .product-info {
@@ -209,7 +210,7 @@
   .second-image {
     width: 60vw;
     height: auto;
-    margin-top: 1rem;
+    margin-top: 0.3rem;
   }
   
   /* Anular las personalizaciones específicas en mobile */
@@ -225,4 +226,9 @@
     height: auto;
     padding-top: 20px; /* Mantener el padding superior para láminas */
   }
+
+  .product-0 .second-image-0 {
+    padding-bottom: 20px;
+  }
+
 }
