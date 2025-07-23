@@ -37,10 +37,10 @@ function ProductsSection() {
       <h2 className="products-title">Productos</h2>
       <div className="products-list">
         {products.map((prod, idx) => (
-          <div className="product-card" key={prod.title}>
+          <div className={`product-card product-${idx}`} key={prod.title}>
             <div className="product-images">
               {/* Primera imagen (izquierda) */}
-              <div className="image-wrapper first-image">
+              <div className={`image-wrapper first-image first-image-${idx}`}>
                 <a href="/ruta-del-producto" className="image-link">
                   <img src={prod.images[0]} alt={prod.title} />
                 </a>
@@ -51,7 +51,7 @@ function ProductsSection() {
                   <h3>{prod.title}</h3>
                   <button className="see-more-btn">Ver más</button>
                 </div>
-                <div className="image-wrapper second-image">
+                <div className={`image-wrapper second-image second-image-${idx}`}>
                   <a href="/ruta-del-producto" className="image-link">
                     <img src={prod.images[1]} alt={prod.title} />
                   </a>
