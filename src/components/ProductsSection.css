@@ -43,7 +43,7 @@
 }
 
 .first-image {
-  width: 500px;
+  width: 420px;
   max-width: 90vw;
   height: auto;
   flex: 1 1 0%;
@@ -67,10 +67,10 @@
 }
 
 .product-right {
-  width: 420px;
+  width: 500px;
   min-width: 220px;
   max-width: 90vw;
-  flex: 0 0 420px;
+  flex: 0 0 500px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -89,7 +89,7 @@
 }
 
 .second-image {
-  width: 350px;
+  width: 420px;
   height: auto;
   max-width: 90vw;
   display: flex;
@@ -110,7 +110,7 @@
 
 .product-card h3 {
   margin: 2rem 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #222;
 }
 
@@ -120,11 +120,11 @@
   background: #2a4fff;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 1.5rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .see-more-btn:hover {
@@ -158,13 +158,13 @@
 /* Estilos específicos para cada producto */
 /* Producto 0: Bolsas Flat */
 .product-0 .second-image-0 {
-  width: 500px;
+  width: 480px;
   /* Estilos específicos para segunda imagen de Bolsas Flat */
 }
 
 /* Producto 1: Bolsas Fondo Cuadrado */
 .product-1 .second-image-1 {
-  width: 500px; /* Un poco más ancha que el default de 350px */
+  width: 480px; /* Ajustado proporcionalmente */
 }
 
 /* Producto 2: Láminas */
