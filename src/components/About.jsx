@@ -18,7 +18,9 @@ const About = () => {
         </div>
         <div className="empresa-img-container">
           <div className="empresa-img-padding">
-            <img src={empresaImage} alt="Empresa" className="empresa-img" />
+            <a href="/sobre-nosotros" className="empresa-img-link">
+              <img src={empresaImage} alt="Empresa" className="empresa-img" />
+            </a>
           </div>
           <span className="badge top-left">Empresa líder del mercado</span>
           <span className="badge bottom-right">

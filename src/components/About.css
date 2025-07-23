@@ -12,6 +12,8 @@
   gap: 2rem;
   flex-wrap: wrap;
   overflow: visible;
+  max-width: 1200px; /* Alinear con el resto de componentes */
+  margin: 0 auto; /* Centrar el contenido */
 }
 
 .about-text {
@@ -72,6 +74,21 @@
   height: auto;
   border-radius: 12px;
   display: block;
+  transition: filter 0.3s ease; /* Transición para el efecto hover */
+}
+
+.empresa-img-link {
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Efecto hover igual al de las imágenes de productos */
+.empresa-img-link:hover .empresa-img,
+.empresa-img-link:focus .empresa-img {
+  filter: brightness(0.7) contrast(1.1);
 }
 
 .badge {
@@ -136,5 +153,19 @@
 
   .badge {
     font-size: 0.9rem;
+  }
+
+  /* Centrar badges en mobile */
+  .empresa-img-container .badge.top-left {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.6rem;
+  }
+
+  .empresa-img-container .badge.bottom-right {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.6rem;
   }
 }

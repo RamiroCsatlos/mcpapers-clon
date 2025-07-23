@@ -164,6 +164,7 @@
 .dropdown-menu li {
   margin: 0;
   padding: 0;
+  list-style: none; /* Quitar las viñetas */
 }
 
 .dropdown-menu a,
