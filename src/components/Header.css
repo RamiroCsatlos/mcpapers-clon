@@ -271,28 +271,70 @@
 
   .navbar a,
   .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    text-align: center;
     font-size: 1rem;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
-    padding: 0.5rem 1rem; /* Padding normal en mobile */
-    min-width: auto;
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    overflow: visible !important;
+    z-index: auto !important;
+    display: flex !important; /* Mantener flex para centrado */
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important; /* Columna para dropdown abajo */
+  }
+
+  .dropdown-text {
+    margin-right: 6px !important;
+    width: auto !important;
+    text-align: center !important;
+  }
+
+  /* Reposiciona el triángulo para móvil */
+  .dropdown-toggle::after {
+    display: block !important;
+    right: auto !important;
+    left: auto !important;
+    position: relative !important;
+    margin-left: 6px !important;
+    transform: translateY(0) rotate(0deg) !important;
+  }
+
+  .dropdown-toggle.open::after {
+    transform: translateY(0) rotate(180deg) !important;
   }
 
   .dropdown-menu {
-    position: static;
-    width: 100%;
-    min-width: 0;
-    background: transparent;
-    text-align: center;
-    border: none;
-    box-shadow: none;
-    padding: 0.5rem 0;
-    margin-left: auto;
-    margin-right: auto;
-    left: unset;
-    transform: unset;
-    gap: 12px;
+    display: flex !important; /* Volver a flex para lista */
+    flex-direction: column !important;
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    background: transparent !important;
+    text-align: center !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    left: unset !important;
+    right: unset !important;
+    transform: none !important;
+    gap: 8px !important; /* Gap para separar elementos */
+    z-index: auto !important;
+    top: auto !important;
+    align-items: center !important; /* Centra los elementos */
   }
 
   .logo-header {

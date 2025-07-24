@@ -1,16 +1,41 @@
 import './Header.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logoHeader from '../assets/logoHeader.png';
 import { Menu, X } from 'lucide-react'; // Agrega X a la importación
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // 'productos', 'equipamiento', 'idioma', o null
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si estamos en móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleDropdown = (dropdown) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
+
+  const handleMouseEnter = (dropdown) => {
+    if (!isMobile) {
+      setOpenDropdown(dropdown);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setOpenDropdown(null);
+    }
   };
 
   return (
@@ -27,16 +52,16 @@ function Header() {
               <button
                 className={`dropdown-toggle ${openDropdown === 'productos' ? 'open' : ''}`}
                 onClick={() => handleDropdown('productos')}
-                onMouseEnter={() => setOpenDropdown('productos')}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('productos')}
+                onMouseLeave={handleMouseLeave}
               >
                 <span className="dropdown-text">Productos</span>
               </button>
               {openDropdown === 'productos' && (
                 <ul
                   className="dropdown-menu"
-                  onMouseEnter={() => setOpenDropdown('productos')}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseEnter={() => handleMouseEnter('productos')}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <li>
                     <a href="#" className="dropdown-item">
@@ -60,16 +85,16 @@ function Header() {
               <button
                 className={`dropdown-toggle ${openDropdown === 'equipamiento' ? 'open' : ''}`}
                 onClick={() => handleDropdown('equipamiento')}
-                onMouseEnter={() => setOpenDropdown('equipamiento')}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('equipamiento')}
+                onMouseLeave={handleMouseLeave}
               >
                 <span className="dropdown-text">Equipamiento</span>
               </button>
               {openDropdown === 'equipamiento' && (
                 <ul
                   className="dropdown-menu"
-                  onMouseEnter={() => setOpenDropdown('equipamiento')}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseEnter={() => handleMouseEnter('equipamiento')}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <li>
                     <a href="#" className="dropdown-item">
@@ -96,16 +121,16 @@ function Header() {
               <button
                 className={`dropdown-toggle ${openDropdown === 'idioma' ? 'open' : ''}`}
                 onClick={() => handleDropdown('idioma')}
-                onMouseEnter={() => setOpenDropdown('idioma')}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => handleMouseEnter('idioma')}
+                onMouseLeave={handleMouseLeave}
               >
                 <span className="dropdown-text">Idioma</span>
               </button>
               {openDropdown === 'idioma' && (
                 <ul
                   className="dropdown-menu"
-                  onMouseEnter={() => setOpenDropdown('idioma')}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseEnter={() => handleMouseEnter('idioma')}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <li>
                     <a href="#" className="dropdown-item">
