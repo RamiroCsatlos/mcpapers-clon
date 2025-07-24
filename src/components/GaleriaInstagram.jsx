@@ -1,4 +1,5 @@
 import './GaleriaInstagram.css';
+import { Instagram } from 'lucide-react';
 
 // Importar las imágenes de Instagram
 import instagram1 from '../assets/instagram1.jpg';
@@ -68,7 +69,8 @@ function GaleriaInstagram() {
             rel="noopener noreferrer"
             className="instagram-handle-link"
           >
-            @mcpapersargentina
+            <Instagram size={48} className="instagram-handle-icon" />
+            @MCPAPERSARGENTINA
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 .instagram-section {
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
   background: linear-gradient(135deg, 
     #f09433 0%, 
     #e6683c 25%, 
@@ -37,7 +37,8 @@
 
 .instagram-title {
   font-size: 3.2rem;
-  margin-bottom: 3rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
   color: white;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -47,7 +48,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .instagram-image-card {
@@ -105,7 +106,7 @@
 }
 
 .instagram-handle {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .instagram-handle-link {
@@ -115,12 +116,22 @@
   text-decoration: none;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.instagram-handle-icon {
+  transition: transform 0.3s ease;
 }
 
 .instagram-handle-link:hover {
   transform: scale(1.05);
   text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+
+.instagram-handle-link:hover .instagram-handle-icon {
+  transform: rotate(15deg);
 }
 
 /* Responsive Design */
@@ -141,16 +152,19 @@
 
 @media (max-width: 768px) {
   .instagram-section {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
   
   .instagram-title {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .instagram-gallery {
+    grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto 1rem auto;
   }
   
   .instagram-handle-link {
@@ -163,11 +177,11 @@
     grid-template-columns: 1fr;
     gap: 1rem;
     max-width: 300px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 1rem auto;
   }
   
   .instagram-section {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
   
   .instagram-title {
