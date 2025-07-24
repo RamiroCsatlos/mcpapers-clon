@@ -4,6 +4,7 @@ import { Suspense, lazy } from 'react';
 import { useInView } from 'react-intersection-observer'
 import AnimatedWaveBanner from './components/AnimatedWaveBanner';
 import Slider from './components/Slider';
+import Footer from './components/Footer';
 
 const About = lazy(() => import('./components/About'));
 import GreenerPack from './components/GreenerPack';
@@ -31,6 +32,7 @@ function App() {
         <Slider />
         <Equipamiento />
       </Suspense>
+      <Footer />
     </>
   )
 }

@@ -1,0 +1,117 @@
+.footer {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.footer-inner a {
+  display: flex;
+  align-items: center;
+}
+
+.logo-footer {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Colores específicos para cada red social */
+.social-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+}
+
+.social-link.linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.social-link.twitter:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.75rem 1rem;
+  }
+  
+  .footer-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .logo-footer {
+    height: 40px;
+  }
+  
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .logo-footer {
+    height: 35px;
+  }
+  
+  .social-links {
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    width: 32px;
+    height: 32px;
+  }
+}
