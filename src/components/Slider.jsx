@@ -5,7 +5,6 @@ import sliderFabrica from '../assets/sliderFabrica.webp';
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [direction, setDirection] = useState('next'); // 'next' o 'prev'
 
   const slides = [
     {
@@ -22,87 +21,44 @@ const Slider = () => {
     }
   ];
 
-  // Auto-slide functionality
+  // Auto-slide functionality - siempre hacia la derecha
   useEffect(() => {
     const timer = setInterval(() => {
-      setDirection('next');
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Cambia cada 5 segundos
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const goToSlide = (index) => {
-    setDirection(index > currentSlide ? 'next' : 'prev');
-    setCurrentSlide(index);
-  };
-
   const nextSlide = () => {
-    setDirection('next');
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    setDirection('prev');
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   return (
     <div className="slider-container">
       <div className="slider-wrapper">
-        {slides.map((slide, index) => {
-          let slideClass = 'slide';
-          
-          if (index === currentSlide) {
-            slideClass += ' active';
-          } else {
-            // Lógica para carrusel infinito
-            if (direction === 'next') {
-              // Si estamos en el último slide y vamos al primero
-              if (currentSlide === slides.length - 1 && index === 0) {
-                slideClass += ' next';
-              }
-              // Si estamos en el primer slide y venimos del último
-              else if (currentSlide === 0 && index === slides.length - 1) {
-                slideClass += ' prev';
-              }
-              // Comportamiento normal
-              else {
-                slideClass += index < currentSlide ? ' prev' : ' next';
-              }
-            } else { // direction === 'prev'
-              // Si estamos en el primer slide y vamos al último
-              if (currentSlide === 0 && index === slides.length - 1) {
-                slideClass += ' prev';
-              }
-              // Si estamos en el último slide y venimos del primero
-              else if (currentSlide === slides.length - 1 && index === 0) {
-                slideClass += ' next';
-              }
-              // Comportamiento normal
-              else {
-                slideClass += index > currentSlide ? ' next' : ' prev';
-              }
-            }
-          }
-
-          return (
-            <div
-              key={slide.id}
-              className={slideClass}
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            >
-              <div className="slide-overlay">
-                <div className="slide-content">
-                  <h2>{slide.title}</h2>
-                  <p>{slide.subtitle}</p>
-                </div>
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className="slide"
+            style={{
+              backgroundImage: `url(${slide.image})`,
+              transform: `translateX(${(index - currentSlide) * 100}%)`,
+              transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
+          >
+            <div className="slide-overlay">
+              <div className="slide-content">
+                <h2>{slide.title}</h2>
+                <p>{slide.subtitle}</p>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       {/* Navigation arrows */}
