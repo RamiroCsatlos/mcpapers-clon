@@ -43,7 +43,6 @@ function Equipamiento() {
               <div className="equipo-badge">{equipo.badge}</div>
             </div>
             <div className="equipo-info">
-              <h3 className="equipo-title">{equipo.title}</h3>
               <button className="equipo-ver-mas-btn">Ver más</button>
             </div>
           </div>

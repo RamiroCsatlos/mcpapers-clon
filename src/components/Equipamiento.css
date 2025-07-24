@@ -14,15 +14,18 @@
 
 .equipamiento-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 0.5rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .equipo-card {
   background: #f9f9f9;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .equipo-image-container {
@@ -33,14 +36,14 @@
 .equipo-image-link {
   display: block;
   position: relative;
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px;
   overflow: hidden;
   background: transparent;
 }
 
 .equipo-image {
-  width: 100%;
-  height: 250px;
+  width: 400px;
+  height: 480px;
   object-fit: cover;
   display: block;
   transition: filter 0.3s ease;
@@ -59,24 +62,22 @@
   transform: translateX(-50%);
   background-color: #20066e;
   color: white;
-  padding: 0.3rem 0.8rem;
+  padding: 0.3rem 1.8rem;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 2;
+  white-space: nowrap;
 }
 
 .equipo-info {
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
-}
-
-.equipo-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 600;
+  width: 400px; /* Mismo ancho que la imagen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .equipo-ver-mas-btn {
@@ -109,20 +110,25 @@
   
   .equipamiento-gallery {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .equipo-image {
-    height: 200px;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .equipo-badge {
+    left: 50%;
+  }
+  
+  .equipo-info {
+    width: 100%;
   }
   
   .equipo-badge {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
-  }
-  
-  .equipo-title {
-    font-size: 1.3rem;
   }
 }
 
@@ -132,7 +138,16 @@
   }
   
   .equipo-image {
-    height: 180px;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .equipo-badge {
+    left: 50%;
+  }
+  
+  .equipo-info {
+    width: 100%;
   }
   
   .equipo-info {
