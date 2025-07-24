@@ -14,10 +14,17 @@
 
 .equipamiento-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+/* Media query para ir directamente a 1 columna */
+@media (max-width: 900px) {
+  .equipamiento-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 .equipo-card {
@@ -42,8 +49,10 @@
 }
 
 .equipo-image {
-  width: 400px;
-  height: 480px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 400/480;
   object-fit: cover;
   display: block;
   transition: filter 0.3s ease;
@@ -74,7 +83,7 @@
 .equipo-info {
   padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
-  width: 400px; /* Mismo ancho que la imagen */
+  width: 100%; /* Usar 100% para que se adapte al ancho de la imagen */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,22 +117,11 @@
     margin-bottom: 2rem;
   }
   
-  .equipamiento-gallery {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
   .equipo-image {
     width: 100%;
+    min-width: unset;
     height: 300px;
-  }
-  
-  .equipo-badge {
-    left: 50%;
-  }
-  
-  .equipo-info {
-    width: 100%;
+    aspect-ratio: unset;
   }
   
   .equipo-badge {
@@ -138,16 +136,7 @@
   }
   
   .equipo-image {
-    width: 100%;
     height: 250px;
-  }
-  
-  .equipo-badge {
-    left: 50%;
-  }
-  
-  .equipo-info {
-    width: 100%;
   }
   
   .equipo-info {

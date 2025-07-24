@@ -28,8 +28,8 @@ function App() {
         </div>
         <GreenerPack />
         <ProductsSection />
-        <Equipamiento />
         <Slider />
+        <Equipamiento />
       </Suspense>
     </>
   )
