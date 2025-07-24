@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem);
   background-color: #f0f2f5;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 2000; /* Asegura que quede por encima del contenido */
+  z-index: 2000;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -21,6 +21,8 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
+  overflow: visible; /* Cambio de hidden a visible para los dropdowns */
+  z-index: 2001; /* Asegura que el header-inner esté por encima */
 }
 
 .header-inner a {
@@ -29,9 +31,9 @@
 }
 
 .logo-header {
-  height: 60px;
+  height: clamp(30px, 6vw, 60px); /* Más compacto basado en viewport */
   width: auto;
-  margin-right: 2rem; /* Espacio a la derecha del logo en escritorio */
+  margin-right: clamp(0.3rem, 1.5vw, 2rem); /* Margen más ajustado */
 }
 
 .menu-toggle {
@@ -50,23 +52,42 @@
 /* NAVBAR */
 .navbar {
   display: flex;
+  flex: 1;
+  min-width: 0;
+  overflow: visible;
+  z-index: 2001; /* Asegura jerarquía correcta */
 }
 
 .navbar > ul {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(0.1rem, 0.5vw, 1.5rem); /* Gap basado en viewport width */
   list-style: none;
   margin: 0;
   padding: 0;
   align-items: center;
-  justify-content: center; /* Centra horizontalmente los links */
-  text-align: center;      /* Centra el texto de los links */
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  min-width: 0; /* Permite compresión */
+}
+
+.navbar li {
+  flex: 0 1 auto; /* Permite que los elementos se compriman */
+  min-width: 0; /* Permite compresión completa */
 }
 
 .navbar a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  font-size: clamp(0.5rem, 1.2vw, 1rem); /* Tamaño más agresivo basado en viewport */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: clamp(1px, 0.3vw, 5px) clamp(1px, 0.5vw, 8px); /* Padding ultra mínimo */
+  display: block;
+  min-width: 0; /* Permite compresión */
 }
 
 .navbar a:hover {
@@ -74,14 +95,19 @@
   text-decoration: underline; 
 }
 
-/* Dropdown */
 .dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 2002; /* Asegura que todo el dropdown esté por encima */
 }
 
 .dropdown-toggle {
   position: relative;
-  padding-right: 28px; /* espacio para el triángulo */
+  padding-right: 10px;
+  padding-left: clamp(1px, 0.3vw, 5px);
   background: none;
   border: none;
   cursor: pointer;
@@ -91,12 +117,23 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  font-size: clamp(0.5rem, 1.2vw, 1rem);
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+  min-width: 0;
+  z-index: 2002; /* Incremento del z-index */
 }
 
 .dropdown-text {
   display: block;
-  width: 100%;
+  width: auto; /* Cambiado de 100% a auto */
   text-align: center;
+  margin-right: 6px;
+  overflow: visible; /* Cambiado de hidden a visible */
+  text-overflow: unset; /* Cambiado para no interferir */
+  white-space: nowrap;
+  pointer-events: auto; /* Asegura que sea clickeable */
 }
 
 .dropdown-toggle:focus {
@@ -113,21 +150,42 @@
   text-decoration: underline; /* subrayado al hacer hover */
 }
 
-/* Mostrar el menú cuando el dropdown está abierto */
-.dropdown-toggle.open + .dropdown-menu {
-  display: flex !important;
+/* El dropdown menu se muestra/oculta desde React, no desde CSS */
+.dropdown-menu {
+  display: flex !important; /* React controla la visibilidad */
   flex-direction: column;
+  position: absolute;
+  width: max-content;  
+  padding: 4px 0px;
+  margin: 0;
+  gap: 4px;
+  border-radius: 6px;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  min-width: 100%;
+  width: max-content;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  z-index: 2003; /* El más alto para estar por encima de todo */
+  white-space: normal; 
+  word-break: break-word;
+  text-align: center;
+  pointer-events: auto;
 }
 
 .dropdown-toggle::after {
   content: '';
   position: absolute;
-  right: 8px;
+  right: 2px;
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
-  border-top: 5px solid #333;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  border-top: 4px solid #333;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
   border-bottom: none;
   transition: transform 0.3s ease;
   pointer-events: none;
@@ -135,30 +193,6 @@
 
 .dropdown-toggle.open::after {
   transform: translateY(-50%) rotate(180deg);
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  width: max-content;  
-  padding: 4px 0px; /* antes: 10px 12px */
-  margin: 0;
-  gap: 4px; /* Espacio entre elementos */
-  border-radius: 6px;
-  top: 100%;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%); /* Centra el dropdown respecto al botón */
-  min-width: 100%;
-  width: max-content;
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  white-space: normal; 
-  word-break: break-word;
-  text-align: center;          /* Centra el texto de los items */
 }
 
 .dropdown-menu li {
@@ -214,6 +248,7 @@
     width: 100%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     z-index: 1000;
+    max-width: none;
   }
 
   .navbar.active {
@@ -224,9 +259,24 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    align-items: center;   /* Centra los items en columna */
+    align-items: center;
     justify-content: center;
     text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar li {
+    flex: none; /* En mobile no comprimir */
+  }
+
+  .navbar a,
+  .dropdown-toggle {
+    font-size: 1rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    padding: 0.5rem 1rem; /* Padding normal en mobile */
+    min-width: auto;
   }
 
   .dropdown-menu {
@@ -247,6 +297,6 @@
 
   .logo-header {
     margin-right: 0;
-    margin-bottom: 0; /* Sin margen inferior en mobile */
+    margin-bottom: 0;
   }
 }
