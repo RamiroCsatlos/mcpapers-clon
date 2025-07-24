@@ -8,6 +8,7 @@ import Slider from './components/Slider';
 const About = lazy(() => import('./components/About'));
 import GreenerPack from './components/GreenerPack';
 import ProductsSection from './components/ProductsSection';
+import Equipamiento from './components/Equipamiento';
 
 function App() {
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -27,6 +28,7 @@ function App() {
         </div>
         <GreenerPack />
         <ProductsSection />
+        <Equipamiento />
         <Slider />
       </Suspense>
     </>

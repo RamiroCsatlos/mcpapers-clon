@@ -1,0 +1,141 @@
+.equipamiento-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.equipamiento-title {
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+  color: rgb(24, 62, 103);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.equipamiento-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipo-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.equipo-image-container {
+  position: relative;
+  padding: 1rem; /* Agregar padding para dar espacio al badge */
+}
+
+.equipo-image-link {
+  display: block;
+  position: relative;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.equipo-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+/* Efecto hover igual al de las imágenes de productos */
+.equipo-image-link:hover .equipo-image,
+.equipo-image-link:focus .equipo-image {
+  filter: brightness(0.7) contrast(1.1);
+}
+
+.equipo-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #20066e;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.equipo-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.equipo-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.equipo-ver-mas-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  background: #2a4fff;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1.2rem;
+}
+
+.equipo-ver-mas-btn:hover {
+  background: #1a2fa0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .equipamiento-section {
+    padding: 2rem 1rem;
+  }
+  
+  .equipamiento-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .equipamiento-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .equipo-image {
+    height: 200px;
+  }
+  
+  .equipo-badge {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .equipo-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipamiento-title {
+    font-size: 2rem;
+  }
+  
+  .equipo-image {
+    height: 180px;
+  }
+  
+  .equipo-info {
+    padding: 1rem;
+  }
+}
