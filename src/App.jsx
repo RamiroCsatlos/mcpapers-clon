@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import AnimatedWaveBanner from './components/AnimatedWaveBanner';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
+import GaleriaInstagram from './components/GaleriaInstagram';
 
 const About = lazy(() => import('./components/About'));
 import GreenerPack from './components/GreenerPack';
@@ -31,6 +32,7 @@ function App() {
         <ProductsSection />
         <Slider />
         <Equipamiento />
+        <GaleriaInstagram />
       </Suspense>
       <Footer />
     </>
