@@ -1,6 +1,8 @@
 import './Header.css';
 import { useState, useEffect } from 'react';
 import logoHeader from '../assets/logoHeader.png';
+import flagAR from '../assets/ar.svg';
+import flagUS from '../assets/us.svg';
 import { Menu, X } from 'lucide-react'; // Agrega X a la importación
 
 function Header() {
@@ -135,7 +137,7 @@ function Header() {
                   <li>
                     <a href="#" className="dropdown-item">
                       <img
-                        src="/flags/ar.svg"
+                        src={flagAR}
                         alt="Bandera de Argentina"
                         className="flag-icon"
                       />
@@ -145,7 +147,7 @@ function Header() {
                   <li>
                     <a href="#" className="dropdown-item">
                       <img
-                        src="/flags/us.svg"
+                        src={flagUS}
                         alt="Bandera de Estados Unidos"
                         className="flag-icon"
                       />
