@@ -1,12 +1,12 @@
 .responsabilidad-social {
   width: 100%;
-  padding: 4rem 1rem;
+  padding: 4rem 1.5rem;
   background-color: #f9f9f9;
   box-sizing: border-box;
 }
 
 .responsabilidad-social-container {
-  max-width: calc(1440px - 2rem); /* Resta el padding total */
+  max-width: calc(1440px - 3rem); /* Resta el padding total */
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -37,8 +37,8 @@
   display: grid;
   grid-template-columns: 35% 40% 25%;
   grid-template-rows: 1fr 1fr;
-  gap: 0.5rem;
-  height: 450px;
+  gap: 0.6rem;
+  height: 380px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -51,17 +51,27 @@
 
 .gallery-item-2 {
   grid-column: 2;
-  grid-row: 1 / 3; /* Ocupa ambas filas */
+  grid-row: 1 / 3; /* Ocupa ambas filas - rectangular */
 }
 
 .gallery-item-3 {
   grid-column: 3;
   grid-row: 1;
+  width: 100%;
+  height: 100%;
+  max-height: calc((400px - 0.8rem) / 2);
+  aspect-ratio: 1;
+  overflow: hidden;
 }
 
 .gallery-item-4 {
   grid-column: 3;
   grid-row: 2;
+  width: 100%;
+  height: 100%;
+  max-height: calc((400px - 0.8rem) / 2);
+  aspect-ratio: 1;
+  overflow: hidden;
 }
 
 .gallery-item {
@@ -71,6 +81,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .gallery-item:hover {
@@ -81,12 +93,50 @@
 .gallery-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
+/* Estilos específicos para cada imagen */
+.gallery-item-1 .gallery-image {
+  object-fit: contain; /* Muestra la imagen completa sin recorte */
+  object-position: center;
+}
+
+.gallery-item-2 .gallery-image {
+  object-fit: cover; /* Mantiene aspecto rectangular, puede recortar */
+  object-position: center;
+}
+
+.gallery-item-3 .gallery-image,
+.gallery-item-4 .gallery-image {
+  object-fit: cover; /* Para mantener aspecto cuadrado sin deformar */
+  object-position: center;
+}
+
 .gallery-item:hover .gallery-image {
-  transform: scale(1.05);
+  transform: scale(1.02); /* Reducido el zoom en hover para imagen 1 */
+}
+
+/* Hover específico para imagen 1 - sin zoom para mantenerla completa */
+.gallery-item-1:hover .gallery-image {
+  transform: none;
+}
+
+/* En mobile, hacer que solo la imagen sea clickeable, no el fondo */
+@media (max-width: 480px) {
+  .gallery-item-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+  
+  .gallery-item-1 .gallery-image {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
 }
 
 /* Media queries para responsive */
@@ -94,16 +144,17 @@
 /* Tablet grande - transición */
 @media (max-width: 1024px) {
   .responsabilidad-social {
-    padding: 3rem 1rem;
+    padding: 3rem 1.2rem;
   }
   
   .responsabilidad-social-container {
-    max-width: calc(100% - 2rem);
+    max-width: calc(100% - 2.4rem);
   }
   
   .responsabilidad-social-gallery {
-    height: 400px;
-    gap: 0.4rem;
+    height: 350px;
+    gap: 0.5rem;
+    grid-template-columns: 32% 43% 25%;
   }
   
   .responsabilidad-social-title {
@@ -115,11 +166,12 @@
 /* Tablet - punto de quiebre donde cambia el layout */
 @media (max-width: 768px) {
   .responsabilidad-social {
-    padding: 2.5rem 0.75rem;
+    padding: 2.5rem 1rem;
   }
   
   .responsabilidad-social-container {
-    max-width: calc(100% - 1.5rem);
+    max-width: calc(100% - 2rem);
+    padding: 0 0.5rem;
   }
   
   .responsabilidad-social-title {
@@ -127,52 +179,60 @@
     margin-bottom: 1.5rem;
   }
   
-  /* Nuevo layout: primera imagen al final, otras 3 en layout 2x2 modificado */
+  /* Nuevo layout: primera imagen al final, imagen 2 grande a la izquierda, 3 y 4 apiladas a la derecha */
   .responsabilidad-social-gallery {
     display: grid;
-    grid-template-columns: 58% 40%;
-    grid-template-rows: auto auto auto;
-    gap: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.7fr;
+    gap: 0.5rem;
     height: auto;
     width: 100%;
     box-sizing: border-box;
-    column-gap: 0.5rem;
   }
   
   /* Reposicionamiento para tablet */
   .gallery-item-1 {
-    grid-column: 1 / 3; /* Ocupa toda la fila */
-    grid-row: 3; /* Se va al final */
-    height: 150px;
+    grid-column: 1 / 3; /* Ocupa toda la fila al final */
+    grid-row: 3;
+    height: 120px;
+    aspect-ratio: unset;
+    max-width: 100%;
   }
   
   .gallery-item-2 {
-    grid-column: 1;
-    grid-row: 1 / 3; /* Ocupa 2 filas (imagen grande izquierda) */
-    height: 250px;
+    grid-column: 1; /* Ocupa todo el espacio de las imágenes 3 y 4 */
+    grid-row: 1 / 3; /* Ocupa 2 filas - imagen grande */
+    height: auto;
+    aspect-ratio: unset;
+    max-width: 100%;
   }
   
   .gallery-item-3 {
     grid-column: 2;
     grid-row: 1;
-    height: 120px;
+    height: auto;
+    aspect-ratio: 1; /* Mantiene cuadrado */
+    max-width: 100%;
   }
   
   .gallery-item-4 {
     grid-column: 2;
     grid-row: 2;
-    height: 120px;
+    height: auto;
+    aspect-ratio: 1; /* Mantiene cuadrado */
+    max-width: 100%;
   }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
   .responsabilidad-social {
-    padding: 2rem 0.5rem;
+    padding: 2rem 1rem;
   }
   
   .responsabilidad-social-container {
-    max-width: calc(100% - 1rem);
+    max-width: calc(100% - 2rem);
+    padding: 0;
   }
   
   .responsabilidad-social-title {
@@ -184,19 +244,31 @@
   .responsabilidad-social-gallery {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 0.4rem;
+    grid-template-rows: repeat(4, auto);
+    gap: 0.8rem;
     height: auto;
     width: 100%;
     box-sizing: border-box;
+    justify-items: center;
   }
   
   .gallery-item-1,
-  .gallery-item-2,
+  .gallery-item-2 {
+    grid-column: 1;
+    height: 140px;
+    width: 85%;
+    max-width: 280px;
+    aspect-ratio: unset;
+    justify-self: center;
+  }
+  
   .gallery-item-3,
   .gallery-item-4 {
     grid-column: 1;
-    height: 160px;
+    height: 140px;
+    width: 140px;
+    aspect-ratio: 1;
+    justify-self: center;
   }
   
   .gallery-item-1 {
@@ -231,14 +303,36 @@
     margin-bottom: 1rem;
   }
   
+/* Mobile pequeño */
+@media (max-width: 320px) {
+  .responsabilidad-social {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .responsabilidad-social-container {
+    max-width: calc(100% - 1.5rem);
+  }
+  
+  .responsabilidad-social-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
   .responsabilidad-social-gallery {
-    gap: 0.3rem;
+    gap: 0.6rem;
   }
   
   .gallery-item-1,
-  .gallery-item-2,
+  .gallery-item-2 {
+    height: 120px;
+    width: 90%;
+    max-width: 250px;
+  }
+  
   .gallery-item-3,
   .gallery-item-4 {
-    height: 140px;
+    height: 120px;
+    width: 120px;
   }
+}
 }
