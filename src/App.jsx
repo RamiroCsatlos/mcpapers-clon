@@ -1,11 +1,8 @@
 import './App.css'
 import './styles/scrollAnimations.css'
-import './styles/loadingOptimizations.css'
 import Header from './components/Header'
-import { Suspense, lazy } from 'react';
 import AnimatedWaveBanner from './components/AnimatedWaveBanner';
 import Footer from './components/Footer';
-import useScrollAnimation from './hooks/useScrollAnimation';
 
 // About también será normal, sin lazy loading
 import About from './components/About';

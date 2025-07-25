@@ -10,6 +10,17 @@ body {
   overflow-x: hidden; /* Asegurar que el body no tenga scroll horizontal */
 }
 
+/* Asegurar que no hay scrolls internos en secciones */
+section {
+  overflow: visible !important;
+}
+
+/* Asegurar scroll suave en toda la página */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

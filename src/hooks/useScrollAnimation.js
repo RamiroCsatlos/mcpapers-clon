@@ -8,7 +8,7 @@ const useScrollAnimation = (options = {}) => {
   const {
     threshold = 0.1,
     rootMargin = '0px',
-    triggerOnce = true,
+    triggerOnce = false, // Cambiado a false para permitir repetir animaciones
     delay = 0,
     animationType = 'fadeInUp'
   } = options;
@@ -22,7 +22,10 @@ const useScrollAnimation = (options = {}) => {
             setHasAnimated(true);
           }, delay);
         } else if (!triggerOnce && !entry.isIntersecting) {
-          setIsVisible(false);
+          // Pequeño retraso antes de quitar la animación para suavizar la transición
+          setTimeout(() => {
+            setIsVisible(false);
+          }, 100);
         }
       },
       {
