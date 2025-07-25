@@ -94,17 +94,18 @@
 
 .badge {
   position: absolute;
-  padding: clamp(0.1rem, 0.8vw, 0.5rem) clamp(0.3rem, 1vw, 0.8rem);
+  padding: clamp(0.2rem, 1vw, 0.8rem) clamp(0.4rem, 1.5vw, 1.2rem);
   font-weight: bold;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: clamp(4px, 1vw, 8px);
 }
 
 .empresa-img-container .badge.top-left {
   background-color: #20066e;
   top: 3%;
-  left: 8%;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  left: 15%;
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
 }
 
 .empresa-img-container .badge.bottom-right {
@@ -117,14 +118,14 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   line-height: 1;
   width: 100%;
 }
 
 .badge-text {
   display: block;
-  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  font-size: clamp(0.6rem, 1.2vw, 0.9rem);
 }
 
 .empresa-img-padding {
@@ -132,10 +133,10 @@
 }
 
 .badge-plus {
-  font-size: clamp(1.2rem, 3vw, 1.8rem); 
+  font-size: clamp(1rem, 2.5vw, 1.8rem); 
   font-weight: bold;  
   position: relative;
-  top: 0.3em;  
+  top: 0.2em;  
   margin-right: 2px;
   flex-shrink: 0;
 }
@@ -152,17 +153,36 @@
     max-width: 100%;
   }
 
-  /* Centrar badges en mobile */
+  /* Badges más grandes y mejor posicionados en mobile */
+  .badge {
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(0.8rem, 3vw, 1.5rem);
+    border-radius: clamp(6px, 2vw, 12px);
+    white-space: nowrap;
+  }
+
   .empresa-img-container .badge.top-left {
     left: 50%;
     transform: translateX(-50%);
-    top: 3%;
+    top: 8%;
+    font-size: clamp(1rem, 3vw, 1.8rem);
   }
 
   .empresa-img-container .badge.bottom-right {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 3%;
+    bottom: 8%;
+  }
+
+  .badge-number {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .badge-text {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+  }
+
+  .badge-plus {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
   }
 }
