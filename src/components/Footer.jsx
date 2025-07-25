@@ -1,10 +1,17 @@
 import './Footer.css';
+import '../styles/scrollAnimations.css';
 import logoHeader from '../assets/logoHeader.png';
 import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 function Footer() {
+  const [footerRef, footerClasses] = useScrollAnimation({ 
+    animationType: 'fadeInUp', 
+    delay: 100 
+  });
+
   return (
-    <footer className="footer">
+    <footer ref={footerRef} className={`footer ${footerClasses}`}>
       <div className="footer-inner">
         <a href="/">
           <img src={logoHeader} alt="Logo MC Papers" className="logo-footer" />

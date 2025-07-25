@@ -1,0 +1,89 @@
+/* Optimizaciones de carga y placeholders */
+.loading-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 2s infinite;
+  border-radius: 8px;
+  margin: 1rem 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Placeholders específicos para cada sección */
+.section-placeholder {
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.section-placeholder:hover {
+  background: #e9ecef;
+}
+
+/* Lazy loading para imágenes */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.lazy-image.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+/* Optimizar animaciones para mejor rendimiento */
+.scroll-animate {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reducir motion para usuarios con preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .loading-placeholder {
+    animation: none;
+    background: #f0f0f0;
+  }
+  
+  .lazy-image {
+    transition: none;
+  }
+  
+  .scroll-animate {
+    will-change: auto;
+  }
+}
+
+/* Preload hint para recursos críticos */
+.preload-hint {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}

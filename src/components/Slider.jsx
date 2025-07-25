@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
 import './Slider.css';
+import '../styles/scrollAnimations.css';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 import sliderBobina from '../assets/sliderBobina.webp';
 import sliderFabrica from '../assets/sliderFabrica.webp';
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(1); // Comenzamos en 1 (primer slide real)
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Animaciones para el slider
+  const [sliderRef, sliderClasses] = useScrollAnimation({ 
+    animationType: 'scaleIn', 
+    delay: 200 
+  });
 
   const slides = [
     {
@@ -80,7 +88,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div ref={sliderRef} className={`slider-container ${sliderClasses}`}>
       <div className="slider-wrapper">
         {extendedSlides.map((slide, index) => (
           <div

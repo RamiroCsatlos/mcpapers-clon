@@ -1,5 +1,7 @@
 import './GaleriaInstagram.css';
+import '../styles/scrollAnimations.css';
 import { Instagram } from 'lucide-react';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 // Importar las imágenes de Instagram
 import instagram1 from '../assets/instagram1.jpg';
@@ -35,12 +37,27 @@ const instagramImages = [
 ];
 
 function GaleriaInstagram() {
+  const [titleRef, titleClasses] = useScrollAnimation({ 
+    animationType: 'titleSlide', 
+    delay: 100 
+  });
+
+  const [galleryRef, galleryClasses] = useScrollAnimation({ 
+    animationType: 'fadeInUp', 
+    delay: 200 
+  });
+
+  const [handleRef, handleClasses] = useScrollAnimation({ 
+    animationType: 'zoomIn', 
+    delay: 400 
+  });
+
   return (
     <section className="instagram-section">
       <div className="instagram-content">
-        <h2 className="instagram-title">¡Seguinos en Instagram!</h2>
+        <h2 ref={titleRef} className={`instagram-title ${titleClasses}`}>¡Seguinos en Instagram!</h2>
         
-        <div className="instagram-gallery">
+        <div ref={galleryRef} className={`instagram-gallery ${galleryClasses}`}>
           {instagramImages.map((item) => (
             <div className="instagram-image-card" key={item.id}>
               <a 
@@ -62,7 +79,7 @@ function GaleriaInstagram() {
           ))}
         </div>
         
-        <div className="instagram-handle">
+        <div ref={handleRef} className={`instagram-handle ${handleClasses}`}>
           <a 
             href="https://instagram.com/mcpapersargentina" 
             target="_blank" 

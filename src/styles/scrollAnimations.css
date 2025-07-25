@@ -1,12 +1,16 @@
-/* Base para todas las animaciones de scroll */
+/* Base para todas las animaciones de scroll - optimizado para rendimiento */
 .scroll-animate {
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .scroll-animate.is-visible {
   opacity: 1;
+  will-change: auto; /* Remover will-change después de la animación */
 }
 
 /* Fade In Up - desde abajo hacia arriba */
@@ -129,7 +133,7 @@
 
 /* Animaciones para cards/tarjetas - versión mejorada sin overflow */
 .animate-cardHover {
-  transform: translateY(30px) scale(0.98);
+  transform: translateY(20px) scale(0.99);
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -156,6 +160,19 @@
 .equipamiento-section .animate-bounceIn {
   max-width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Específicamente para productos - evitar overflow horizontal */
+.products-section {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.products-section .product-card {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Ajustar animaciones horizontales para evitar overflow */

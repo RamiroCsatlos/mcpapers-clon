@@ -1,44 +1,24 @@
 import './App.css'
 import './styles/scrollAnimations.css'
+import './styles/loadingOptimizations.css'
 import Header from './components/Header'
 import { Suspense, lazy } from 'react';
-import { useInView } from 'react-intersection-observer'
 import AnimatedWaveBanner from './components/AnimatedWaveBanner';
-import Slider from './components/Slider';
 import Footer from './components/Footer';
-import GaleriaInstagram from './components/GaleriaInstagram';
 import useScrollAnimation from './hooks/useScrollAnimation';
 
-const About = lazy(() => import('./components/About'));
+// About también será normal, sin lazy loading
+import About from './components/About';
 import GreenerPack from './components/GreenerPack';
 import ProductsSection from './components/ProductsSection';
+import Slider from './components/Slider';
 import Equipamiento from './components/Equipamiento';
+import GaleriaInstagram from './components/GaleriaInstagram';
 
 function App() {
-  const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  // Los hooks de animación ahora se pasarán a los componentes internos
+  // Los contenedores principales (con fondos) no tendrán animaciones
   
-  // Hooks para animaciones de scroll
-  const [greenerRef, greenerClasses] = useScrollAnimation({ 
-    animationType: 'fadeInLeft', 
-    delay: 200 
-  });
-  const [productsRef, productsClasses] = useScrollAnimation({ 
-    animationType: 'fadeInUp', 
-    delay: 300 
-  });
-  const [sliderRef, sliderClasses] = useScrollAnimation({ 
-    animationType: 'scaleIn', 
-    delay: 100 
-  });
-  const [equipamientoRef, equipamientoClasses] = useScrollAnimation({ 
-    animationType: 'fadeInUp', 
-    delay: 200 
-  });
-  const [galeriaRef, galeriaClasses] = useScrollAnimation({ 
-    animationType: 'fadeInRight', 
-    delay: 250 
-  });
-
   return (
     <>
       <Header />
@@ -48,26 +28,18 @@ function App() {
           Conectamos tus ideas con la mejor tecnología
         </h2>
       </AnimatedWaveBanner>
-      <Suspense fallback={<div>Cargando...</div>}>
-        <div ref={aboutRef}>
-          {aboutInView && <About />}
-        </div>
-        <div ref={greenerRef} className={greenerClasses}>
-          <GreenerPack />
-        </div>
-        <div ref={productsRef} className={productsClasses}>
-          <ProductsSection />
-        </div>
-        <div ref={sliderRef} className={sliderClasses}>
-          <Slider />
-        </div>
-        <div ref={equipamientoRef} className={equipamientoClasses}>
-          <Equipamiento />
-        </div>
-        <div ref={galeriaRef} className={galeriaClasses}>
-          <GaleriaInstagram />
-        </div>
-      </Suspense>
+      {/* About - sin animación en el contenedor */}
+      <About />
+      {/* GreenerPack - sin animación en el contenedor, ya tiene animaciones internas */}
+      <GreenerPack />
+      {/* ProductsSection - sin animación en el contenedor, ya tiene animaciones internas */}
+      <ProductsSection />
+      {/* Slider - agregar animación interna */}
+      <Slider />
+      {/* Equipamiento - agregar animación interna */}
+      <Equipamiento />
+      {/* GaleriaInstagram - agregar animación interna */}
+      <GaleriaInstagram />
       <Footer />
     </>
   )
