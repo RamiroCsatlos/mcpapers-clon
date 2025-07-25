@@ -51,32 +51,63 @@ function ProductsSection() {
       </a>
       <div className="products-list">
         {products.map((prod, idx) => {
-          // Hook individual para cada producto
+          // Hook individual para cada producto (para desktop)
           const { ref: productRef, inView: productInView } = useInView({
             threshold: 0.2,
             triggerOnce: false
           });
 
+          // Hooks individuales para cada elemento interno
+          const { ref: firstImageRef, inView: firstImageInView } = useInView({
+            threshold: 0.2,
+            triggerOnce: false
+          });
+
+          const { ref: secondImageRef, inView: secondImageInView } = useInView({
+            threshold: 0.2,
+            triggerOnce: false
+          });
+
+          const { ref: infoRef, inView: infoInView } = useInView({
+            threshold: 0.2,
+            triggerOnce: false
+          });
+
+          // Calcular delays para los elementos internos
+          const baseDelay = idx * 200 + 200;
+          const firstImageDelay = baseDelay;
+          const infoDelay = baseDelay + 100;
+          const secondImageDelay = baseDelay + 200;
+
           return (
             <div 
               ref={productRef}
-              className={`product-card product-${idx} scale-in animation-delay-${idx * 200 + 200} ${productInView ? 'fade-in-visible' : ''}`} 
+              className={`product-card product-${idx} scale-in animation-delay-${baseDelay} ${productInView ? 'fade-in-visible' : ''}`} 
               key={prod.title}
             >
               <div className="product-images">
-                {/* Primera imagen (izquierda) */}
-                <div className={`image-wrapper first-image first-image-${idx}`}>
+                {/* Primera imagen con su propia animación */}
+                <div 
+                  ref={firstImageRef}
+                  className={`image-wrapper first-image first-image-${idx} scale-in animation-delay-${firstImageDelay} ${firstImageInView ? 'fade-in-visible' : ''}`}
+                >
                   <a href="/ruta-del-producto" className="image-link">
                     <img src={prod.images[0]} alt={prod.title} />
                   </a>
                 </div>
                 {/* Lado derecho: título+botón y segunda imagen */}
                 <div className="product-right">
-                  <div className="product-info">
+                  <div 
+                    ref={infoRef}
+                    className={`product-info scale-in animation-delay-${infoDelay} ${infoInView ? 'fade-in-visible' : ''}`}
+                  >
                     <h3>{prod.title}</h3>
                     <button className="see-more-btn">Ver más</button>
                   </div>
-                  <div className={`image-wrapper second-image second-image-${idx}`}>
+                  <div 
+                    ref={secondImageRef}
+                    className={`image-wrapper second-image second-image-${idx} scale-in animation-delay-${secondImageDelay} ${secondImageInView ? 'fade-in-visible' : ''}`}
+                  >
                     <a href="/ruta-del-producto" className="image-link">
                       <img src={prod.images[1]} alt={prod.title} />
                     </a>
