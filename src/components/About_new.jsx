@@ -7,12 +7,12 @@ import logoImage from '../assets/logo.png';
 const About = () => {
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false  // Permite que la animación se repita
+    triggerOnce: true
   });
 
   const { ref: imageRef, inView: imageInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false  // Permite que la animación se repita
+    triggerOnce: true
   });
 
   return (
@@ -20,7 +20,7 @@ const About = () => {
       <div className="about-content">
         <div 
           ref={textRef}
-          className={`about-text fade-in-up ${textInView ? 'fade-in-visible' : ''}`}
+          className={`about-text fade-in-left ${textInView ? 'fade-in-visible' : ''}`}
         >
           <img src={logoImage} alt="Logo" className="empresa-logo" />
           <p>
@@ -33,7 +33,7 @@ const About = () => {
         </div>
         <div 
           ref={imageRef}
-          className={`empresa-img-container scale-in animation-delay-200 ${imageInView ? 'fade-in-visible' : ''}`}
+          className={`empresa-img-container fade-in-right animation-delay-200 ${imageInView ? 'fade-in-visible' : ''}`}
         >
           <div className="empresa-img-padding">
             <a href="/sobre-nosotros" className="empresa-img-link">
