@@ -1,5 +1,7 @@
 import React from 'react';
 import './ResponsabilidadSocial.css';
+import './ScrollAnimations.css';
+import { useInView } from 'react-intersection-observer';
 // Importar las imágenes
 import responsabilidadSocial1 from '../assets/responsabilidadSocial1.avif';
 import responsabilidadSocial2 from '../assets/responsabilidadSocial2.avif';
@@ -7,6 +9,11 @@ import responsabilidadSocial3 from '../assets/responsabilidadSocial3.avif';
 import responsabilidadSocial4 from '../assets/responsabilidadSocial4.avif';
 
 const ResponsabilidadSocial = () => {
+  const { ref: titleRef, inView: titleInView } = useInView({
+    threshold: 0.2,
+    triggerOnce: false
+  });
+
   const images = [
     {
       src: responsabilidadSocial1,
@@ -33,21 +40,35 @@ const ResponsabilidadSocial = () => {
   return (
     <section className="responsabilidad-social">
       <div className="responsabilidad-social-container">
-        <h2 className="responsabilidad-social-title">Responsabilidad Social</h2>
+        <h2 
+          ref={titleRef}
+          className={`responsabilidad-social-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
+        >
+          Responsabilidad Social
+        </h2>
         <div className="responsabilidad-social-gallery">
-          {images.map((image, index) => (
-            <a 
-              key={index}
-              href={image.link}
-              className={`gallery-item gallery-item-${index + 1}`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="gallery-image"
-              />
-            </a>
-          ))}
+          {images.map((image, index) => {
+            // Hook individual para cada imagen de responsabilidad social
+            const { ref: imageRef, inView: imageInView } = useInView({
+              threshold: 0.2,
+              triggerOnce: false
+            });
+
+            return (
+              <a 
+                key={index}
+                href={image.link}
+                ref={imageRef}
+                className={`gallery-item gallery-item-${index + 1} scale-in animation-delay-${(index + 1) * 200} ${imageInView ? 'fade-in-visible' : ''}`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="gallery-image"
+                />
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

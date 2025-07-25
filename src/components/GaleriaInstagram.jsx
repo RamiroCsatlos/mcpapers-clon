@@ -1,5 +1,7 @@
 import './GaleriaInstagram.css';
+import './ScrollAnimations.css';
 import { Instagram } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
 
 // Importar las imágenes de Instagram
 import instagram1 from '../assets/instagram1.jpg';
@@ -35,34 +37,64 @@ const instagramImages = [
 ];
 
 function GaleriaInstagram() {
+  const { ref: titleRef, inView: titleInView } = useInView({
+    threshold: 0.2,
+    triggerOnce: false
+  });
+
+  const { ref: handleRef, inView: handleInView } = useInView({
+    threshold: 0.2,
+    triggerOnce: false
+  });
+
   return (
     <section className="instagram-section">
       <div className="instagram-content">
-        <h2 className="instagram-title">¡Seguinos en Instagram!</h2>
+        <h2 
+          ref={titleRef}
+          className={`instagram-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
+        >
+          ¡Seguinos en Instagram!
+        </h2>
         
         <div className="instagram-gallery">
-          {instagramImages.map((item) => (
-            <div className="instagram-image-card" key={item.id}>
-              <a 
-                href={item.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="instagram-image-link"
+          {instagramImages.map((item, idx) => {
+            // Hook individual para cada imagen de Instagram
+            const { ref: imageRef, inView: imageInView } = useInView({
+              threshold: 0.2,
+              triggerOnce: false
+            });
+
+            return (
+              <div 
+                ref={imageRef}
+                className={`instagram-image-card scale-in animation-delay-${(idx + 1) * 200} ${imageInView ? 'fade-in-visible' : ''}`} 
+                key={item.id}
               >
-                <img 
-                  src={item.image} 
-                  alt={item.alt} 
-                  className="instagram-image" 
-                />
-                <div className="instagram-overlay">
-                  <div className="instagram-icon">📷</div>
-                </div>
-              </a>
-            </div>
-          ))}
+                <a 
+                  href={item.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="instagram-image-link"
+                >
+                  <img 
+                    src={item.image} 
+                    alt={item.alt} 
+                    className="instagram-image" 
+                  />
+                  <div className="instagram-overlay">
+                    <div className="instagram-icon">📷</div>
+                  </div>
+                </a>
+              </div>
+            );
+          })}
         </div>
         
-        <div className="instagram-handle">
+        <div 
+          ref={handleRef}
+          className={`instagram-handle fade-in-up animation-delay-800 ${handleInView ? 'fade-in-visible' : ''}`}
+        >
           <a 
             href="https://instagram.com/mcpapersargentina" 
             target="_blank" 
