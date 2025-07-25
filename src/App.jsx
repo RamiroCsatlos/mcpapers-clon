@@ -6,6 +6,7 @@ import AnimatedWaveBanner from './components/AnimatedWaveBanner';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
 import GaleriaInstagram from './components/GaleriaInstagram';
+import ResponsabilidadSocial from './components/ResponsabilidadSocial';
 
 const About = lazy(() => import('./components/About'));
 import GreenerPack from './components/GreenerPack';
@@ -33,6 +34,7 @@ function App() {
         <Slider />
         <Equipamiento />
         <GaleriaInstagram />
+        <ResponsabilidadSocial />
       </Suspense>
       <Footer />
     </>
