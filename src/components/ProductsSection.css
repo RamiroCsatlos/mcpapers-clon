@@ -2,6 +2,7 @@
   padding: 1rem 0;
   background: #f7f7fa;
   text-align: center;
+  overflow-x: hidden; /* Prevenir overflow horizontal */
 }
 
 .products-title {

@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  overflow-x: hidden; /* Prevenir overflow horizontal global */
+}
+
+body {
+  overflow-x: hidden; /* Asegurar que el body no tenga scroll horizontal */
 }
 
 .logo {

@@ -1,4 +1,6 @@
 import './ProductsSection.css';
+import '../styles/scrollAnimations.css';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 import bolsasFondoFlatBobinas from '../assets/bolsasFondoFlatBobinas.avif';
 import bolsasFondoFlatArmadas from '../assets/bolsasFondoFlatArmadas.avif';
@@ -32,14 +34,38 @@ const products = [
 ];
 
 function ProductsSection() {
+  const [titleRef, titleClasses] = useScrollAnimation({ 
+    animationType: 'titleSlide', 
+    delay: 100 
+  });
+
+  // Crear hooks para cada producto fuera del map
+  const [card0Ref, card0Classes] = useScrollAnimation({ 
+    animationType: 'cardHover', 
+    delay: 150 
+  });
+  
+  const [card1Ref, card1Classes] = useScrollAnimation({ 
+    animationType: 'cardHover', 
+    delay: 300 
+  });
+  
+  const [card2Ref, card2Classes] = useScrollAnimation({ 
+    animationType: 'cardHover', 
+    delay: 450 
+  });
+
+  const cardRefs = [card0Ref, card1Ref, card2Ref];
+  const cardClasses = [card0Classes, card1Classes, card2Classes];
+
   return (
     <section className="products-section">
       <a href="/ruta-del-producto" className="title-link">
-       <h2 className="products-title">Productos</h2>
+       <h2 ref={titleRef} className={`products-title ${titleClasses}`}>Productos</h2>
       </a>
       <div className="products-list">
         {products.map((prod, idx) => (
-          <div className={`product-card product-${idx}`} key={prod.title}>
+          <div ref={cardRefs[idx]} className={`product-card product-${idx} ${cardClasses[idx]}`} key={prod.title}>
             <div className="product-images">
               {/* Primera imagen (izquierda) */}
               <div className={`image-wrapper first-image first-image-${idx}`}>
