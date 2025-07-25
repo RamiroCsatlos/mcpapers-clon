@@ -12,7 +12,7 @@
   gap: 2rem;
   flex-wrap: wrap;
   overflow: visible;
-  max-width: 1200px; /* Alinear con el resto de componentes */
+  max-width: 1440px; /* Alinear con el resto de componentes */
   margin: 0 auto; /* Centrar el contenido */
 }
 
