@@ -19,8 +19,8 @@ function App() {
     <>
       <Header />
       <AnimatedWaveBanner>
-        <h1 style={{ fontSize: '2.5rem', margin: 0 }}>Predict the future</h1>
-        <h2 style={{ fontSize: '1.3rem', fontWeight: 400, margin: 0 }}>
+        <h1>Predict the future</h1>
+        <h2>
           Conectamos tus ideas con la mejor tecnología
         </h2>
       </AnimatedWaveBanner>
