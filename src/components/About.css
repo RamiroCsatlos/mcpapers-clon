@@ -1,7 +1,9 @@
 .about-section {
-  padding: 2rem;
+  width: 100%;
+  padding: 4rem 2.5rem;
   background-color: #f9f9f9;
   overflow: visible;
+  box-sizing: border-box;
 }
 
 .about-content {
@@ -12,8 +14,10 @@
   gap: 2rem;
   flex-wrap: wrap;
   overflow: visible;
-  max-width: 1440px; /* Alinear con el resto de componentes */
+  max-width: calc(1440px - 5rem); /* Resta el padding total */
   margin: 0 auto; /* Centrar el contenido */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-text {
@@ -142,15 +146,76 @@
 }
 
 /* Responsive: columnas en móviles */
+/* Media queries para responsive */
+
+/* Tablet grande - transición */
+@media (max-width: 1440px) {
+  .about-section {
+    padding: 3rem 2rem;
+  }
+  
+  .about-content {
+    max-width: calc(100% - 4rem);
+  }
+
+  .about-text {
+    min-width: 250px;
+  }
+
+  .empresa-img-container {
+    min-width: 250px;
+  }
+}
+
+/* Pantallas muy grandes - padding fijo */
+@media (min-width: 1441px) {
+  .about-section {
+    padding: 4rem calc((100vw - 1440px) / 2 + 2.5rem);
+  }
+  
+  .about-content {
+    max-width: 1440px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .about-section {
+    padding: 2rem 1.5rem;
+  }
+  
   .about-content {
     flex-direction: column;
     text-align: center;
+    max-width: calc(100% - 3rem);
+    padding: 0 0.5rem;
   }
 
   .about-text,
   .empresa-img-container {
     max-width: 100%;
+  }
+
+  .about-text {
+    padding: 1.5rem;
+    min-width: 0;
+  }
+
+  .empresa-img-container {
+    min-width: 0;
+  }
+
+  .empresa-img-padding {
+    padding: 1.5rem;
+  }
+
+  .ver-mas-btn {
+    padding: 0.5rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .empresa-logo {
+    width: 100px;
   }
 
   /* Badges más grandes y mejor posicionados en mobile */
@@ -184,5 +249,35 @@
 
   .badge-plus {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+}
+
+/* Mobile pequeño */
+@media (max-width: 320px) {
+  .about-section {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .about-content {
+    max-width: calc(100% - 2.4rem);
+    padding: 0 0.3rem;
+  }
+
+  .about-text {
+    padding: 1rem;
+    min-width: 0;
+  }
+
+  .empresa-img-padding {
+    padding: 1rem;
+  }
+
+  .ver-mas-btn {
+    padding: 0.4rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .empresa-logo {
+    width: 80px;
   }
 }
