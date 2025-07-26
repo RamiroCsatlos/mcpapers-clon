@@ -328,3 +328,11 @@ a:focus {
     display: none !important;
   }
 }
+
+/* ===== OVERRIDES ESPECÍFICOS ===== */
+
+/* Reducir tamaño de la imagen 2 de láminas específicamente */
+.products-section .product-2 .second-image-2 {
+  width: 320px !important;
+  max-width: 320px !important;
+}
