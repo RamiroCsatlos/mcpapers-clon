@@ -39,12 +39,14 @@ function Equipamiento() {
 
   return (
     <section className="equipamiento-section">
-      <h2 
-        ref={titleRef}
-        className={`equipamiento-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
-      >
-        Equipamiento
-      </h2>
+      <a href="/ruta-del-producto" className="title-link">
+        <h2 
+          ref={titleRef}
+          className={`equipamiento-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
+        >
+          Equipamiento
+        </h2>
+      </a>
       <div className="equipamiento-gallery">
         {equipos.map((equipo, idx) => {
           // Hook individual para cada tarjeta de equipo

@@ -40,12 +40,14 @@ const ResponsabilidadSocial = () => {
   return (
     <section className="responsabilidad-social">
       <div className="responsabilidad-social-container">
-        <h2 
-          ref={titleRef}
-          className={`responsabilidad-social-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
-        >
-          Responsabilidad Social
-        </h2>
+        <a href="/ruta-del-producto" className="title-link">
+          <h2 
+            ref={titleRef}
+            className={`responsabilidad-social-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
+          >
+            Responsabilidad Social
+          </h2>
+        </a>
         <div className="responsabilidad-social-gallery">
           {images.map((image, index) => {
             // Hook individual para cada imagen de responsabilidad social
