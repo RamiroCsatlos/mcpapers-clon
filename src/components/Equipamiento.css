@@ -1,6 +1,9 @@
+@import '../styles/variables.css';
+@import '../styles/components.css';
+
 .equipamiento-section {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background-color: var(--background-light);
   text-align: center;
 }
 
@@ -14,19 +17,21 @@
 }
 
 .equipamiento-title {
-  font-size: 3.2rem;
-  margin-bottom: 1rem;
-  color: rgb(24, 62, 103);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-sm);
+  color: var(--primary-blue);
   font-weight: 700;
   text-decoration: underline;
 }
 
 .equipamiento-gallery {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  gap: var(--space-xs);
   max-width: 1400px;
   margin: 0 auto;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Media query para ir directamente a 1 columna */
@@ -37,24 +42,30 @@
 }
 
 .equipo-card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  display: flex;
+  background: var(--background-light);
+  border-radius: var(--border-radius-lg);
+  display: flex !important;
   flex-direction: column;
   align-items: center;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .equipo-image-container {
   position: relative;
-  padding: 1rem; /* Agregar padding para dar espacio al badge */
+  padding: var(--space-sm);
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .equipo-image-link {
-  display: block;
+  display: block !important;
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
   background: transparent;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .equipo-image {
@@ -63,11 +74,13 @@
   height: auto;
   aspect-ratio: 400/480;
   object-fit: cover;
-  display: block;
-  transition: filter 0.3s ease;
+  display: block !important;
+  transition: filter var(--transition-normal);
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Efecto hover igual al de las imágenes de productos */
+/* Aplicar hover effect del sistema */
 .equipo-image-link:hover .equipo-image,
 .equipo-image-link:focus .equipo-image {
   filter: brightness(0.7) contrast(1.1);
@@ -75,44 +88,44 @@
 
 .equipo-badge {
   position: absolute;
-  bottom: 0.5rem;
+  bottom: var(--space-xs);
   left: 50%;
   transform: translateX(-50%);
-  background-color: #20066e;
+  background-color: var(--dark-blue);
   color: white;
-  padding: 0.3rem 1.8rem;
+  padding: var(--space-xs) clamp(1.2rem, 3vw, 1.8rem);
   font-weight: bold;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 2;
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+  z-index: var(--z-base);
   white-space: nowrap;
 }
 
 .equipo-info {
-  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  padding: var(--space-xs) var(--space-md) var(--space-md) var(--space-md);
   text-align: center;
-  width: 100%; /* Usar 100% para que se adapte al ancho de la imagen */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .equipo-ver-mas-btn {
-  margin-top: 1rem;
-  padding: 0.7rem 2rem;
-  background: #2a4fff;
-  color: #fff;
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--accent-blue);
+  color: white;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius-full);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
-  font-size: 1.2rem;
+  transition: background var(--transition-fast);
+  font-size: var(--font-size-sm);
 }
 
 .equipo-ver-mas-btn:hover {
-  background: #1a2fa0;
+  background: var(--hover-blue-dark);
 }
 
 /* Responsive design */

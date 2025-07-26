@@ -1,0 +1,145 @@
+/* ===== SISTEMA DE DISEÑO UNIFICADO ===== */
+
+:root {
+  /* === COLORES === */
+  --primary-blue: rgb(24, 62, 103);
+  --secondary-blue: #2985d5;
+  --accent-blue: #2a4fff;
+  --dark-blue: #20066e;
+  --hover-blue: #535bf2;
+  --hover-blue-dark: #1a2fa0;
+  
+  --background-light: #f9f9f9;
+  --background-section: #f7f7fa;
+  --text-primary: #333;
+  --text-secondary: #222;
+  --border-color: #ddd;
+  
+  /* === SPACING SYSTEM === */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4rem;     /* 64px */
+  --space-3xl: 6rem;     /* 96px */
+  
+  /* === RESPONSIVE SPACING === */
+  --section-padding-x: clamp(1rem, 3vw, 2.5rem);
+  --section-padding-y: clamp(2rem, 5vw, 4rem);
+  --container-max-width: 1440px;
+  --container-padding: 5rem;
+  
+  /* === TYPOGRAPHY === */
+  --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 1.2vw, 1rem);
+  --font-size-base: clamp(1rem, 1.6vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 2vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 3vw, 2rem);
+  --font-size-2xl: clamp(2rem, 4vw, 2.5rem);
+  --font-size-3xl: clamp(2.5rem, 5vw, 3.2rem);
+  
+  /* === BORDERS & RADIUS === */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+  
+  /* === SHADOWS === */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --shadow-header: 0 10px 20px rgba(0, 0, 0, 0.3);
+  
+  /* === Z-INDEX SYSTEM === */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-overlay: 50;
+  --z-sticky: 100;
+  --z-fixed: 1000;
+  --z-modal: 2000;
+  --z-tooltip: 3000;
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* === RESPONSIVE BREAKPOINTS === */
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-large: 1440px;
+}
+
+/* === UTILITY CLASSES === */
+.container {
+  max-width: calc(var(--container-max-width) - var(--container-padding));
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-padding {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+/* === HOVER EFFECTS === */
+.hover-brightness {
+  transition: filter var(--transition-normal);
+}
+
+.hover-brightness:hover,
+.hover-brightness:focus {
+  filter: brightness(0.7) contrast(1.1);
+}
+
+.hover-scale {
+  transition: transform var(--transition-fast);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* === BUTTON STYLES === */
+.btn-primary {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  font-size: var(--font-size-sm);
+}
+
+.btn-primary:hover {
+  background: var(--hover-blue-dark);
+}
+
+.btn-secondary {
+  padding: var(--space-sm) var(--space-xl);
+  background: white;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+  font-size: var(--font-size-sm);
+}
+
+.btn-secondary:hover {
+  transform: scale(1.1);
+}

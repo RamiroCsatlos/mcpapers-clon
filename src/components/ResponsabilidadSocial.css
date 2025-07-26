@@ -1,12 +1,15 @@
+@import '../styles/variables.css';
+@import '../styles/components.css';
+
 .responsabilidad-social {
   width: 100%;
-  padding: 4rem 2.5rem;
-  background-color: #f9f9f9;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background-color: var(--background-light);
   box-sizing: border-box;
 }
 
 .responsabilidad-social-container {
-  max-width: calc(1440px - 5rem); /* Resta el padding total */
+  max-width: calc(var(--container-max-width) - var(--container-padding));
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -23,9 +26,9 @@
 
 .responsabilidad-social-title {
   text-align: center;
-  font-size: 3.2rem;
-  margin-bottom: 1rem;
-  color: rgb(24, 62, 103);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-sm);
+  color: var(--primary-blue);
   font-weight: 700;
   text-decoration: underline;
   position: relative;
@@ -33,13 +36,15 @@
 
 /* Layout principal para pantallas grandes */
 .responsabilidad-social-gallery {
-  display: grid;
+  display: grid !important;
   grid-template-columns: 35% 40% 25%;
   grid-template-rows: 1fr 1fr;
   gap: 1.2rem;
   height: 380px;
   width: 100%;
   box-sizing: border-box;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Posicionamiento de cada imagen en desktop */
@@ -83,25 +88,30 @@
 }
 
 .gallery-item {
-  display: block;
+  display: block !important;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   position: relative;
   max-width: 100%;
   box-sizing: border-box;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .gallery-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-lg);
 }
 
 .gallery-image {
   width: 100%;
   height: 100%;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .gallery-item:hover .gallery-image {

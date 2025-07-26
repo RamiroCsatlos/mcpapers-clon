@@ -1,7 +1,9 @@
+@import '../styles/variables.css';
+
 .slider-container {
   position: relative;
   width: 100%;
-  min-height: 260px; /* Misma altura que el banner */
+  min-height: 260px;
   overflow: hidden;
   border-radius: 0;
 }
@@ -56,20 +58,20 @@
 
 .slide-content {
   text-align: center;
-  color: #fff;
-  padding: 2rem 1rem;
+  color: white;
+  padding: var(--space-lg) var(--space-sm);
   width: 100%;
-  max-width: 70vw; /* Máximo 70% del viewport width */
+  max-width: 70vw;
 }
 
 .slide-content h2 {
-  font-size: 2.5rem;
-  margin: 0 0 1rem 0;
+  font-size: var(--font-size-2xl);
+  margin: 0 0 var(--space-sm) 0;
   font-weight: 700;
 }
 
 .slide-content p {
-  font-size: 1.3rem;
+  font-size: var(--font-size-lg);
   font-weight: 400;
   margin: 0;
   opacity: 0.9;

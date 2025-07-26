@@ -1,16 +1,18 @@
+@import '../styles/variables.css';
+
 .header {
   width: 100%;
-  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem);
+  padding: var(--section-padding-y) var(--section-padding-x);
   background-color: #f0f2f5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 2000;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-header);
 }
 
 .header-inner {
@@ -21,8 +23,8 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  overflow: visible; /* Cambio de hidden a visible para los dropdowns */
-  z-index: 2001; /* Asegura que el header-inner esté por encima */
+  overflow: visible;
+  z-index: calc(var(--z-sticky) + 1);
 }
 
 .header-inner a {
@@ -55,7 +57,7 @@
   flex: 1;
   min-width: 0;
   overflow: visible;
-  z-index: 2001; /* Asegura jerarquía correcta */
+  z-index: calc(var(--z-sticky) + 1);
 }
 
 .navbar > ul {

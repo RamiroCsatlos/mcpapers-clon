@@ -1,7 +1,9 @@
+@import '../styles/variables.css';
+
 .about-section {
   width: 100%;
-  padding: 4rem 2.5rem;
-  background-color: #f9f9f9;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background-color: var(--background-light);
   overflow: visible;
   box-sizing: border-box;
 }
@@ -11,11 +13,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: var(--space-lg);
   flex-wrap: wrap;
   overflow: visible;
-  max-width: calc(1440px - 5rem); /* Resta el padding total */
-  margin: 0 auto; /* Centrar el contenido */
+  max-width: calc(var(--container-max-width) - var(--container-padding));
+  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
@@ -29,8 +31,8 @@
   flex: 1;
   min-width: 280px;
   max-width: 500px;
-  color: #333;
-  padding: 3rem;
+  color: var(--text-primary);
+  padding: var(--space-xl);
 }
 
 .about-text p{
@@ -39,58 +41,56 @@
 
 .empresa-logo {
   width: 120px;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
 }
 
 .about-text p {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-md);
 }
 
 .ver-mas-btn {
-  padding: 0.75rem 3rem;
+  padding: var(--space-sm) var(--space-xl);
   background-color: white;
-  color: black;
-  border: none;
-  border-radius: 2em;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--border-radius-full);
   cursor: pointer;
-  border: 1px solid black;
+  transition: transform var(--transition-fast);
+  font-size: var(--font-size-sm);
 }
 
 .ver-mas-btn:hover {
   transform: scale(1.1);
-  background-color: white;
-  border: 1px solid black;
-  transition: transform 0.2s ease-in-out;
 }
 
 .empresa-img-container {
   flex: 1;
   min-width: 280px;
   position: relative;
-  max-width: 600px;
-  padding: 0; /* Quitar el padding aquí */
-  width: 100%; /* Añadir para mejor responsividad */
+  max-width: 700px; /* Restaurar max-width */
+  padding: 0;
+  width: 100%;
 }
 
 .empresa-img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   display: block;
-  transition: filter 0.3s ease; /* Transición para el efecto hover */
+  transition: filter var(--transition-normal);
 }
 
 .empresa-img-link {
   display: block;
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
   background: transparent;
 }
 
-/* Efecto hover igual al de las imágenes de productos */
+/* Aplicar clase de utility hover */
 .empresa-img-link:hover .empresa-img,
 .empresa-img-link:focus .empresa-img {
   filter: brightness(0.7) contrast(1.1);
@@ -133,7 +133,7 @@
 }
 
 .empresa-img-padding {
-  padding: 3rem; /* El padding que antes estaba en el contenedor */
+  padding: calc(1.5vw + 1rem); /* Padding proporcional que se ajusta al tamaño de la imagen */
 }
 
 .badge-plus {
