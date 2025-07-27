@@ -5,6 +5,7 @@
 @import './components.css';
 @import './utilities.css';
 @import './performance.css';
+@import './buttons.css';
 
 /* ===== RESET Y BASE STYLES ===== */
 *,
@@ -100,23 +101,23 @@ img {
 /* === RANGO INTERMEDIO - TABLET/DESKTOP PEQUEÑO Y MEDIANO === */
 @media (min-width: 901px) and (max-width: 1440px) {
   .products-section .product-images {
-    width: 98vw !important; /* Usar más ancho en pantallas medianas */
-    gap: 1.5rem !important; /* Gap más pequeño */
+    width: 98vw; /* Usar más ancho en pantallas medianas */
+    gap: 1.5rem; /* Gap más pequeño */
   }
   
   .products-section .first-image {
-    max-width: 60vw !important; /* Más flexible en pantallas medianas */
-    min-width: 400px !important;
+    max-width: 60vw; /* Más flexible en pantallas medianas */
+    min-width: 400px;
   }
   
   .products-section .product-right {
-    max-width: 35vw !important; /* Más flexible */
-    min-width: 300px !important;
+    max-width: 35vw; /* Más flexible */
+    min-width: 300px;
   }
   
   .products-section .second-image {
-    max-width: 100% !important; /* Usar todo el espacio disponible */
-    min-width: 250px !important;
+    max-width: 100%; /* Usar todo el espacio disponible */
+    min-width: 250px;
   }
 }
 
@@ -207,26 +208,26 @@ img {
 
 /* === NO INTERFERIR CON PSEUDO-ELEMENTOS === */
 .products-section .product-card::before {
-  content: '' !important;
-  display: block !important;
-  position: absolute !important;
-  visibility: visible !important;
-  opacity: 0.15 !important;
-  background: #2a4fff !important;
-  z-index: 0 !important;
+  content: '';
+  display: block;
+  position: absolute;
+  visibility: visible;
+  opacity: 0.15;
+  background: #2a4fff;
+  z-index: 0;
 }
 
 /* === FRANJAS ESPECÍFICAS POR PRODUCTO === */
 .products-section .product-0::before {
-  top: 70% !important;
+  top: 70%;
 }
 
 .products-section .product-1::before {
-  top: 75% !important;
+  top: 75%;
 }
 
 .products-section .product-2::before {
-  top: 60% !important;
+  top: 60%;
 }
 
 /* === ASEGURAR QUE FRANJAS SEAN VISIBLES EN DESKTOP === */
@@ -234,10 +235,10 @@ img {
   .products-section .product-0::before,
   .products-section .product-1::before,
   .products-section .product-2::before {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 0.15 !important;
-    z-index: 0 !important;
+    display: block;
+    visibility: visible;
+    opacity: 0.15;
+    z-index: 0;
   }
 }
 
@@ -347,7 +348,7 @@ a:focus {
 /* ===== PRINT STYLES ===== */
 @media print {
   .no-print {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -361,170 +362,141 @@ a:focus {
 
 /* Estilos consistentes para el título principal de la sección productos */
 .products-section .products-title {
-  font-size: var(--font-size-3xl) !important;
-  color: var(--primary-blue) !important;
-  font-weight: 700 !important;
-  text-decoration: underline !important;
-  margin-bottom: 1rem !important;
-  text-align: center !important;
+  font-size: var(--font-size-3xl);
+  color: var(--primary-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Aumentar font-size de los h3 de productos */
 .product-card h3 {
-  font-size: clamp(1.8rem, 3vw, 3.5rem) !important; /* Reducir un poco el tamaño */
-  font-weight: 700 !important;
-  color: #222 !important;
-  margin: 2rem 0 1rem 0 !important;
-  white-space: pre-line !important; /* Permitir saltos de línea para títulos con \n */
+  font-size: clamp(1.8rem, 3vw, 3.5rem);
+  font-weight: 700;
+  color: #222;
+  margin: 2rem 0 1rem 0;
+  white-space: pre-line; /* Permitir saltos de línea para títulos con \n */
 }
 
 /* Asegurar que las imágenes no se salgan de sus contenedores en pantallas grandes */
 @media (min-width: 901px) {
   /* Contenedor principal más flexible */
   .products-section .product-images {
-    max-width: 1400px !important; /* Reducir para evitar desborde */
-    width: 90vw !important; /* Reducir el ancho para contener mejor */
-    margin: 0 auto !important;
-    overflow: hidden !important;
-    justify-content: center !important; /* Centrar el contenido */
+    max-width: 1400px; /* Reducir para evitar desborde */
+    width: 90vw; /* Reducir el ancho para contener mejor */
+    margin: 0 auto;
+    overflow: hidden;
+    justify-content: center; /* Centrar el contenido */
   }
   
   .products-section .first-image,
   .products-section .second-image {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden;
+    max-width: 100%;
   }
   
   /* Asegurar que las segundas imágenes no se desborden */
   .products-section .second-image {
-    max-width: 450px !important; /* Limitar el tamaño de las segundas imágenes */
-    min-width: 300px !important;
-    flex: 1 1 auto !important;
+    max-width: 450px; /* Limitar el tamaño de las segundas imágenes */
+    min-width: 300px;
+    flex: 1 1 auto;
   }
   
   .products-section .first-image img,
   .products-section .second-image img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
   
   /* Contenedores más flexibles */
   .products-section .product-right {
-    overflow: hidden !important;
-    max-width: 600px !important; /* Más grande */
-    min-width: 400px !important; /* Mínimo más grande */
-    flex: 1 1 auto !important; /* Flexible */
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    overflow: hidden;
+    max-width: 600px; /* Más grande */
+    min-width: 400px; /* Mínimo más grande */
+    flex: 1 1 auto; /* Flexible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Primera imagen más flexible y más grande */
   .products-section .first-image {
-    max-width: 800px !important; /* Mucho más grande */
-    min-width: 500px !important; /* Mínimo más grande */
-    flex: 1 1 auto !important; /* Flexible */
+    max-width: 800px; /* Mucho más grande */
+    min-width: 500px; /* Mínimo más grande */
+    flex: 1 1 auto; /* Flexible */
   }
   
   /* Centrar contenido del product-info */
   .products-section .product-info {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    margin-bottom: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 }
 
 /* === OPTIMIZACIÓN PARA RANGO INTERMEDIO 901px-1440px === */
 @media (min-width: 901px) and (max-width: 1440px) {
   .products-section .product-images {
-    width: 95vw !important; /* Usar más espacio en pantallas medianas */
-    max-width: none !important; /* Sin límite máximo */
-    gap: 1.5rem !important; /* Gap más pequeño */
+    width: 95vw; /* Usar más espacio en pantallas medianas */
+    max-width: none; /* Sin límite máximo */
+    gap: 1.5rem; /* Gap más pequeño */
   }
   
   .products-section .first-image {
-    max-width: none !important; /* Sin límite, usar flex */
-    min-width: 300px !important; /* Mínimo más pequeño */
-    flex: 2 1 auto !important; /* Tomar más espacio proporcional */
+    max-width: none; /* Sin límite, usar flex */
+    min-width: 300px; /* Mínimo más pequeño */
+    flex: 2 1 auto; /* Tomar más espacio proporcional */
   }
   
   .products-section .product-right {
-    max-width: none !important; /* Sin límite, usar flex */
-    min-width: 250px !important; /* Mínimo más pequeño */
-    flex: 1 1 auto !important; /* Tomar menos espacio proporcional */
+    max-width: none; /* Sin límite, usar flex */
+    min-width: 250px; /* Mínimo más pequeño */
+    flex: 1 1 auto; /* Tomar menos espacio proporcional */
   }
   
   .products-section .second-image {
-    max-width: none !important; /* Sin límite máximo */
-    min-width: 200px !important; /* Mínimo más pequeño */
-    flex: 1 1 auto !important; /* Flexible dentro del product-right */
+    max-width: none; /* Sin límite máximo */
+    min-width: 200px; /* Mínimo más pequeño */
+    flex: 1 1 auto; /* Flexible dentro del product-right */
   }
 }
 
 /* Límites adicionales para pantallas muy grandes - Solo para 1440px+ */
 @media (min-width: 1441px) {
   .products-section .product-images {
-    width: 98vw !important; /* Usar viewport width pero con límite máximo */
-    max-width: 1440px !important; /* Límite máximo de 1440px - no crece más */
-    gap: 1.5rem !important; /* Mantener el mismo gap que en 1440px */
-    margin: 0 auto !important; /* Centrar el contenedor */
+    width: 98vw; /* Usar viewport width pero con límite máximo */
+    max-width: 1440px; /* Límite máximo de 1440px - no crece más */
+    gap: 1.5rem; /* Mantener el mismo gap que en 1440px */
+    margin: 0 auto; /* Centrar el contenedor */
   }
   
   .products-section .first-image {
-    max-width: none !important; /* Sin límite, usar flex dentro del contenedor limitado */
-    min-width: 300px !important; /* Mantener el mismo mínimo que en 1440px */
-    flex: 2 1 auto !important; /* Mantener la misma proporción que en 1440px */
+    max-width: none; /* Sin límite, usar flex dentro del contenedor limitado */
+    min-width: 300px; /* Mantener el mismo mínimo que en 1440px */
+    flex: 2 1 auto; /* Mantener la misma proporción que en 1440px */
   }
   
   .products-section .product-right {
-    max-width: none !important; /* Sin límite, usar flex dentro del contenedor limitado */
-    min-width: 250px !important; /* Mantener el mismo mínimo que en 1440px */
-    flex: 1 1 auto !important; /* Mantener la misma proporción que en 1440px */
+    max-width: none; /* Sin límite, usar flex dentro del contenedor limitado */
+    min-width: 250px; /* Mantener el mismo mínimo que en 1440px */
+    flex: 1 1 auto; /* Mantener la misma proporción que en 1440px */
   }
   
   .products-section .second-image {
-    max-width: none !important; /* Sin límite máximo dentro del contenedor limitado */
-    min-width: 200px !important; /* Mantener el mismo mínimo que en 1440px */
-    flex: 1 1 auto !important; /* Mantener flexible igual que en 1440px */
+    max-width: none; /* Sin límite máximo dentro del contenedor limitado */
+    min-width: 200px; /* Mantener el mismo mínimo que en 1440px */
+    flex: 1 1 auto; /* Mantener flexible igual que en 1440px */
   }
 }
 
 /* ===== RESPONSABILIDAD SOCIAL - SIN OVERRIDES ===== */
 /* Eliminando todos los overrides para que use los estilos originales del componente */
-
-/* ===== BOTONES UNIFICADOS - MÁXIMA PRIORIDAD ===== */
-/* Forzar estilos consistentes en todos los botones "Ver más" de la página */
-
-.products-section .see-more-btn,
-.about-section .ver-mas-btn,
-.equipamiento-section .equipo-ver-mas-btn {
-  padding: 1rem 3rem !important;
-  background: white !important;
-  color: #333 !important;
-  border: 1px solid #333 !important;
-  border-radius: 50px !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  transition: all 0.2s ease !important;
-  font-size: 0.875rem !important;
-  margin-top: 1rem !important;
-  display: inline-block !important;
-  text-decoration: none !important;
-}
-
-.products-section .see-more-btn:hover,
-.about-section .ver-mas-btn:hover,
-.equipamiento-section .equipo-ver-mas-btn:hover {
-  transform: scale(1.1) !important;
-  background: #2985d5 !important;
-  color: white !important;
-  border-color: #2985d5 !important;
-}
 
 
 

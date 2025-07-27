@@ -1,0 +1,57 @@
+/* ===== SISTEMA UNIFICADO DE BOTONES ===== */
+/* Estilos consistentes para todos los botones "Ver más" de la página */
+
+/* Botón base - sin !important */
+.ver-mas-btn,
+.see-more-btn,
+.equipo-ver-mas-btn {
+  padding: 1rem 3rem;
+  background: white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.ver-mas-btn:hover,
+.see-more-btn:hover,
+.equipo-ver-mas-btn:hover {
+  transform: scale(1.1);
+  background: #2985d5;
+  color: white;
+  border-color: #2985d5;
+}
+
+/* Especificidad adicional si es necesaria */
+.about-section .ver-mas-btn,
+.products-section .see-more-btn,
+.equipamiento-section .equipo-ver-mas-btn {
+  padding: 1rem 3rem;
+  background: white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.about-section .ver-mas-btn:hover,
+.products-section .see-more-btn:hover,
+.equipamiento-section .equipo-ver-mas-btn:hover {
+  transform: scale(1.1);
+  background: #2985d5;
+  color: white;
+  border-color: #2985d5;
+}
