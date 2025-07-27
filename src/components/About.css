@@ -25,12 +25,12 @@
 .about-text {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
-  text-align: center;     
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   flex: 1;
-  min-width: 280px;
-  max-width: 500px;
+  min-width: 180px;
+  max-width: clamp(220px, 40vw, 500px);
   color: var(--text-primary);
   padding: var(--space-xl);
 }
@@ -193,14 +193,15 @@
     padding: 0 0.5rem;
   }
 
+
   .about-text,
   .empresa-img-container {
     max-width: 100%;
+    min-width: 0;
   }
 
   .about-text {
     padding: 1.5rem;
-    min-width: 0;
   }
 
   .empresa-img-container {

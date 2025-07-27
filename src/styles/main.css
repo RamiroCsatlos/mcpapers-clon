@@ -620,20 +620,20 @@ a:focus {
   /* Contenedores más flexibles */
   .products-section .product-right {
     overflow: hidden;
-    max-width: 600px; /* Más grande */
-    min-width: 400px; /* Mínimo más grande */
-    flex: 1 1 auto; /* Flexible */
+    max-width: clamp(200px, 22vw, 400px);
+    min-width: 160px;
+    flex: 0.8 1 clamp(200px, 22vw, 400px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Primera imagen más flexible y más grande */
   .products-section .first-image {
-    max-width: 800px; /* Mucho más grande */
-    min-width: 500px; /* Mínimo más grande */
-    flex: 1 1 auto; /* Flexible */
+    max-width: clamp(400px, 65vw, 900px);
+    min-width: 260px;
+    flex: 2.2 1 clamp(400px, 65vw, 900px);
   }
   
   /* Centrar contenido del product-info */
@@ -655,15 +655,15 @@ a:focus {
   }
   
   .products-section .first-image {
-    max-width: none !important; /* Sin límite, usar flex */
-    min-width: 300px !important; /* Mínimo más pequeño */
-    flex: 2 1 auto !important; /* Tomar más espacio proporcional */
+    max-width: clamp(220px, 60vw, 600px) !important;
+    min-width: 180px !important;
+    flex: 2.5 1 clamp(220px, 60vw, 600px) !important;
   }
-  
+
   .products-section .product-right {
-    max-width: none !important; /* Sin límite, usar flex */
-    min-width: 250px !important; /* Mínimo más pequeño */
-    flex: 1 1 auto !important; /* Tomar menos espacio proporcional */
+    max-width: clamp(120px, 18vw, 300px) !important;
+    min-width: 100px !important;
+    flex: 0.7 1 clamp(120px, 18vw, 300px) !important;
   }
   
   .products-section .second-image {
@@ -707,8 +707,15 @@ a:focus {
 
 
 /* Corrección para el badge plus de About - forzar superíndice */
+
+.about-section .badge-number {
+  font-size: clamp(1.5rem, 4vw, 3rem) !important; /* 3rem en 1440px, baja suavemente */
+}
+.about-section .badge-text {
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem) !important; /* 1.2rem en 1440px, baja suavemente */
+}
 .about-section .badge-plus {
-  font-size: clamp(0.9rem, 1.9vw, 2rem) !important; /* Aproximadamente la mitad del número */
+  font-size: clamp(1.1rem, 2vw, 1.7rem) !important; /* Más grande y proporcional al número */
   position: relative !important;
   margin-right: 2px !important;
   vertical-align: super !important;
@@ -717,9 +724,5 @@ a:focus {
 }
 
 /* Para mobile también */
-@media (max-width: 768px) {
-  .about-section .badge-plus {
-    font-size: clamp(1rem, 2.5vw, 2rem) !important; /* Mitad del número en mobile */
-  }
-}
+
 
