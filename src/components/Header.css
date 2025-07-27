@@ -255,8 +255,8 @@
     z-index: 1999;
     max-width: none;
     /* Estilos de scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: #c1c1c1 transparent;
+    /* Custom scrollbar styles for Firefox are removed for compatibility.
+       WebKit scrollbar styles below will handle Chrome, Safari, and others. */
   }
 
   /* Estilos webkit para scrollbar (Safari, Chrome) */

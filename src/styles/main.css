@@ -348,3 +348,118 @@ a:focus {
   text-align: center !important;
 }
 
+/* Asegurar que las imágenes no se salgan de sus contenedores en pantallas grandes */
+@media (min-width: 901px) {
+  /* Contenedor principal con límites estrictos */
+  .products-section .product-images {
+    max-width: 1400px !important;
+    width: 95vw !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+  }
+  
+  .products-section .first-image,
+  .products-section .second-image {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    width: auto !important; /* Cambiar de 100% a auto */
+  }
+  
+  .products-section .first-image img,
+  .products-section .second-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  /* Contenedores específicos para cada imagen con límites estrictos */
+  .products-section .product-right {
+    overflow: hidden !important;
+    max-width: 500px !important;
+    width: 500px !important;
+    flex: 0 0 500px !important;
+  }
+  
+  /* Limitar el ancho de la primera imagen también */
+  .products-section .first-image {
+    max-width: 420px !important;
+    width: 420px !important;
+    flex: 0 0 420px !important;
+  }
+}
+
+/* Límites adicionales para pantallas muy grandes */
+@media (min-width: 1440px) {
+  .products-section .product-images {
+    max-width: 1200px !important;
+    width: 80vw !important;
+  }
+  
+  .products-section .first-image {
+    max-width: 380px !important;
+    width: 380px !important;
+  }
+  
+  .products-section .product-right {
+    max-width: 450px !important;
+    width: 450px !important;
+  }
+  
+  .products-section .second-image {
+    max-width: 400px !important;
+    width: 400px !important;
+  }
+}
+
+/* Corrección para Responsabilidad Social - evitar que las imágenes se salgan */
+@media (min-width: 901px) {
+  .responsabilidad-social-gallery {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+  }
+  
+  .responsabilidad-social .gallery-item {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  .responsabilidad-social .gallery-image {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+  }
+  
+  /* Específico para la imagen problemática */
+  .responsabilidad-social .gallery-item-1 {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  .responsabilidad-social .gallery-item-1 .gallery-image {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+/* Corrección para el badge plus de About - forzar superíndice */
+.about-section .badge-plus {
+  font-size: clamp(0.9rem, 1.9vw, 2rem) !important; /* Aproximadamente la mitad del número */
+  position: relative !important;
+  margin-right: 2px !important;
+  vertical-align: super !important;
+  line-height: 1 !important;
+  font-weight: bold !important;
+}
+
+/* Para mobile también */
+@media (max-width: 768px) {
+  .about-section .badge-plus {
+    font-size: clamp(1rem, 2.5vw, 2rem) !important; /* Mitad del número en mobile */
+  }
+}
+

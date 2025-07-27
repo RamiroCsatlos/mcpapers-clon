@@ -137,12 +137,14 @@
 }
 
 .badge-plus {
-  font-size: clamp(1rem, 2.5vw, 1.8rem); 
+  font-size: clamp(0.4rem, 0.8vw, 0.8rem); /* Mucho más pequeño que el número */
   font-weight: bold;  
   position: relative;
-  top: 0.2em;  
-  margin-right: 2px;
+  top: -1em; /* Mover más arriba para posicionarlo como superíndice */
+  margin-right: 1px;
   flex-shrink: 0;
+  vertical-align: super; /* Alineación como superíndice */
+  line-height: 1; /* Evitar espaciado extra */
 }
 
 /* Responsive: columnas en móviles */
@@ -248,7 +250,9 @@
   }
 
   .badge-plus {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(0.5rem, 1.5vw, 1rem); /* Mucho más pequeño proporcionalmente */
+    top: -1.2em; /* Ajuste para mobile, más arriba */
+    line-height: 1;
   }
 }
 

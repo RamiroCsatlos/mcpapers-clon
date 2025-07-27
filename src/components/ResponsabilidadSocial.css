@@ -42,9 +42,12 @@
   gap: 1.2rem;
   height: 380px;
   width: 100%;
+  max-width: 1200px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrar el grid */
   box-sizing: border-box;
   visibility: visible !important;
   opacity: 1 !important;
+  overflow: hidden; /* Evitar que las imágenes se salgan */
 }
 
 /* Posicionamiento de cada imagen en desktop */
@@ -89,7 +92,7 @@
 
 .gallery-item {
   display: block !important;
-  overflow: hidden;
+  overflow: hidden !important; /* Asegurar que esté marcado como importante */
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
