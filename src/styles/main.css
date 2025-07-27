@@ -49,24 +49,29 @@ img {
   opacity: 1;
 }
 
+/* === ELEMENTOS QUE NECESITAN POSICIONAMIENTO RELATIVO === */
+.products-section .product-images,
+.products-section .first-image,
+.products-section .second-image {
+  position: relative !important;
+}
+
+/* === Z-INDEX ESPECÍFICOS === */
+.products-section .product-images {
+  z-index: 1 !important;
+}
+
+.products-section .first-image,
+.products-section .second-image {
+  z-index: 2 !important;
+}
+
 /* === PRODUCTOS - ASEGURAR VISIBILIDAD SIN ROMPER LAYOUT === */
 .products-section .first-image img,
 .products-section .second-image img {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* === ASEGURAR Z-INDEX CORRECTO === */
-.products-section .product-images {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.products-section .first-image,
-.products-section .second-image {
   position: relative !important;
   z-index: 2 !important;
 }
@@ -101,23 +106,23 @@ img {
 /* === RANGO INTERMEDIO - TABLET/DESKTOP PEQUEÑO Y MEDIANO === */
 @media (min-width: 901px) and (max-width: 1440px) {
   .products-section .product-images {
-    width: 98vw; /* Usar más ancho en pantallas medianas */
-    gap: 1.5rem; /* Gap más pequeño */
+    width: 98vw !important; /* Usar más ancho en pantallas medianas */
+    gap: 1.5rem !important; /* Gap más pequeño */
   }
   
   .products-section .first-image {
-    max-width: 60vw; /* Más flexible en pantallas medianas */
-    min-width: 400px;
+    max-width: 60vw !important; /* Más flexible en pantallas medianas */
+    min-width: 400px !important;
   }
   
   .products-section .product-right {
-    max-width: 35vw; /* Más flexible */
-    min-width: 300px;
+    max-width: 35vw !important; /* Más flexible */
+    min-width: 300px !important;
   }
   
   .products-section .second-image {
-    max-width: 100%; /* Usar todo el espacio disponible */
-    min-width: 250px;
+    max-width: 100% !important; /* Usar todo el espacio disponible */
+    min-width: 250px !important;
   }
 }
 
@@ -206,6 +211,19 @@ img {
   visibility: visible !important;
 }
 
+/* ===== CLASES AUXILIARES PARA FRANJAS AZULES ===== */
+.blue-stripe-base {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 60px;
+  background: #2a4fff;
+  opacity: 0.15;
+  z-index: 0;
+  display: block;
+  visibility: visible;
+}
+
 /* === NO INTERFERIR CON PSEUDO-ELEMENTOS === */
 .products-section .product-card::before {
   content: '';
@@ -215,6 +233,9 @@ img {
   opacity: 0.15;
   background: #2a4fff;
   z-index: 0;
+  width: 100vw;
+  height: 60px;
+  left: 0;
 }
 
 /* === FRANJAS ESPECÍFICAS POR PRODUCTO === */
@@ -239,6 +260,11 @@ img {
     visibility: visible;
     opacity: 0.15;
     z-index: 0;
+    background: #2a4fff;
+    width: 100vw;
+    height: 60px;
+    position: absolute;
+    content: '';
   }
 }
 
@@ -271,8 +297,16 @@ img {
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .items-center {
   align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .justify-center {
@@ -293,6 +327,62 @@ img {
 
 .h-full {
   height: 100%;
+}
+
+/* ===== VISIBILITY HELPERS ===== */
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.block {
+  display: block;
+}
+
+/* ===== POSITION HELPERS ===== */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.z-0 { z-index: 0; }
+.z-1 { z-index: 1; }
+.z-2 { z-index: 2; }
+
+/* ===== COMMON FLEX PATTERNS ===== */
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+/* ===== PRODUCT LAYOUT PATTERNS ===== */
+.product-mobile-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.product-desktop-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 95vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-end;
 }
 
 /* ===== SPACING UTILITIES ===== */
@@ -337,12 +427,12 @@ img {
 
 /* ===== FOCUS STYLES ===== */
 *:focus {
-  outline: none !important; /* Quitar el borde azul de focus */
+  outline: none; /* Quitar el borde azul de focus */
 }
 
 button:focus,
 a:focus {
-  outline: none !important; /* Quitar el borde azul de focus */
+  outline: none; /* Quitar el borde azul de focus */
 }
 
 /* ===== PRINT STYLES ===== */
@@ -443,55 +533,55 @@ a:focus {
 /* === OPTIMIZACIÓN PARA RANGO INTERMEDIO 901px-1440px === */
 @media (min-width: 901px) and (max-width: 1440px) {
   .products-section .product-images {
-    width: 95vw; /* Usar más espacio en pantallas medianas */
-    max-width: none; /* Sin límite máximo */
-    gap: 1.5rem; /* Gap más pequeño */
+    width: 95vw !important; /* Usar más espacio en pantallas medianas */
+    max-width: none !important; /* Sin límite máximo */
+    gap: 1.5rem !important; /* Gap más pequeño */
   }
   
   .products-section .first-image {
-    max-width: none; /* Sin límite, usar flex */
-    min-width: 300px; /* Mínimo más pequeño */
-    flex: 2 1 auto; /* Tomar más espacio proporcional */
+    max-width: none !important; /* Sin límite, usar flex */
+    min-width: 300px !important; /* Mínimo más pequeño */
+    flex: 2 1 auto !important; /* Tomar más espacio proporcional */
   }
   
   .products-section .product-right {
-    max-width: none; /* Sin límite, usar flex */
-    min-width: 250px; /* Mínimo más pequeño */
-    flex: 1 1 auto; /* Tomar menos espacio proporcional */
+    max-width: none !important; /* Sin límite, usar flex */
+    min-width: 250px !important; /* Mínimo más pequeño */
+    flex: 1 1 auto !important; /* Tomar menos espacio proporcional */
   }
   
   .products-section .second-image {
-    max-width: none; /* Sin límite máximo */
-    min-width: 200px; /* Mínimo más pequeño */
-    flex: 1 1 auto; /* Flexible dentro del product-right */
+    max-width: none !important; /* Sin límite máximo */
+    min-width: 200px !important; /* Mínimo más pequeño */
+    flex: 1 1 auto !important; /* Flexible dentro del product-right */
   }
 }
 
 /* Límites adicionales para pantallas muy grandes - Solo para 1440px+ */
 @media (min-width: 1441px) {
   .products-section .product-images {
-    width: 98vw; /* Usar viewport width pero con límite máximo */
-    max-width: 1440px; /* Límite máximo de 1440px - no crece más */
-    gap: 1.5rem; /* Mantener el mismo gap que en 1440px */
-    margin: 0 auto; /* Centrar el contenedor */
+    width: 98vw !important; /* Usar viewport width pero con límite máximo */
+    max-width: 1440px !important; /* Límite máximo de 1440px - no crece más */
+    gap: 1.5rem !important; /* Mantener el mismo gap que en 1440px */
+    margin: 0 auto !important; /* Centrar el contenedor */
   }
   
   .products-section .first-image {
-    max-width: none; /* Sin límite, usar flex dentro del contenedor limitado */
-    min-width: 300px; /* Mantener el mismo mínimo que en 1440px */
-    flex: 2 1 auto; /* Mantener la misma proporción que en 1440px */
+    max-width: none !important; /* Sin límite, usar flex dentro del contenedor limitado */
+    min-width: 300px !important; /* Mantener el mismo mínimo que en 1440px */
+    flex: 2 1 auto !important; /* Mantener la misma proporción que en 1440px */
   }
   
   .products-section .product-right {
-    max-width: none; /* Sin límite, usar flex dentro del contenedor limitado */
-    min-width: 250px; /* Mantener el mismo mínimo que en 1440px */
-    flex: 1 1 auto; /* Mantener la misma proporción que en 1440px */
+    max-width: none !important; /* Sin límite, usar flex dentro del contenedor limitado */
+    min-width: 250px !important; /* Mantener el mismo mínimo que en 1440px */
+    flex: 1 1 auto !important; /* Mantener la misma proporción que en 1440px */
   }
   
   .products-section .second-image {
-    max-width: none; /* Sin límite máximo dentro del contenedor limitado */
-    min-width: 200px; /* Mantener el mismo mínimo que en 1440px */
-    flex: 1 1 auto; /* Mantener flexible igual que en 1440px */
+    max-width: none !important; /* Sin límite máximo dentro del contenedor limitado */
+    min-width: 200px !important; /* Mantener el mismo mínimo que en 1440px */
+    flex: 1 1 auto !important; /* Mantener flexible igual que en 1440px */
   }
 }
 
