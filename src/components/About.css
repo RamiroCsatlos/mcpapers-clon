@@ -110,15 +110,13 @@
 
 .empresa-img-container .badge.top-left {
   background-color: #20066e;
-  top: 3%;
   left: 15%;
   font-size: clamp(0.8rem, 2vw, 1.5rem);
 }
 
 .empresa-img-container .badge.bottom-right {
-  background-color: #2985d5;
-  bottom: 3%;
-  right: 4%;
+  background-color: #2985d5 !important;
+  bottom: -5%;
 }
 
 .badge-number {
@@ -143,7 +141,6 @@
   font-size: clamp(0.4rem, 0.8vw, 0.8rem); /* Mucho más pequeño que el número */
   font-weight: bold;  
   position: relative;
-  top: -1em; /* Mover más arriba para posicionarlo como superíndice */
   margin-right: 1px;
   flex-shrink: 0;
   vertical-align: super; /* Alineación como superíndice */
@@ -233,7 +230,6 @@
   .empresa-img-container .badge.top-left {
     left: 50%;
     transform: translateX(-50%);
-    top: 8%;
     font-size: clamp(1rem, 3vw, 1.8rem);
     right: auto;
     margin-left: 0;
@@ -248,7 +244,6 @@
     transform: translateX(-50%) !important;
     right: auto !important;
     margin-left: 0 !important;
-    top: 8% !important;
   }
 }
 
@@ -256,7 +251,6 @@
     right: auto;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 8%;
   }
 
   .badge-number {
@@ -269,7 +263,6 @@
 
   .badge-plus {
     font-size: clamp(0.5rem, 1.5vw, 1rem); /* Mucho más pequeño proporcionalmente */
-    top: -1.2em; /* Ajuste para mobile, más arriba */
     line-height: 1;
   }
 }

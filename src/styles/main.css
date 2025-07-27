@@ -6,7 +6,6 @@
 @import './utilities.css';
 @import './performance.css';
 @import './buttons.css';
-@import './troubleshooting.css'; /* ÚLTIMO PARA MÁXIMA PRIORIDAD */
 
 /* ===== RESET Y BASE STYLES ===== */
 *,
