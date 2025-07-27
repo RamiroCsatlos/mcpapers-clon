@@ -338,3 +338,13 @@ a:focus {
   padding-top: 3rem;
 }
 
+/* Estilos consistentes para el título principal de la sección productos */
+.products-section .products-title {
+  font-size: var(--font-size-3xl) !important;
+  color: var(--primary-blue) !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+}
+

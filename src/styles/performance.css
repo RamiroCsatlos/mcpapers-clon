@@ -68,7 +68,13 @@
 }
 
 /* === OPTIMIZACIÓN DE FONTS === */
-@font-display: swap;
+/* 
+@font-face {
+  font-family: 'YourFontName';
+  src: url('your-font.woff2') format('woff2');
+  font-display: swap;
+}
+*/
 
 /* === CRITICAL CSS INLINING === */
 .critical {
@@ -116,7 +122,9 @@
 /* === OPTIMIZACIÓN DE ANIMACIONES === */
 @media (prefers-reduced-motion: no-preference) {
   .animate-on-scroll {
-    animation-timeline: scroll();
+    will-change: opacity, transform;
+    /* animation-timeline: scroll(); */
+    /* Fallback: Use a standard animation or handle scroll-based animation with JavaScript for better browser support */
   }
 }
 
