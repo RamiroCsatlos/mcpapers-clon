@@ -228,6 +228,7 @@ img {
   margin-left: 50% !important;
   transform: translateX(-50%) !important;
   position: relative !important;
+  padding: 2rem 0 !important;
 }
 
 /* === GRIDS ESPECÍFICOS === */
@@ -331,8 +332,9 @@ a:focus {
 
 /* ===== OVERRIDES ESPECÍFICOS ===== */
 
-/* Reducir tamaño de la imagen 2 de láminas específicamente */
-.products-section .product-2 .second-image-2 {
-  width: 320px !important;
-  max-width: 320px !important;
+/* Más padding entre la segunda imagen y el botón - usando padding en el info */
+
+.second-image {
+  padding-top: 3rem;
 }
+
