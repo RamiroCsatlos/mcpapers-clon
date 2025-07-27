@@ -6,6 +6,7 @@
 @import './utilities.css';
 @import './performance.css';
 @import './buttons.css';
+@import './troubleshooting.css'; /* ÚLTIMO PARA MÁXIMA PRIORIDAD */
 
 /* ===== RESET Y BASE STYLES ===== */
 *,
@@ -443,6 +444,137 @@ a:focus {
 }
 
 /* ===== OVERRIDES ESPECÍFICOS ===== */
+
+/* === TÍTULOS H2 DE SECCIONES - MÁS ESPECÍFICO === */
+.products-section .products-title,
+.equipamiento-section .equipamiento-title,
+.responsabilidad-social-container .responsabilidad-social-title {
+  color: var(--primary-blue, rgb(24, 62, 103)) !important;
+  font-weight: 700 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Instagram tiene fondo rosa, necesita texto blanco */
+.instagram-section .instagram-title {
+  color: white !important;
+  font-weight: 700 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === SECCIÓN ABOUT - TEXTOS Y BOTONES === */
+.about-section,
+.about-text,
+.about-text p {
+  color: var(--text-primary, #333) !important;
+}
+
+.about-section .ver-mas-btn {
+  color: var(--text-primary, #333) !important;
+  background-color: white !important;
+  border: 1px solid var(--text-primary, #333) !important;
+}
+
+.about-section .ver-mas-btn:hover {
+  background-color: var(--secondary-blue, #2985d5) !important;
+  color: white !important;
+  border-color: var(--secondary-blue, #2985d5) !important;
+}
+
+/* === BADGES DE EQUIPAMIENTO - MÁS ESPECÍFICO === */
+.equipamiento-section .equipo-badge,
+.equipo-card .equipo-badge,
+.equipo-image-container .equipo-badge {
+  background-color: var(--dark-blue, #20066e) !important;
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === BADGES DE ABOUT === */
+.about-section .badge {
+  color: white !important;
+  background-color: var(--dark-blue, #20066e) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === ASEGURAR VISIBILIDAD DE TODOS LOS TEXTOS === */
+.products-section,
+.equipamiento-section,
+.responsabilidad-social-section {
+  color: var(--text-primary, #333) !important;
+}
+
+.products-section h3,
+.equipamiento-section h3,
+.responsabilidad-social-section h3 {
+  color: var(--text-secondary, #222) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.products-section p,
+.equipamiento-section p,
+.responsabilidad-social-section p {
+  color: var(--text-primary, #333) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === FORZAR VISIBILIDAD GENERAL === */
+h1, h2, h3, h4, h5, h6,
+p, span, div, a {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === EXCEPCIONES DE COLOR PARA FONDOS ESPECIALES === */
+
+/* Banner - Fondo azul, texto blanco */
+.animated-wave-banner h1,
+.animated-wave-banner h2,
+.banner-section h1,
+.banner-section h2 {
+  color: white !important;
+}
+
+/* Slider - Fondo azul, texto blanco */
+.slider-section h1,
+.slider-section h2,
+.slide-content h1,
+.slide-content h2 {
+  color: white !important;
+}
+
+/* Instagram - Fondo rosa, texto blanco */
+.instagram-section h1,
+.instagram-section h2,
+.instagram-section .instagram-title {
+  color: white !important;
+}
+
+/* === ELEMENTOS DE TEXTO EN FONDOS AZULES === */
+.animated-wave-banner p,
+.animated-wave-banner span,
+.banner-section p,
+.banner-section span,
+.slider-section p,
+.slider-section span,
+.slide-content p,
+.slide-content span {
+  color: white !important;
+}
+
+/* === BOTONES EN FONDOS AZULES === */
+.animated-wave-banner button,
+.banner-section button,
+.slider-section button,
+.slide-content button {
+  color: white !important;
+  border-color: white !important;
+}
 
 /* Más padding entre la segunda imagen y el botón - usando padding en el info */
 

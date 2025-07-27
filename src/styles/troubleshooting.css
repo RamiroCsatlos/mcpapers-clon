@@ -1,0 +1,149 @@
+/* ===== TROUBLESHOOTING DE COLORES - MÁXIMA PRIORIDAD ===== */
+
+/* === ASEGURAR QUE TODOS LOS TÍTULOS SEAN VISIBLES === */
+.products-title,
+.equipamiento-title,
+.responsabilidad-social-title {
+  color: rgb(24, 62, 103) !important;
+  font-weight: 700 !important;
+  font-size: clamp(2.5rem, 5vw, 3.2rem) !important;
+  text-decoration: underline !important;
+  margin-bottom: 1rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* === TÍTULOS CON FONDOS ESPECIALES === */
+.instagram-title {
+  color: white !important; /* Fondo rosa */
+  font-weight: 700 !important;
+  font-size: clamp(2.5rem, 5vw, 3.2rem) !important;
+  text-decoration: underline !important;
+  margin-bottom: 1rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* === BANNER Y SLIDER - FONDOS AZULES === */
+.animated-wave-banner h1,
+.animated-wave-banner h2,
+.banner-section h1,
+.banner-section h2,
+.slider-section h1,
+.slider-section h2,
+.slide-content h1,
+.slide-content h2 {
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === ASEGURAR QUE TODOS LOS TEXTOS SEAN VISIBLES === */
+.about-section p,
+.products-section p,
+.equipamiento-section p,
+.responsabilidad-social-section p {
+  color: #333 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* === ASEGURAR QUE EL BOTÓN DE ABOUT SEA VISIBLE === */
+.about-section .ver-mas-btn {
+  color: #333 !important;
+  background-color: white !important;
+  border: 1px solid #333 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-block !important;
+}
+
+/* === ASEGURAR QUE LAS BADGES DE EQUIPAMIENTO SEAN VISIBLES === */
+.equipo-badge,
+.equipamiento-section .equipo-badge,
+.equipo-card .equipo-badge {
+  background-color: #20066e !important;
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+/* === ASEGURAR QUE LAS BADGES DE ABOUT SEAN VISIBLES === */
+.about-section .badge {
+  color: white !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  position: absolute !important;
+  padding: 8px 16px !important;
+  font-weight: bold !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+}
+
+.about-section .badge.top-left {
+  background-color: #20066e !important;
+  top: 3% !important;
+  left: 15% !important;
+}
+
+.about-section .badge.bottom-right {
+  background-color: #2985d5 !important;
+  bottom: 3% !important;
+  right: 15% !important;
+}
+
+/* === FORZAR VISIBILIDAD DE ELEMENTOS BÁSICOS === */
+/* Solo aplicar a secciones con fondo claro */
+.products-section h1, 
+.products-section h2, 
+.products-section h3, 
+.products-section h4, 
+.products-section h5, 
+.products-section h6,
+.equipamiento-section h1,
+.equipamiento-section h2,
+.equipamiento-section h3,
+.equipamiento-section h4,
+.equipamiento-section h5,
+.equipamiento-section h6,
+.responsabilidad-social-section h1,
+.responsabilidad-social-section h2,
+.responsabilidad-social-section h3,
+.responsabilidad-social-section h4,
+.responsabilidad-social-section h5,
+.responsabilidad-social-section h6,
+.about-section h1,
+.about-section h2,
+.about-section h3,
+.about-section h4,
+.about-section h5,
+.about-section h6 {
+  color: #333 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* === ESPECÍFICO PARA TÍTULOS DE SECCIÓN === */
+.section h2,
+section h2,
+.products-section h2,
+.equipamiento-section h2,
+.responsabilidad-social-section h2 {
+  color: rgb(24, 62, 103) !important;
+  font-weight: 700 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
