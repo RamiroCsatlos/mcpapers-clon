@@ -11,7 +11,7 @@ import responsabilidadSocial4 from '../assets/responsabilidadSocial4.avif';
 const ResponsabilidadSocial = () => {
   const { ref: titleRef, inView: titleInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   const images = [
@@ -53,7 +53,7 @@ const ResponsabilidadSocial = () => {
             // Hook individual para cada imagen de responsabilidad social
             const { ref: imageRef, inView: imageInView } = useInView({
               threshold: 0.2,
-              triggerOnce: false
+              triggerOnce: true
             });
 
             return (

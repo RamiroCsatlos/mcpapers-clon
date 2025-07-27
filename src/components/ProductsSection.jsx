@@ -35,7 +35,7 @@ const products = [
 
 function ProductsSection() {
   // Animaciones sincronizadas con el resto de la página
-  const { ref: titleRef, className: titleAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: false });
+  const { ref: titleRef, className: titleAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
 
   return (
     <section className="products-section">
@@ -46,7 +46,7 @@ function ProductsSection() {
       </a>
       <div className="products-list">
         {products.map((prod, idx) => {
-          const { ref: cardRef, className: cardAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: false });
+          const { ref: cardRef, className: cardAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
           return (
             <div ref={cardRef} className={`product-card product-${idx} scale-in ${cardAnimClass}`} key={prod.title}>
               <div className="product-images">

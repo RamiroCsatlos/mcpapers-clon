@@ -39,12 +39,12 @@ const instagramImages = [
 function GaleriaInstagram() {
   const { ref: titleRef, inView: titleInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   const { ref: handleRef, inView: handleInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   return (
@@ -62,7 +62,7 @@ function GaleriaInstagram() {
             // Hook individual para cada imagen de Instagram
             const { ref: imageRef, inView: imageInView } = useInView({
               threshold: 0.2,
-              triggerOnce: false
+              triggerOnce: true
             });
 
             return (

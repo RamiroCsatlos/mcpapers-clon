@@ -6,12 +6,12 @@ import greenerImg from '../assets/greenerpackLogoColor.png';
 const GreenerPack = () => {
   const { ref: logoRef, inView: logoInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   return (

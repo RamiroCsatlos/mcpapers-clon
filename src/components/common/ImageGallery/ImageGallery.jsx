@@ -21,9 +21,8 @@ const ImageGallery = ({
       {images.map((image, index) => {
         const { ref, className: animationClass } = useInViewAnimation({
           threshold: 0.2,
-          triggerOnce: false
+          triggerOnce: true
         });
-
         return (
           <a 
             key={image.id || index}

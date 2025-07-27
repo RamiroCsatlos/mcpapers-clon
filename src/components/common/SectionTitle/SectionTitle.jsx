@@ -16,7 +16,7 @@ const SectionTitle = ({
   className = '',
   animationDelay = 0 
 }) => {
-  const { ref, className: animationClass } = useInViewAnimation();
+  const { ref, className: animationClass } = useInViewAnimation({ triggerOnce: true });
   
   const TitleTag = level;
   const titleClasses = `section-title fade-in-up ${animationClass} ${className}`;

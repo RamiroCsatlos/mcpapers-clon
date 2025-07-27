@@ -34,7 +34,7 @@ const equipos = [
 function Equipamiento() {
   const { ref: titleRef, inView: titleInView } = useInView({
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   return (
@@ -52,7 +52,7 @@ function Equipamiento() {
           // Hook individual para cada tarjeta de equipo
           const { ref: equipoRef, inView: equipoInView } = useInView({
             threshold: 0.2,
-            triggerOnce: false
+            triggerOnce: true
           });
 
           return (

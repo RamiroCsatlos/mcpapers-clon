@@ -5,8 +5,8 @@ import empresaImage from '../assets/foto-empresa.jpg';
 import logoImage from '../assets/logo.png';
 
 const About = () => {
-  const { ref: textRef, className: textAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: false });
-  const { ref: imageRef, className: imageAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: false });
+  const { ref: textRef, className: textAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+  const { ref: imageRef, className: imageAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
 
   return (
     <section className="about-section">
