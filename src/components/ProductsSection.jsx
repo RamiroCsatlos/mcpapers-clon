@@ -18,7 +18,7 @@ const products = [
     ]
   },
   {
-    title: 'Bolsas Fondo Cuadrado',
+    title: 'Bolsas Fondo\nCuadrado',
     images: [
       bolsaCuadrada1,
       bolsaCuadrada2
