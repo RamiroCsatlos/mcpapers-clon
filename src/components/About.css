@@ -235,7 +235,22 @@
     transform: translateX(-50%);
     top: 8%;
     font-size: clamp(1rem, 3vw, 1.8rem);
+    right: auto;
+    margin-left: 0;
   }
+/* Centrado horizontal del badge solo en mobile y solo si hay una columna */
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .empresa-img-container .badge.top-left {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+    margin-left: 0 !important;
+    top: 8% !important;
+  }
+}
 
   .empresa-img-container .badge.bottom-right {
     right: auto;
