@@ -346,6 +346,14 @@ a:focus {
   text-align: center !important;
 }
 
+/* Aumentar font-size de los h3 de productos */
+.product-card h3 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem) !important; /* Más grande y responsive */
+  font-weight: 700 !important;
+  color: #222 !important;
+  margin: 2rem 0 1rem 0 !important;
+}
+
 /* Asegurar que las imágenes no se salgan de sus contenedores en pantallas grandes */
 @media (min-width: 901px) {
   /* Contenedor principal más flexible */
@@ -461,7 +469,13 @@ a:focus {
     max-width: 100% !important;
     max-height: 100% !important;
     border-radius: 12px !important; /* Border radius en la imagen */
+    transition: transform 0.3s ease !important; /* Efecto hover para todas las imágenes */
     /* Mantener width y height originales para cada item específico */
+  }
+  
+  /* Efecto hover para todas las imágenes */
+  .responsabilidad-social .gallery-item:hover .gallery-image {
+    transform: scale(1.05) !important;
   }
   
   /* Solo ajustar la imagen problemática específicamente */
@@ -471,6 +485,7 @@ a:focus {
     width: auto !important;
     height: auto !important;
     border-radius: 12px !important; /* Border radius también para esta imagen */
+    transition: transform 0.3s ease !important; /* Efecto hover también para esta imagen */
   }
   
   /* Medidas específicas para imágenes 3 y 4 - más grandes */
@@ -489,6 +504,7 @@ a:focus {
     object-fit: cover !important; /* Estirar para llenar el contenedor */
     object-position: center !important;
     border-radius: 12px !important; /* Border radius para estas imágenes también */
+    transition: transform 0.3s ease !important; /* Efecto hover también para estas imágenes */
   }
 
 }
