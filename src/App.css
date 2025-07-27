@@ -72,7 +72,9 @@
 }
 
 .btn-ver-mas:hover {
-  background-color: #062a63;
+  background-color: #2985d5; /* Usar el secondary-blue más suave */
+  color: white; /* Cambiar texto a blanco para mejor contraste */
+  transform: translateY(-2px); /* Agregar efecto de elevación */
 }
 
 .about-section {

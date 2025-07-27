@@ -113,19 +113,22 @@
 
 .equipo-ver-mas-btn {
   margin-top: var(--space-sm);
-  padding: var(--space-sm) var(--space-lg);
-  background: var(--accent-blue);
-  color: white;
-  border: none;
-  border-radius: var(--border-radius-full);
+  padding: var(--space-sm) var(--space-xl) !important;
+  background: white !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--text-primary) !important;
+  border-radius: var(--border-radius-full) !important;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--transition-fast);
-  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast) !important;
+  font-size: var(--font-size-sm) !important;
 }
 
 .equipo-ver-mas-btn:hover {
-  background: var(--hover-blue-dark);
+  transform: scale(1.1) !important;
+  background: var(--secondary-blue) !important;
+  color: white !important;
+  border-color: var(--secondary-blue) !important;
 }
 
 /* Responsive design */

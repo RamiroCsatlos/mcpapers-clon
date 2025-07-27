@@ -371,7 +371,7 @@ a:focus {
 
 /* Aumentar font-size de los h3 de productos */
 .product-card h3 {
-  font-size: clamp(2.5rem, 4vw, 4.5rem) !important; /* Más grande y responsive */
+  font-size: clamp(1.8rem, 3vw, 3.5rem) !important; /* Reducir un poco el tamaño */
   font-weight: 700 !important;
   color: #222 !important;
   margin: 2rem 0 1rem 0 !important;
@@ -496,6 +496,35 @@ a:focus {
 
 /* ===== RESPONSABILIDAD SOCIAL - SIN OVERRIDES ===== */
 /* Eliminando todos los overrides para que use los estilos originales del componente */
+
+/* ===== BOTONES UNIFICADOS - MÁXIMA PRIORIDAD ===== */
+/* Forzar estilos consistentes en todos los botones "Ver más" de la página */
+
+.products-section .see-more-btn,
+.about-section .ver-mas-btn,
+.equipamiento-section .equipo-ver-mas-btn {
+  padding: 1rem 3rem !important;
+  background: white !important;
+  color: #333 !important;
+  border: 1px solid #333 !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-size: 0.875rem !important;
+  margin-top: 1rem !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+}
+
+.products-section .see-more-btn:hover,
+.about-section .ver-mas-btn:hover,
+.equipamiento-section .equipo-ver-mas-btn:hover {
+  transform: scale(1.1) !important;
+  background: #2985d5 !important;
+  color: white !important;
+  border-color: #2985d5 !important;
+}
 
 
 

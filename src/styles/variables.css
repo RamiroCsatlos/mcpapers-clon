@@ -126,7 +126,8 @@
 }
 
 .btn-primary:hover {
-  background: var(--hover-blue-dark);
+  background: var(--secondary-blue); /* Usar un azul más suave en lugar del oscuro */
+  transform: translateY(-2px); /* Agregar un efecto de elevación sutil */
 }
 
 .btn-secondary {
