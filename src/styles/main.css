@@ -313,14 +313,12 @@ img {
 
 /* ===== FOCUS STYLES ===== */
 *:focus {
-  outline: 2px solid var(--hover-blue);
-  outline-offset: 2px;
+  outline: none !important; /* Quitar el borde azul de focus */
 }
 
 button:focus,
 a:focus {
-  outline: 2px solid var(--hover-blue);
-  outline-offset: 2px;
+  outline: none !important; /* Quitar el borde azul de focus */
 }
 
 /* ===== PRINT STYLES ===== */
@@ -350,19 +348,26 @@ a:focus {
 
 /* Asegurar que las imágenes no se salgan de sus contenedores en pantallas grandes */
 @media (min-width: 901px) {
-  /* Contenedor principal con límites estrictos */
+  /* Contenedor principal más flexible */
   .products-section .product-images {
-    max-width: 1400px !important;
-    width: 95vw !important;
+    max-width: 1400px !important; /* Reducir para evitar desborde */
+    width: 90vw !important; /* Reducir el ancho para contener mejor */
     margin: 0 auto !important;
     overflow: hidden !important;
+    justify-content: center !important; /* Centrar el contenido */
   }
   
   .products-section .first-image,
   .products-section .second-image {
     overflow: hidden !important;
     max-width: 100% !important;
-    width: auto !important; /* Cambiar de 100% a auto */
+  }
+  
+  /* Asegurar que las segundas imágenes no se desborden */
+  .products-section .second-image {
+    max-width: 450px !important; /* Limitar el tamaño de las segundas imágenes */
+    min-width: 300px !important;
+    flex: 1 1 auto !important;
   }
   
   .products-section .first-image img,
@@ -373,78 +378,114 @@ a:focus {
     object-fit: contain !important;
   }
   
-  /* Contenedores específicos para cada imagen con límites estrictos */
+  /* Contenedores más flexibles */
   .products-section .product-right {
     overflow: hidden !important;
-    max-width: 500px !important;
-    width: 500px !important;
-    flex: 0 0 500px !important;
+    max-width: 600px !important; /* Más grande */
+    min-width: 400px !important; /* Mínimo más grande */
+    flex: 1 1 auto !important; /* Flexible */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
-  /* Limitar el ancho de la primera imagen también */
+  /* Primera imagen más flexible y más grande */
   .products-section .first-image {
-    max-width: 420px !important;
-    width: 420px !important;
-    flex: 0 0 420px !important;
+    max-width: 800px !important; /* Mucho más grande */
+    min-width: 500px !important; /* Mínimo más grande */
+    flex: 1 1 auto !important; /* Flexible */
+  }
+  
+  /* Centrar contenido del product-info */
+  .products-section .product-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
   }
 }
 
 /* Límites adicionales para pantallas muy grandes */
 @media (min-width: 1440px) {
   .products-section .product-images {
-    max-width: 1200px !important;
-    width: 80vw !important;
+    max-width: 1400px !important; /* Más ancho para pantallas grandes */
+    width: 90vw !important; /* Más espacio en pantallas grandes */
   }
   
   .products-section .first-image {
-    max-width: 380px !important;
-    width: 380px !important;
+    max-width: 800px !important; /* Mantener el tamaño grande como en 901px */
+    min-width: 500px !important;
   }
   
   .products-section .product-right {
-    max-width: 450px !important;
-    width: 450px !important;
+    max-width: 650px !important; /* Más grande */
+    min-width: 450px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .products-section .second-image {
-    max-width: 400px !important;
-    width: 400px !important;
+    max-width: 450px !important; /* Limitar tamaño para evitar desborde */
+    min-width: 300px !important;
+    flex: 1 1 auto !important;
   }
 }
 
 /* Corrección para Responsabilidad Social - evitar que las imágenes se salgan */
 @media (min-width: 901px) {
   .responsabilidad-social-gallery {
-    max-width: 1200px !important;
+    max-width: 1000px !important; /* Reducir para respetar contenedor padre */
     margin: 0 auto !important;
     overflow: hidden !important;
+    width: 100% !important; /* Usar todo el ancho disponible del contenedor padre */
   }
   
+  /* Restaurar comportamiento original de gallery-item */
   .responsabilidad-social .gallery-item {
+    /* No override display, mantener el original */
     overflow: hidden !important;
     max-width: 100% !important;
+    /* Mantener estilos originales como border-radius, box-shadow, etc. */
   }
   
   .responsabilidad-social .gallery-image {
     max-width: 100% !important;
     max-height: 100% !important;
-    object-fit: cover !important;
+    /* Mantener width y height originales para cada item específico */
   }
   
-  /* Específico para la imagen problemática */
-  .responsabilidad-social .gallery-item-1 {
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-  
+  /* Solo ajustar la imagen problemática específicamente */
   .responsabilidad-social .gallery-item-1 .gallery-image {
-    max-width: 100% !important;
-    max-height: 100% !important;
+    object-fit: contain !important; /* Mantener imagen completa */
+    object-position: center !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  
+  /* Medidas específicas para imágenes 3 y 4 */
+  .responsabilidad-social .gallery-item-3,
+  .responsabilidad-social .gallery-item-4 {
+    width: 180px !important;
+    height: 180px !important;
+    max-width: 180px !important;
+    max-height: 180px !important;
+  }
+  
+  .responsabilidad-social .gallery-item-3 .gallery-image,
+  .responsabilidad-social .gallery-item-4 .gallery-image {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
+    object-fit: cover !important; /* Estirar para llenar el contenedor */
+    object-position: center !important;
   }
+
 }
+
+
 
 /* Corrección para el badge plus de About - forzar superíndice */
 .about-section .badge-plus {
