@@ -1,26 +1,19 @@
 import './About.css';
-import './ScrollAnimations.css';
-import { useInView } from 'react-intersection-observer';
+import '../styles/ScrollAnimations.css';
+import useInViewAnimation from '../hooks/useInViewAnimation';
 import empresaImage from '../assets/foto-empresa.jpg';
 import logoImage from '../assets/logo.png';
 
 const About = () => {
-  const { ref: textRef, inView: textInView } = useInView({
-    threshold: 0.2,
-    triggerOnce: false  // Permite que la animación se repita
-  });
-
-  const { ref: imageRef, inView: imageInView } = useInView({
-    threshold: 0.2,
-    triggerOnce: false  // Permite que la animación se repita
-  });
+  const { ref: textRef, className: textAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: false });
+  const { ref: imageRef, className: imageAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: false });
 
   return (
     <section className="about-section">
       <div className="about-content">
         <div 
           ref={textRef}
-          className={`about-text fade-in-up ${textInView ? 'fade-in-visible' : ''}`}
+          className={`about-text fade-in-up ${textAnimClass}`}
         >
           <img src={logoImage} alt="Logo" className="empresa-logo" />
           <p>
@@ -33,7 +26,7 @@ const About = () => {
         </div>
         <div 
           ref={imageRef}
-          className={`empresa-img-container scale-in animation-delay-200 ${imageInView ? 'fade-in-visible' : ''}`}
+          className={`empresa-img-container scale-in animation-delay-200 ${imageAnimClass}`}
         >
           <div className="empresa-img-padding">
             <a href="/sobre-nosotros" className="empresa-img-link">

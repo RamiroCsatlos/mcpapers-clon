@@ -1,0 +1,33 @@
+/* Animaciones de scroll profesionales para About y otras secciones */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scale-in.fade-in-visible {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.animation-delay-200 {
+  transition-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  transition-delay: 0.4s;
+}

@@ -200,17 +200,7 @@ img {
   }
 }
 
-/* === DESHABILITAR ANIMACIONES PROBLEMÁTICAS GLOBALMENTE === */
-.fade-in-left,
-.fade-in-right,
-.fade-in-up,
-.fade-in-down,
-.fade-in,
-.scale-in {
-  opacity: 1 !important;
-  transform: none !important;
-  visibility: visible !important;
-}
+
 
 /* ===== CLASES AUXILIARES PARA FRANJAS AZULES ===== */
 .blue-stripe-base {
@@ -276,8 +266,7 @@ img {
   align-items: center !important;
   width: 100vw !important;
   max-width: 100vw !important;
-  margin-left: 50% !important;
-  transform: translateX(-50%) !important;
+  margin: 0 auto !important;
   position: relative !important;
   padding: 2rem 0 !important;
 }
