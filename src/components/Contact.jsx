@@ -24,7 +24,7 @@ const Contact = () => {
             alt="Contacto trabajando"
             className={`contact-img scale-in${imgInView ? ' fade-in-visible' : ''}`}
           />
-          <div ref={formRef} className={`contact-form scale-in${formInView ? ' fade-in-visible' : ''}`}>
+          <div ref={formRef} className={`contact-form-container scale-in${formInView ? ' fade-in-visible' : ''}`}>
             <ContactForm />
           </div>
         </div>

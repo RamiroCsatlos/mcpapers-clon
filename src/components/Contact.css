@@ -20,12 +20,6 @@
   padding-right: 2vw;
 }
 
-.contact-title {
-  margin-bottom: 32px;
-  font-size: 2.2rem;
-  font-weight: 700;
-}
-
 .contact-row {
   display: flex;
   flex-direction: row;
@@ -43,22 +37,36 @@
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   flex: 2 1 0;
-  height: auto;
-  object-fit: cover;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 35%;
-  min-width: 180px;
+  width: 100%;
+  min-width: 280px;
   max-width: 600px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   padding: 24px;
+  flex: 1 1 350px;
+  margin: 0 auto;
+}
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 24px;
   flex: 1 1 0;
+}
+
+.contact-form-container {
+  width: 35%;
+  min-width: 180px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 24px;
+  justify-content: center;
 }
 
 /* Los estilos de label, input, textarea y button ahora se heredan de forms.css usando clases globales. */
@@ -116,6 +124,11 @@
     gap: 24px;
   }
   .contact-info-col, .contact-map-col {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  .contact-form-container {
     max-width: 100%;
     min-width: 0;
     width: 100%;

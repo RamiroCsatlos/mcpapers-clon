@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { validators } from "../../../utils/validators";
 import { sendContact } from '../../../utils/api';
-import './ContactForm.css';
+import "../../../styles/forms.css"; // Importar estilos globales
 
 const ContactForm = ({ onSubmit, isLoading = false }) => {
   const [formData, setFormData] = useState({
