@@ -3,6 +3,7 @@ import useContactAnimations from "../hooks/useContactAnimations";
 import contactoTrabajando from "../assets/contactoTrabajando.avif";
 import "./Contact.css";
 import "../styles/forms.css";
+import ContactForm from "./common/ContactForm/ContactForm";
 
 const Contact = () => {
   const {
@@ -23,29 +24,9 @@ const Contact = () => {
             alt="Contacto trabajando"
             className={`contact-img scale-in${imgInView ? ' fade-in-visible' : ''}`}
           />
-          <form ref={formRef} className={`contact-form scale-in${formInView ? ' fade-in-visible' : ''}`}>
-            <label className="form-label">
-              Nombre
-              <input className="form-input" type="text" name="nombre" required />
-            </label>
-            <label className="form-label">
-              Email
-              <input className="form-input" type="email" name="email" required />
-            </label>
-            <label className="form-label">
-              Celular
-              <input className="form-input" type="tel" name="celular" />
-            </label>
-            <label className="form-label">
-              Empresa
-              <input className="form-input" type="text" name="empresa" />
-            </label>
-            <label className="form-label">
-              Mensaje
-              <textarea className="form-textarea" name="mensaje" required />
-            </label>
-            <button className="form-button" type="submit">Enviar</button>
-          </form>
+          <div ref={formRef} className={`contact-form scale-in${formInView ? ' fade-in-visible' : ''}`}>
+            <ContactForm />
+          </div>
         </div>
         <div className="contact-info-map-row">
           <div ref={infoRef} className={`contact-info-col fade-in-up${infoInView ? ' fade-in-visible' : ''}`}>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { validators } from '../../utils/validators';
+import { validators } from "../../../utils/validators";
 import { sendContact } from '../../../utils/api';
 import './ContactForm.css';
 
@@ -41,6 +41,7 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log('handleSubmit ejecutado'); // <-- PRUEBA RAPIDA
     e.preventDefault();
     // Validar todos los campos
     const newErrors = {};
@@ -54,8 +55,17 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
     // Si no hay errores, enviar formulario
     if (Object.keys(newErrors).length === 0) {
       setSubmitStatus(null);
+      // Mapear los campos al formato que espera el backend
+      const backendData = {
+        nombre: formData.name,
+        email: formData.email,
+        celular: formData.phone,
+        empresa: formData.company,
+        mensaje: formData.message
+      };
+      console.log('enviando', backendData); // <-- LOG PARA DEPURAR
       try {
-        await sendContact(formData);
+        await sendContact(backendData);
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', company: '', message: '' });
       } catch (err) {

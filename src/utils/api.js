@@ -2,7 +2,7 @@
 // Servicios para interactuar con el backend de contacto, CV y cotización
 // Usa fetch y variables de entorno para la URL base
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
 export async function sendContact(data) {
   const res = await fetch(`${API_BASE_URL}/api/contact`, {
