@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { validators } from '../../utils/validators';
+import { sendContact } from '../../../utils/api';
 import './ContactForm.css';
 
 const ContactForm = ({ onSubmit, isLoading = false }) => {
@@ -12,6 +13,7 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const validateField = (name, value) => {
     switch (name) {
@@ -38,23 +40,27 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
     setErrors(prev => ({ ...prev, [name]: error }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
     // Validar todos los campos
     const newErrors = {};
     Object.keys(formData).forEach(key => {
-      if (key !== 'company') { // company es opcional
+      if (key !== 'company') {
         const error = validateField(key, formData[key]);
         if (error) newErrors[key] = error;
       }
     });
-
     setErrors(newErrors);
-    
     // Si no hay errores, enviar formulario
     if (Object.keys(newErrors).length === 0) {
-      onSubmit(formData);
+      setSubmitStatus(null);
+      try {
+        await sendContact(formData);
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+      } catch (err) {
+        setSubmitStatus('error');
+      }
     }
   };
 
@@ -153,6 +159,12 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
       >
         {isLoading ? 'Enviando...' : 'Enviar Mensaje'}
       </button>
+      {submitStatus === 'success' && (
+        <div className="form-success">¡Mensaje enviado correctamente!</div>
+      )}
+      {submitStatus === 'error' && (
+        <div className="form-error">Ocurrió un error al enviar el mensaje.</div>
+      )}
     </form>
   );
 };
