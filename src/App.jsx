@@ -7,7 +7,7 @@ import { Suspense, lazy } from 'react';
 import Footer from './components/Footer';
 
 // Lazy load de los componentes principales
-const About = lazy(() => import('./components/About'));
+import About from './components/About';
 const GreenerPack = lazy(() => import('./components/GreenerPack'));
 const ProductsSection = lazy(() => import('./components/ProductsSection'));
 const Equipamiento = lazy(() => import('./components/Equipamiento'));
@@ -26,11 +26,7 @@ function App() {
         </h2>
       </AnimatedWaveBanner>
       
-      <LazySection rootMargin="200px">
-        <Suspense fallback={<LoadingSpinner />}>
-          <About />
-        </Suspense>
-      </LazySection>
+      <About />
 
       <LazySection rootMargin="200px">
         <Suspense fallback={<LoadingSpinner />}>
