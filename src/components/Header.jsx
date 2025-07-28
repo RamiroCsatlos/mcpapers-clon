@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import logoHeader from '../assets/logoHeader.png';
 import flagAR from '../assets/ar.svg';
 import flagUS from '../assets/us.svg';
-import { Menu, X } from 'lucide-react'; // Agrega X a la importación
+import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -118,7 +119,7 @@ function Header() {
             </li>
             <li><a href="#">Novedades</a></li>
             <li><a href="#">Responsabilidad Social</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><Link to="/contacto">Contacto</Link></li>
             <li className="dropdown">
               <button
                 className={`dropdown-toggle ${openDropdown === 'idioma' ? 'open' : ''}`}
