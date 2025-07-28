@@ -1,0 +1,1 @@
+import{u as t}from"./index-CyCX3WUo.js";const r=(i={})=>{const n={threshold:.2,triggerOnce:!1,rootMargin:"50px",...i},{ref:s,inView:e}=t(n);return{ref:s,inView:e,className:e?"fade-in-visible":""}};export{r as u};
