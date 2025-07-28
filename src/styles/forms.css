@@ -1,0 +1,40 @@
+/* Form styles extracted from Contact.css for reuse */
+
+.form-label {
+  text-align: left;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111;
+}
+
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-button {
+  margin-top: 12px;
+  padding: 12px 0;
+  background: #0b3d91;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-button:hover {
+  background: #2985d5;
+}

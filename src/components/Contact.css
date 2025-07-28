@@ -1,3 +1,12 @@
+/* Estilos para el iframe del mapa */
+.contact-map-iframe {
+  width: 80%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
 .contact-section {
   padding: 2rem 0;
   background: transparent;
@@ -52,54 +61,43 @@
   flex: 1 1 0;
 }
 
-.contact-form label {
-  text-align: left;
-  font-weight: 500;
-}
+/* Los estilos de label, input, textarea y button ahora se heredan de forms.css usando clases globales. */
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-top: 4px;
-  font-size: 1rem;
-}
 
-.contact-form textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-
-.contact-form button {
-  margin-top: 12px;
-  padding: 12px 0;
-  background: #0b3d91;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.contact-form button:hover {
-  background: #2985d5;
-}
-
-.contact-info-row {
+.contact-info-map-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 40px;
+  align-items: stretch;
   justify-content: center;
-  gap: 32px;
   margin-bottom: 32px;
 }
 
+.contact-info-col {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.contact-map-col {
+  flex: 2 1 0;
+  min-width: 320px;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+}
+
 .contact-map-container {
-  max-width: 600px;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
   margin: 0 auto;
+  justify-content: center;
 }
 
 @media (max-width: 900px) {
@@ -109,6 +107,15 @@
     gap: 24px;
   }
   .contact-img, .contact-form {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+  .contact-info-map-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .contact-info-col, .contact-map-col {
     max-width: 100%;
     min-width: 0;
     width: 100%;
