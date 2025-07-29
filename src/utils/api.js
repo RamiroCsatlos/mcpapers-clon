@@ -17,8 +17,7 @@ export async function sendContact(data) {
 export async function sendCV(data) {
   const res = await fetch(`${API_BASE_URL}/api/cv`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: data, // FormData
   });
   if (!res.ok) throw new Error('Error enviando CV');
   return res.json();
