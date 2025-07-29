@@ -437,7 +437,8 @@ a:focus {
 /* === TÍTULOS H2 DE SECCIONES - MÁS ESPECÍFICO === */
 .products-section .products-title,
 .equipamiento-section .equipamiento-title,
-.responsabilidad-social-container .responsabilidad-social-title {
+.responsabilidad-social-container .responsabilidad-social-title
+.contact-title {
   color: var(--primary-blue, rgb(24, 62, 103)) !important;
   font-weight: 700 !important;
   visibility: visible !important;

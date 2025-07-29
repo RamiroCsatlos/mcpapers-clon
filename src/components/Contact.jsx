@@ -4,6 +4,7 @@ import contactoTrabajando from "../assets/contactoTrabajando.avif";
 import "./Contact.css";
 import "../styles/forms.css";
 import ContactForm from "./common/ContactForm/ContactForm";
+import "../styles/main.css";
 
 const Contact = () => {
   const {

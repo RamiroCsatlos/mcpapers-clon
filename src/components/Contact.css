@@ -20,6 +20,12 @@
   padding-right: 2vw;
 }
 
+.contact-title {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
 .contact-row {
   display: flex;
   flex-direction: row;
@@ -34,9 +40,10 @@
   width: 50%;
   min-width: 280px;
   max-width: 900px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border-radius: 12px;  
   flex: 2 1 0;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -46,12 +53,9 @@
   max-width: 600px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   padding: 24px;
   flex: 1 1 350px;
   margin: 0 auto;
-}
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   padding: 24px;
   flex: 1 1 0;
 }
@@ -88,7 +92,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 24px;
+  align-items: center;
+  padding: 2rem;
+}
+
+.contact-info-col h3{
+  padding: 1rem 0;
+  font-size: 1.8rem;
+}
+
+.contact-info-col h3, .contact-info-col p {
+  margin: 0;
 }
 
 .contact-map-col {

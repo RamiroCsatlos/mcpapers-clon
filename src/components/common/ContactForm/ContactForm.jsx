@@ -164,7 +164,7 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
 
       <button 
         type="submit" 
-        className="form-submit"
+        className="btn btn-primary" // Usar clase global de botón
         disabled={isLoading}
       >
         {isLoading ? 'Enviando...' : 'Enviar Mensaje'}
