@@ -16,6 +16,7 @@ const Slider = lazy(() => import('./components/Slider'));
 const GaleriaInstagram = lazy(() => import('./components/GaleriaInstagram'));
 const ResponsabilidadSocial = lazy(() => import('./components/ResponsabilidadSocial'));
 import Contact from './components/Contact';
+import CV from './components/CV';
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
           }
         />
         <Route path="/contacto" element={<Contact />} />
+        <Route path="/cv" element={<CV />} />
       </Routes>
       <Footer />
     </>

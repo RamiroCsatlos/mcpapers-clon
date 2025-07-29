@@ -119,7 +119,30 @@ function Header() {
             </li>
             <li><a href="#">Novedades</a></li>
             <li><a href="#">Responsabilidad Social</a></li>
-            <li><Link to="/contacto">Contacto</Link></li>
+            <li className="dropdown">
+              <button
+                className={`dropdown-toggle ${openDropdown === 'contacto' ? 'open' : ''}`}
+                onClick={() => handleDropdown('contacto')}
+                onMouseEnter={() => handleMouseEnter('contacto')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <span className="dropdown-text">Contacto</span>
+              </button>
+              {openDropdown === 'contacto' && (
+                <ul
+                  className="dropdown-menu"
+                  onMouseEnter={() => handleMouseEnter('contacto')}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <li>
+                    <Link to="/contacto" className="dropdown-item">Comunicate con nosotros</Link>
+                  </li>
+                  <li>
+                    <Link to="/cv" className="dropdown-item">Trabajá con nosotros</Link>
+                  </li>
+                </ul>
+              )}
+            </li>
             <li className="dropdown">
               <button
                 className={`dropdown-toggle ${openDropdown === 'idioma' ? 'open' : ''}`}
