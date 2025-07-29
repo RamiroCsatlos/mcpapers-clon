@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../../styles/forms.css";
+import { sendCV } from '../../../utils/api';
 
 const CVForm = () => {
   const [formData, setFormData] = useState({
@@ -53,14 +54,23 @@ const CVForm = () => {
     if (Object.keys(newErrors).length === 0) {
       setIsLoading(true);
       setSubmitStatus(null);
-      // Mostrar datos en consola para depuración
-      console.log('Datos enviados:', formData);
-      // Aquí iría la lógica para enviar el formulario al backend
-      setTimeout(() => {
+      try {
+        // Crear FormData para enviar archivo
+        const data = new FormData();
+        data.append('nombre', formData.nombre);
+        data.append('email', formData.email);
+        data.append('celular', formData.telefono);
+        data.append('mensaje', formData.mensaje);
+        data.append('archivo', formData.archivo);
+        // Enviar al backend
+        await sendCV(data);
+        setSubmitStatus('success');
+        setFormData({ nombre: '', email: '', telefono: '', mensaje: '', archivo: null });
+      } catch (err) {
+        setSubmitStatus('error');
+      } finally {
         setIsLoading(false);
-        setSubmitStatus("success");
-        setFormData({ nombre: "", email: "", telefono: "", mensaje: "", archivo: null });
-      }, 1500);
+      }
     }
   };
 
