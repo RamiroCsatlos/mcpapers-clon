@@ -1,13 +1,19 @@
 import SectionTitle from "./common/SectionTitle/SectionTitle.jsx";
 import CVForm from "./common/CVForm/CVForm.jsx";
-import { useRef, useEffect, useState } from "react";
+import useContactAnimations from "../hooks/useContactAnimations";
+import { useEffect, useState } from "react";
 import "./Contact.css";
 import contactoCV from "../assets/contactoCV.avif";
 
 const CV = () => {
-  const formRef = useRef(null);
+  const {
+    titleRef, titleInView,
+    imgRef, imgInView,
+    formRef, formInView
+  } = useContactAnimations();
   const [imgHeight, setImgHeight] = useState('auto');
 
+  // Sincronizar altura de imagen con el formulario
   useEffect(() => {
     const updateHeight = () => {
       if (formRef.current) {
@@ -17,17 +23,21 @@ const CV = () => {
     updateHeight();
     window.addEventListener('resize', updateHeight);
     return () => window.removeEventListener('resize', updateHeight);
-  }, []);
+  }, [formRef]);
 
   return (
     <section className="contact-section">
       <div className="contact-container">
-        <SectionTitle>Trabajá con nosotros</SectionTitle>
+        <h2 ref={titleRef} className={`contact-title fade-in-up${titleInView ? ' fade-in-visible' : ''}`}>Trabajá con nosotros</h2>
         <div className="contact-row" style={{ flexDirection: "row-reverse" }}>
-          <div className="contact-img">
-            <img src={contactoCV} alt="CV" style={{ width: "100%", height: imgHeight, objectFit: "cover", borderRadius: "12px" }} />
-          </div>
-          <div className="contact-form-container" ref={formRef}>
+          <img
+            ref={imgRef}
+            src={contactoCV}
+            alt="CV"
+            className={`contact-img scale-in${imgInView ? ' fade-in-visible' : ''}`}
+            style={{ width: "100%", height: imgHeight, objectFit: "cover", borderRadius: "12px" }}
+          />
+          <div ref={formRef} className={`contact-form-container scale-in${formInView ? ' fade-in-visible' : ''}`}>
             <CVForm />
           </div>
         </div>
