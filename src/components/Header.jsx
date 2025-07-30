@@ -52,13 +52,15 @@ function Header() {
           <ul>
             <li><a href="#">Nosotros</a></li>
             <li className="dropdown">
-              <div className="dropdown-toggle-wrapper">
+              <div
+                className="dropdown-toggle-wrapper"
+                onMouseEnter={() => handleMouseEnter('productos')}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Link to="/productos" className="dropdown-text navbar-link">Productos</Link>
                 <button
                   className={`dropdown-toggle ${openDropdown === 'productos' ? 'open' : ''}`}
                   onClick={() => handleDropdown('productos')}
-                  onMouseEnter={() => handleMouseEnter('productos')}
-                  onMouseLeave={handleMouseLeave}
                   aria-label="Abrir menú de productos"
                 />
               </div>
@@ -68,11 +70,6 @@ function Header() {
                   onMouseEnter={() => handleMouseEnter('productos')}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <li>
-                    <Link to="/productos" className="dropdown-item">
-                      Ver todos los productos
-                    </Link>
-                  </li>
                   <li>
                     <Link to="/bolsas-flat" className="dropdown-item">
                       Bolsas Flat
@@ -92,14 +89,18 @@ function Header() {
               )}
             </li>
             <li className="dropdown">
-              <button
-                className={`dropdown-toggle ${openDropdown === 'equipamiento' ? 'open' : ''}`}
-                onClick={() => handleDropdown('equipamiento')}
+              <div
+                className="dropdown-toggle-wrapper"
                 onMouseEnter={() => handleMouseEnter('equipamiento')}
                 onMouseLeave={handleMouseLeave}
               >
-                <span className="dropdown-text">Equipamiento</span>
-              </button>
+                <a href="#equipamiento" className="dropdown-text navbar-link">Equipamiento</a>
+                <button
+                  className={`dropdown-toggle ${openDropdown === 'equipamiento' ? 'open' : ''}`}
+                  onClick={() => handleDropdown('equipamiento')}
+                  aria-label="Abrir menú de equipamiento"
+                />
+              </div>
               {openDropdown === 'equipamiento' && (
                 <ul
                   className="dropdown-menu"
@@ -127,14 +128,18 @@ function Header() {
             <li><a href="#">Novedades</a></li>
             <li><a href="#">Responsabilidad Social</a></li>
             <li className="dropdown">
-              <button
-                className={`dropdown-toggle ${openDropdown === 'contacto' ? 'open' : ''}`}
-                onClick={() => handleDropdown('contacto')}
+              <div
+                className="dropdown-toggle-wrapper"
                 onMouseEnter={() => handleMouseEnter('contacto')}
                 onMouseLeave={handleMouseLeave}
               >
-                <span className="dropdown-text">Contacto</span>
-              </button>
+                <a href="#contacto" className="dropdown-text navbar-link">Contacto</a>
+                <button
+                  className={`dropdown-toggle ${openDropdown === 'contacto' ? 'open' : ''}`}
+                  onClick={() => handleDropdown('contacto')}
+                  aria-label="Abrir menú de contacto"
+                />
+              </div>
               {openDropdown === 'contacto' && (
                 <ul
                   className="dropdown-menu"
@@ -151,14 +156,18 @@ function Header() {
               )}
             </li>
             <li className="dropdown">
-              <button
-                className={`dropdown-toggle ${openDropdown === 'idioma' ? 'open' : ''}`}
-                onClick={() => handleDropdown('idioma')}
+              <div
+                className="dropdown-toggle-wrapper"
                 onMouseEnter={() => handleMouseEnter('idioma')}
                 onMouseLeave={handleMouseLeave}
               >
-                <span className="dropdown-text">Idioma</span>
-              </button>
+                <a href="#idioma" className="dropdown-text navbar-link">Idioma</a>
+                <button
+                  className={`dropdown-toggle ${openDropdown === 'idioma' ? 'open' : ''}`}
+                  onClick={() => handleDropdown('idioma')}
+                  aria-label="Abrir menú de idioma"
+                />
+              </div>
               {openDropdown === 'idioma' && (
                 <ul
                   className="dropdown-menu"
