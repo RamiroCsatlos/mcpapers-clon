@@ -72,14 +72,14 @@ function Header() {
                     </Link>
                   </li>
                   <li>
-                    <a href="#" className="dropdown-item">
+                    <Link to="/bolsas-cuadrado" className="dropdown-item">
                       Bolsas Fondo Cuadrado
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="dropdown-item">
+                    <Link to="/laminas" className="dropdown-item">
                       Laminas
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}

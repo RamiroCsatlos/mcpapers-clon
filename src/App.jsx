@@ -18,6 +18,7 @@ const ResponsabilidadSocial = lazy(() => import('./components/ResponsabilidadSoc
 import Contact from './components/Contact';
 import CV from './components/CV';
 import BolsasFlat from './pages/BolsasFlat';
+import BolsasCuadrado from './pages/BolsasCuadrado';
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
         <Route path="/contacto" element={<Contact />} />
         <Route path="/cv" element={<CV />} />
         <Route path="/bolsas-flat" element={<BolsasFlat />} />
+        <Route path="/bolsas-cuadrado" element={<BolsasCuadrado />} />
       </Routes>
       <Footer />
     </>
