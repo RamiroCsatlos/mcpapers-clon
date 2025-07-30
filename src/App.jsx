@@ -19,6 +19,7 @@ import Contact from './components/Contact';
 import CV from './components/CV';
 import BolsasFlat from './pages/BolsasFlat';
 import BolsasCuadrado from './pages/BolsasCuadrado';
+import Laminas from './pages/Laminas';
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
         <Route path="/cv" element={<CV />} />
         <Route path="/bolsas-flat" element={<BolsasFlat />} />
         <Route path="/bolsas-cuadrado" element={<BolsasCuadrado />} />
+        <Route path="/laminas" element={<Laminas />} />
       </Routes>
       <Footer />
     </>
