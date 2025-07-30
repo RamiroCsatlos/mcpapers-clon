@@ -15,21 +15,24 @@ const products = [
     images: [
       bolsasFondoFlatBobinas,
       bolsasFondoFlatArmadas
-    ]
+    ],
+    link: '/mcpapers-clon/bolsas-flat'
   },
   {
     title: 'Bolsas Fondo\nCuadrado',
     images: [
       bolsaCuadrada1,
       bolsaCuadrada2
-    ]
+    ],
+    link: '/mcpapers-clon/bolsas-cuadrado'
   },
   {
     title: 'Láminas',
     images: [
       laminasBobinas,
       laminas2
-    ]
+    ],
+    link: '/mcpapers-clon/laminas'
   }
 ];
 
@@ -52,28 +55,20 @@ function ProductsSection() {
               <div className="product-images">
                 {/* Primera imagen */}
                 <div className={`image-wrapper first-image first-image-${idx}`}>
-                  {prod.title === 'Bolsas Flat' ? (
-                    <a href="/mcpapers-clon/bolsas-flat" className="image-link">
-                      <img src={prod.images[0]} alt={prod.title} />
-                    </a>
-                  ) : (
+                  <a href={prod.link} className="image-link">
                     <img src={prod.images[0]} alt={prod.title} />
-                  )}
+                  </a>
                 </div>
                 {/* Lado derecho: título+botón y segunda imagen */}
                 <div className="product-right">
                   <div className="product-info">
                     <h3>{prod.title}</h3>
-                    <a href="/mcpapers-clon/bolsas-flat" className="see-more-btn">Ver más</a>
+                    <a href={prod.link} className="see-more-btn">Ver más</a>
                   </div>
                   <div className={`image-wrapper second-image second-image-${idx}`}>
-                    {prod.title === 'Bolsas Flat' ? (
-                      <a href="/mcpapers-clon/bolsas-flat" className="image-link">
-                        <img src={prod.images[1]} alt={prod.title} />
-                      </a>
-                    ) : (
+                    <a href={prod.link} className="image-link">
                       <img src={prod.images[1]} alt={prod.title} />
-                    )}
+                    </a>
                   </div>
                 </div>
               </div>
