@@ -9,12 +9,24 @@ const Lightbox = ({ images, open, current, setOpen, setCurrent }) => {
   const next = () => setCurrent(current === images.length - 1 ? 0 : current + 1);
   return (
     <div className="lightbox-overlay" onClick={handleClose}>
-      <div className="lightbox-content" onClick={e => e.stopPropagation()}>
-        <button className="lightbox-close" onClick={handleClose}>&times;</button>
-        <button className="lightbox-prev" onClick={prev}>&lt;</button>
-        <img src={images[current].src} alt={images[current].alt} className="lightbox-img" loading="lazy" />
-        <button className="lightbox-next" onClick={next}>&gt;</button>
-      </div>
+      <button className="lightbox-close" onClick={handleClose}>&times;</button>
+      <button className="lightbox-prev" onClick={e => { e.stopPropagation(); prev(); }}>&lt;</button>
+      <img
+        key={current}
+        src={images[current].src}
+        alt={images[current].alt}
+        className="lightbox-img"
+        loading="lazy"
+        style={{
+          maxWidth: '90vw',
+          maxHeight: '90vh',
+          margin: 'auto',
+          display: 'block',
+          boxShadow: 'none',
+          background: 'none',
+        }}
+      />
+      <button className="lightbox-next" onClick={e => { e.stopPropagation(); next(); }}>&gt;</button>
     </div>
   );
 };

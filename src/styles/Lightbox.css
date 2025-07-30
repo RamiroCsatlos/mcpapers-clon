@@ -2,40 +2,75 @@
 .lightbox-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.65);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.5s;
 }
-.lightbox-content {
-  position: relative;
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.lightbox-img {
-  max-width: 500px;
-  max-height: 70vh;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-}
-.lightbox-close, .lightbox-prev, .lightbox-next {
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #2e7d32;
+  font-size: 2.5rem;
+  color: #fff;
   cursor: pointer;
-  margin: 0 1rem;
+  z-index: 1010;
   transition: color 0.2s;
 }
-.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
-  color: #1b5e20;
+.lightbox-close:hover {
+  color: #ff5252;
+}
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1010;
+  transition: color 0.2s;
+}
+.lightbox-prev {
+  left: 2rem;
+}
+.lightbox-next {
+  right: 2rem;
+}
+/* Animación de transición para la imagen */
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: none;
+  background: none;
+  opacity: 0;
+  transform: scale(0.98);
+  animation: lightboxImgFadeIn 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes lightboxImgFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Eliminar borde al hacer focus en las flechas */
+.lightbox-prev:focus, .lightbox-next:focus {
+  outline: none;
+  box-shadow: none;
 }
 @keyframes fadeIn {
   from { opacity: 0; }
