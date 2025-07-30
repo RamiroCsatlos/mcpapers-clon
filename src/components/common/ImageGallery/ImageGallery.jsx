@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import useInViewAnimation from '../../hooks/useInViewAnimation';
+import useInViewAnimation from '../../../hooks/useInViewAnimation';
 
 /**
  * Componente reutilizable para galerías de imágenes

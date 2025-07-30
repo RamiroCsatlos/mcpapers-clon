@@ -17,6 +17,7 @@ const GaleriaInstagram = lazy(() => import('./components/GaleriaInstagram'));
 const ResponsabilidadSocial = lazy(() => import('./components/ResponsabilidadSocial'));
 import Contact from './components/Contact';
 import CV from './components/CV';
+import BolsasFlat from './pages/BolsasFlat';
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
         />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/cv" element={<CV />} />
+        <Route path="/bolsas-flat" element={<BolsasFlat />} />
       </Routes>
       <Footer />
     </>
