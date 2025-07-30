@@ -13,25 +13,25 @@ const instagramImages = [
   {
     id: 1,
     image: instagram1,
-    link: 'https://instagram.com/p/example1',
+    link: 'https://www.instagram.com/mcpapersargentina/p/DLVeerDP7rr/',
     alt: 'Post de Instagram 1'
   },
   {
     id: 2,
     image: instagram2,
-    link: 'https://instagram.com/p/example2',
+    link: 'https://www.instagram.com/mcpapersargentina/p/DCXMF8yvErH/',
     alt: 'Post de Instagram 2'
   },
   {
     id: 3,
     image: instagram3,
-    link: 'https://instagram.com/p/example3',
+    link: 'https://www.instagram.com/mcpapersargentina/p/C_TiD8CSugd/',
     alt: 'Post de Instagram 3'
   },
   {
     id: 4,
     image: instagram4,
-    link: 'https://instagram.com/p/example4',
+    link: 'https://www.instagram.com/mcpapersargentina/p/C_OMTSfOfcS/',
     alt: 'Post de Instagram 4'
   }
 ];

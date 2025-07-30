@@ -12,7 +12,7 @@ function Footer() {
 
         <div className="social-links">
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/mcpapersargentina/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link instagram"
@@ -21,7 +21,7 @@ function Footer() {
             <Instagram size={24} />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/company/mc-paper-s-argentina-s-a" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link linkedin"
@@ -30,7 +30,7 @@ function Footer() {
             <Linkedin size={24} />
           </a>
           <a 
-            href="https://x.com" 
+            href="https://x.com/Mcpapersar72677" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link twitter"
