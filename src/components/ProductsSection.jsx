@@ -1,6 +1,7 @@
 import './ProductsSection.css';
 import '../styles/ScrollAnimations.css';
 import useInViewAnimation from '../hooks/useInViewAnimation';
+import { Link } from 'react-router-dom';
 
 import bolsasFondoFlatBobinas from '../assets/bolsasFondoFlatBobinas.avif';
 import bolsasFondoFlatArmadas from '../assets/bolsasFondoFlatArmadas.avif';
@@ -42,11 +43,11 @@ function ProductsSection() {
 
   return (
     <section className="products-section">
-      <a href="/ruta-del-producto" className="title-link">
-       <h2 ref={titleRef} className={`products-title fade-in-up ${titleAnimClass}`}>
-         Productos
-       </h2>
-      </a>
+      <Link to="/productos" className="title-link">
+        <h2 ref={titleRef} className={`products-title fade-in-up ${titleAnimClass}`}>
+          Productos
+        </h2>
+      </Link>
       <div className="products-list">
         {products.map((prod, idx) => {
           const { ref: cardRef, className: cardAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });

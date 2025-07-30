@@ -20,6 +20,7 @@ import CV from './components/CV';
 import BolsasFlat from './pages/BolsasFlat';
 import BolsasCuadrado from './pages/BolsasCuadrado';
 import Laminas from './pages/Laminas';
+import Productos from './pages/Productos';
 
 function App() {
   return (
@@ -75,6 +76,11 @@ function App() {
         <Route path="/bolsas-flat" element={<BolsasFlat />} />
         <Route path="/bolsas-cuadrado" element={<BolsasCuadrado />} />
         <Route path="/laminas" element={<Laminas />} />
+        <Route path="/productos" element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <Productos />
+          </Suspense>
+        } />
       </Routes>
       <Footer />
     </>

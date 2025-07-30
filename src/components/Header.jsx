@@ -52,20 +52,27 @@ function Header() {
           <ul>
             <li><a href="#">Nosotros</a></li>
             <li className="dropdown">
-              <button
-                className={`dropdown-toggle ${openDropdown === 'productos' ? 'open' : ''}`}
-                onClick={() => handleDropdown('productos')}
-                onMouseEnter={() => handleMouseEnter('productos')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <span className="dropdown-text">Productos</span>
-              </button>
+              <div className="dropdown-toggle-wrapper">
+                <Link to="/productos" className="dropdown-text navbar-link">Productos</Link>
+                <button
+                  className={`dropdown-toggle ${openDropdown === 'productos' ? 'open' : ''}`}
+                  onClick={() => handleDropdown('productos')}
+                  onMouseEnter={() => handleMouseEnter('productos')}
+                  onMouseLeave={handleMouseLeave}
+                  aria-label="Abrir menú de productos"
+                />
+              </div>
               {openDropdown === 'productos' && (
                 <ul
                   className="dropdown-menu"
                   onMouseEnter={() => handleMouseEnter('productos')}
                   onMouseLeave={handleMouseLeave}
                 >
+                  <li>
+                    <Link to="/productos" className="dropdown-item">
+                      Ver todos los productos
+                    </Link>
+                  </li>
                   <li>
                     <Link to="/bolsas-flat" className="dropdown-item">
                       Bolsas Flat
