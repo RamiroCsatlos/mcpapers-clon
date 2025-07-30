@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { bolsasFlatImages } from '../constants/galleryImages';
 import Lightbox from '../components/common/Lightbox';
 import '../styles/BolsasFlat.css';
+import '../styles/main.css';
 
 const BolsasFlat = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -18,25 +19,26 @@ const BolsasFlat = () => {
 
   return (
     <div className="bolsas-flat-page">
-      <Header />
       <main>
-        <h1 className="bolsas-flat-title">Bolsas Flat</h1>
-        <div className="bolsas-flat-gallery gallery gallery-2">
-          {bolsasFlatImages.map((img, idx) => (
-            <div
-              key={idx}
-              className="gallery-item"
-              onClick={() => handleImageClick(idx)}
-              style={{ cursor: 'pointer' }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="gallery-image"
-                loading="lazy"
-              />
-            </div>
-          ))}
+        <h1 className="page-title">Bolsas Flat</h1>
+        <div className="bolsas-flat-gallery-wrapper">
+          <div className="bolsas-flat-gallery gallery gallery-2">
+            {bolsasFlatImages.map((img, idx) => (
+              <div
+                key={idx}
+                className="gallery-item"
+                onClick={() => handleImageClick(idx)}
+                style={{ cursor: 'pointer' }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="gallery-image"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
         {lightboxOpen && (
           <Lightbox
@@ -48,7 +50,6 @@ const BolsasFlat = () => {
           />
         )}
       </main>
-      <Footer />
     </div>
   );
 };

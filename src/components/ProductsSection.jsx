@@ -52,20 +52,28 @@ function ProductsSection() {
               <div className="product-images">
                 {/* Primera imagen */}
                 <div className={`image-wrapper first-image first-image-${idx}`}>
-                  <a href="/ruta-del-producto" className="image-link">
+                  {prod.title === 'Bolsas Flat' ? (
+                    <a href="/mcpapers-clon/bolsas-flat" className="image-link">
+                      <img src={prod.images[0]} alt={prod.title} />
+                    </a>
+                  ) : (
                     <img src={prod.images[0]} alt={prod.title} />
-                  </a>
+                  )}
                 </div>
                 {/* Lado derecho: título+botón y segunda imagen */}
                 <div className="product-right">
                   <div className="product-info">
                     <h3>{prod.title}</h3>
-                    <button className="see-more-btn">Ver más</button>
+                    <a href="/mcpapers-clon/bolsas-flat" className="see-more-btn">Ver más</a>
                   </div>
                   <div className={`image-wrapper second-image second-image-${idx}`}>
-                    <a href="/ruta-del-producto" className="image-link">
+                    {prod.title === 'Bolsas Flat' ? (
+                      <a href="/mcpapers-clon/bolsas-flat" className="image-link">
+                        <img src={prod.images[1]} alt={prod.title} />
+                      </a>
+                    ) : (
                       <img src={prod.images[1]} alt={prod.title} />
-                    </a>
+                    )}
                   </div>
                 </div>
               </div>

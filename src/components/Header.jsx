@@ -67,9 +67,9 @@ function Header() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <li>
-                    <a href="#" className="dropdown-item">
+                    <Link to="/bolsas-flat" className="dropdown-item">
                       Bolsas Flat
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="#" className="dropdown-item">
