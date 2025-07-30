@@ -11,7 +11,15 @@ const ArrowButton = ({ direction, onClick, className = '', ariaLabel }) => {
       tabIndex={0}
       type="button"
     >
-      {direction === 'left' ? <span>&lt;</span> : <span>&gt;</span>}
+      {direction === 'left' ? (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="22,6 10,16 22,26" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        </svg>
+      ) : (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="10,6 22,16 10,26" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        </svg>
+      )}
     </button>
   );
 };
