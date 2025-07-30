@@ -1,18 +1,7 @@
-/* Lightbox styles para BolsasFlat */
-.lightbox-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.65);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.5s;
-}
-.lightbox-close {
+.arrow-btn {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   font-size: 2.5rem;
@@ -20,11 +9,25 @@
   cursor: pointer;
   z-index: 1010;
   transition: color 0.2s;
+  outline: none;
+  box-shadow: none;
+  padding: 0.2em 0.6em;
 }
-.lightbox-close:hover {
+.arrow-btn-left {
+  left: 2rem;
+}
+.arrow-btn-right {
+  right: 2rem;
+}
+.arrow-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.arrow-btn:hover {
   color: #ff5252;
 }
-.lightbox-prev, .lightbox-next {
+
+.prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -36,21 +39,16 @@
   z-index: 1010;
   transition: color 0.2s;
 }
-.lightbox-prev {
+.prev {
   left: 2rem;
 }
-.lightbox-next {
+.next {
     opacity: 1;
     transform: scale(1);
   }
 
 /* Eliminar borde al hacer focus en las flechas */
-.lightbox-prev:focus, .lightbox-next:focus {
+.prev:focus, .next:focus {
   outline: none;
   box-shadow: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }

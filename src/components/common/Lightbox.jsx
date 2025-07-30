@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/Lightbox.css';
+import ArrowButton from './ArrowButton';
 
 const Lightbox = ({ images, open, current, setOpen, setCurrent }) => {
   if (!open) return null;
@@ -10,7 +11,7 @@ const Lightbox = ({ images, open, current, setOpen, setCurrent }) => {
   return (
     <div className="lightbox-overlay" onClick={handleClose}>
       <button className="lightbox-close" onClick={handleClose}>&times;</button>
-      <button className="lightbox-prev" onClick={e => { e.stopPropagation(); prev(); }}>&lt;</button>
+      <ArrowButton direction="left" onClick={e => { e.stopPropagation(); prev(); }} className="lightbox-prev" ariaLabel="Anterior" />
       <img
         key={current}
         src={images[current].src}
@@ -26,7 +27,7 @@ const Lightbox = ({ images, open, current, setOpen, setCurrent }) => {
           background: 'none',
         }}
       />
-      <button className="lightbox-next" onClick={e => { e.stopPropagation(); next(); }}>&gt;</button>
+      <ArrowButton direction="right" onClick={e => { e.stopPropagation(); next(); }} className="lightbox-next" ariaLabel="Siguiente" />
     </div>
   );
 };

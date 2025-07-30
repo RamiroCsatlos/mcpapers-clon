@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Slider.css';
+import ArrowButton from './common/ArrowButton';
 import sliderBobina from '../assets/sliderBobina.webp';
 import sliderFabrica from '../assets/sliderFabrica.webp';
 
@@ -103,12 +104,8 @@ const Slider = () => {
       </div>
 
       {/* Navigation arrows */}
-      <button className="slider-arrow slider-arrow-left" onClick={prevSlide}>
-        &lt;
-      </button>
-      <button className="slider-arrow slider-arrow-right" onClick={nextSlide}>
-        &gt;
-      </button>
+      <ArrowButton direction="left" onClick={prevSlide} className="slider-arrow slider-arrow-left" ariaLabel="Anterior" />
+      <ArrowButton direction="right" onClick={nextSlide} className="slider-arrow slider-arrow-right" ariaLabel="Siguiente" />
     </div>
   );
 };
