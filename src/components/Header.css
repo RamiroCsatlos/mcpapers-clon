@@ -52,6 +52,25 @@
 }
 
 /* NAVBAR */
+/* Quitar borde azul en flechas del header */
+button.dropdown-toggle,
+button.dropdown-toggle:focus,
+button.dropdown-toggle:hover,
+button.dropdown-toggle:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  border-radius: 0 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+.dropdown-toggle:focus,
+.dropdown-toggle:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .navbar {
   display: flex;
   flex: 1;

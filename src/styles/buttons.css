@@ -26,7 +26,7 @@
   transform: scale(1.1);
   background: #2985d5;
   color: white;
-  border-color: #2985d5;
+  /* border-color: #2985d5; */
 }
 
 /* Especificidad adicional si es necesaria */
@@ -53,5 +53,5 @@
   transform: scale(1.1);
   background: #2985d5;
   color: white;
-  border-color: #2985d5;
+  /* border-color: #2985d5; */
 }
