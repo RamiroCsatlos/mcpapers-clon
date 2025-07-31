@@ -50,7 +50,9 @@ function Header() {
 
         <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
           <ul>
-            <li><a href="#">Nosotros</a></li>
+            <li>
+              <Link to="/nosotros" className="navbar-link">Nosotros</Link>
+            </li>
             <li className="dropdown">
               <div
                 className="dropdown-toggle-wrapper"
