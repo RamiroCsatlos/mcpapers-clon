@@ -297,7 +297,7 @@
     flex: none; /* En mobile no comprimir */
   }
 
-  .navbar a,
+  /* .navbar a, */
   .dropdown-toggle {
     display: flex;
     align-items: center;
@@ -312,22 +312,34 @@
     border: none;
     color: #333;
     cursor: pointer;
+    position: relative;
+    left: 20%; /* Alinea al centro del contenedor */
+  }
+
+  .dropdown-toggle-wrapper {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
   }
 
   .dropdown {
     overflow: visible !important;
     z-index: auto !important;
-    display: flex !important; /* Mantener flex para centrado */
+    display: flex !important;
     width: 100% !important;
     align-items: center !important;
     justify-content: center !important;
-    flex-direction: column !important; /* Columna para dropdown abajo */
+    flex-direction: column !important; /* Cambia a row para centrar como los enlaces normales */
   }
 
   .dropdown-text {
-    margin-right: 6px !important;
-    width: auto !important;
+    margin: 0 auto;
+    margin-right: 0 !important;
+    width: 100% !important;
     text-align: center !important;
+    justify-content: center;
+    width: 100%;
   }
 
   /* Reposiciona el triángulo para móvil */
@@ -355,15 +367,22 @@
     text-align: center !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 0.5rem 0 !important;
+    padding: 0rem 0 !important;
     margin: 0 !important;
     left: unset !important;
     right: unset !important;
     transform: none !important;
-    gap: 8px !important; /* Gap para separar elementos */
+    gap: 0px !important; /* Gap para separar elementos */
     z-index: auto !important;
     top: auto !important;
     align-items: center !important; /* Centra los elementos */
+  }
+
+  .dropdown-menu li{
+    height: 1.5rem !important;
+    align-items: center; /* Asegura que los elementos no tengan altura mínima */
+    display: flex; /* Asegura que los elementos se alineen correctamente */
+    justify-content: center; /* Centra el contenido dentro del li */
   }
 
   .logo-header {
