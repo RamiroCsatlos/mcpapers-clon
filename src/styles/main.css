@@ -438,12 +438,21 @@ a:focus {
 .products-section .products-title,
 .equipamiento-section .equipamiento-title,
 .responsabilidad-social-container .responsabilidad-social-title,
-.contact-title, .page-title {
+.contact-title, .section-title {
   color: var(--primary-blue, rgb(24, 62, 103)) !important;
   font-weight: 700 !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
+
+.h3-title {
+  color: rgb(23, 107, 224);
+}
+
+.h4-title {
+  color: rgb(23, 107, 224);
+}
+
 
 /* Instagram tiene fondo rosa, necesita texto blanco */
 .instagram-section .instagram-title {
