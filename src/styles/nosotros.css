@@ -1,13 +1,3 @@
-@media (max-width: 768px) {
-  .trayectoriaH-image {
-    max-width: 270px !important;
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-}
 .nosotros-section {
     max-width: 90vw;
     margin: 0 auto;
@@ -17,5 +7,49 @@
   margin-top: 0;
   text-decoration: none;
   background-color: #f0f0f0;
-  color: rgb(23, 107, 224) !important;
+  color: rgb(23, 107, 224);
+}
+
+.filosofia-image {
+  padding: 1.5rem 0;
+  max-width: 50vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h3-title {
+  text-decoration: underline;
+}
+
+.item-innovacion .h3-title, .item-innovacion {
+  color: orange;
+}
+
+.item-compromiso .h3-title, .item-compromiso {
+  color: blue;
+}
+
+.item-valores .h3-title, .item-valores {
+  color: green;
+}
+
+.item-especializacion .h3-title, .item-especializacion {
+  color: magenta;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .trayectoriaH-image {
+    max-width: 270px !important;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
