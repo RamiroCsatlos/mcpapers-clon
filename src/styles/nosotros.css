@@ -10,6 +10,10 @@
   color: rgb(23, 107, 224);
 }
 
+.trayectoria-image {
+  margin: 0 auto;
+}
+
 .filosofia-image {
   padding: 1.5rem 0;
   max-width: 50vw;
@@ -38,18 +42,29 @@
   color: magenta;
 }
 
-
-
-
-
+.innovacion-list-columns {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.innovacion-list-columns ul {
+  flex: 1;
+  list-style: disc inside;
+  padding-left: 0;
+}
 
 @media (max-width: 768px) {
-  .trayectoriaH-image {
+  .trayectoria-image {
     max-width: 270px !important;
     width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+
+  .innovacion-list-columns {
+  flex-direction: column;
+  gap: 0rem;
   }
 }

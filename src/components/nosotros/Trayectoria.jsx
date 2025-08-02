@@ -48,7 +48,7 @@ export default function Trayectoria() {
         ref={imgRef}
         src={isMobile ? trayectoriaV : trayectoriaH}
         alt="Trayectoria"
-        className={`trayectoriaH-image fade-in-up${imgInView ? ' fade-in-visible' : ''}`}
+        className={`trayectoria-image fade-in-up${imgInView ? ' fade-in-visible' : ''}`}
       />
       <TimelineItem
         title="INICIÓ DE MC PAPER´S"
