@@ -1,18 +1,3 @@
-        <div>
-          {/* Garabatos extra suaves y randoms */}
-          <svg className="doodle doodle-7" viewBox="0 0 80 40" fill="none">
-            <path d="M10,20 Q40,10 70,20 Q40,30 10,20 Z" stroke="#eaf7e2" stroke-width="3" fill="none"/>
-          </svg>
-          <svg className="doodle doodle-8" viewBox="0 0 60 60" fill="none">
-            <ellipse cx="30" cy="30" rx="25" ry="10" stroke="#d6f5d6" stroke-width="2.5" fill="none"/>
-          </svg>
-          <svg className="doodle doodle-9" viewBox="0 0 100 40" fill="none">
-            <path d="M10,20 Q30,5 50,20 Q70,35 90,20" stroke="#f5f3e7" stroke-width="2.5" fill="none"/>
-          </svg>
-          <svg className="doodle doodle-10" viewBox="0 0 50 50" fill="none">
-            <circle cx="25" cy="25" r="18" stroke="#eaf7e2" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
 import './GreenerPack.css';
 import './ScrollAnimations.css';
 import { useInView } from 'react-intersection-observer';

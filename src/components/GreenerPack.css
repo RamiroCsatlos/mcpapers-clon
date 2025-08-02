@@ -10,6 +10,16 @@
   justify-content: center;
 }
 
+.innovation-section {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .greenerpack-bg {
   position: absolute;
