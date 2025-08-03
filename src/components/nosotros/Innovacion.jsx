@@ -88,9 +88,10 @@ export default function Innovacion() {
           <circle cx="25" cy="25" r="18" stroke="#eaf7e2" strokeWidth="2" fill="none"/>
         </svg>
       </div>
+      <section className="nosotros-section">
       <h2
         ref={h2Ref}
-        className={`innovacion-title fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
+        className={`innovacion-title section-title fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
       >
         Innovación
       </h2>
@@ -99,21 +100,21 @@ export default function Innovacion() {
           ref={img1Ref}
           src={innovacionImg1}
           alt="Innovación principal"
-          className={`innovacion-img fade-in-up${img1InView ? ' fade-in-visible' : ''}`}
+          className={`innovacion-img-1 fade-in-up${img1InView ? ' fade-in-visible' : ''}`}
         />
       </div>
       <div
         ref={textRef}
         className={`innovacion-text fade-in-up${textInView ? ' fade-in-visible' : ''}`}
       >
-        Texto descriptivo sobre la innovación y el compromiso de la empresa con la mejora continua, tecnología y sostenibilidad.
+        Un coating interno para los wraps y flat bags que se realiza con ceras vegetales biodegradables 100% y cumple con las siguientes condiciones:
       </div>
       <div className="innovacion-img-container">
         <img
           ref={img2Ref}
           src={innovacionImg2}
           alt="Innovación secundaria"
-          className={`innovacion-img fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+          className={`innovacion-img-2 fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
         />
       </div>
       <div
@@ -133,6 +134,7 @@ export default function Innovacion() {
           </ul>
         </div>
       </div>
+      </section>
     </section>
   );
 }
