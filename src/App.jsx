@@ -23,6 +23,9 @@ import Laminas from './pages/Laminas';
 import Productos from './pages/Productos';
 import Nosotros from './pages/Nosotros';
 import EquipamientoPage from './pages/Equipamiento';
+import Tecnologia from './pages/Tecnologia';
+import Tecnica from './pages/Tecnica';  
+import ControlDeCalidad from './pages/ControlDeCalidad';
 
 function App() {
   return (
@@ -91,6 +94,9 @@ function App() {
           </Suspense>
         
         } />
+        <Route path="/tecnologia" element={<Tecnologia />} />
+        <Route path="/tecnica" element={<Tecnica />} />
+        <Route path="/control-calidad" element={<ControlDeCalidad />} />
       </Routes>
       <Footer />
     </>

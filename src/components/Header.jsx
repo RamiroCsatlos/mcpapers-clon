@@ -110,19 +110,19 @@ function Header() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <li>
-                    <a href="#" className="dropdown-item">
+                    <Link to="/tecnologia" className="dropdown-item">
                       Tecnología
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="dropdown-item">
+                    <Link to="/tecnica" className="dropdown-item">
                       Técnica
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="dropdown-item">
+                    <Link to="/control-calidad" className="dropdown-item">
                       Control de Calidad
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}
