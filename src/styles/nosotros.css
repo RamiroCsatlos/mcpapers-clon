@@ -1,3 +1,17 @@
+/* Centrado de la imagen en Certificaciones */
+.certificaciones-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.certificaciones-img {
+  max-width: 80vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 /* Solapamiento de imágenes en mobile para Innovacion */
 .innovacion-img-mobile-overlap {
   position: relative;
@@ -171,6 +185,9 @@
 
 
 @media (max-width: 768px) {
+  .certificaciones-img {
+    max-width: 320px;
+  }
   .trayectoria-image {
     max-width: 270px !important;
     width: 100%;
