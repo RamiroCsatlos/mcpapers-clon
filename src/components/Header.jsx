@@ -96,7 +96,7 @@ function Header() {
                 onMouseEnter={() => handleMouseEnter('equipamiento')}
                 onMouseLeave={handleMouseLeave}
               >
-                <a href="#equipamiento" className="dropdown-text navbar-link">Equipamiento</a>
+                <Link to="/equipamiento" className="dropdown-text navbar-link">Equipamiento</Link>
                 <button
                   className={`dropdown-toggle ${openDropdown === 'equipamiento' ? 'open' : ''}`}
                   onClick={() => handleDropdown('equipamiento')}

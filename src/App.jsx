@@ -22,6 +22,7 @@ import BolsasCuadrado from './pages/BolsasCuadrado';
 import Laminas from './pages/Laminas';
 import Productos from './pages/Productos';
 import Nosotros from './pages/Nosotros';
+import EquipamientoPage from './pages/Equipamiento';
 
 function App() {
   return (
@@ -81,6 +82,12 @@ function App() {
         <Route path="/productos" element={
           <Suspense fallback={<LoadingSpinner />}>
             <Productos />
+          </Suspense>
+        
+        } />
+        <Route path="/equipamiento" element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <EquipamientoPage />
           </Suspense>
         
         } />
