@@ -1,3 +1,58 @@
+/* Marcas: fila en desktop, columna en mobile */
+.marcas-img-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.marca-img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+}
+@media (max-width: 768px) {
+  .marcas-img-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .marca-img {
+    max-width: 180px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    background: transparent;
+    margin-bottom: 1.5rem;
+  }
+  .marca-img:last-child {
+    margin-bottom: 0;
+  }
+}
+.marcas-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .marcas-img-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .marca-img {
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* Centrado de la imagen en Certificaciones */
 .certificaciones-img-container {
   display: flex;
