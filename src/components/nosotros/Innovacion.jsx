@@ -6,8 +6,10 @@ import useInViewAnimation from '../../hooks/useInViewAnimation';
 import '../../styles/ScrollAnimations.css';
 import '../../components/GreenerPack.css';
 
-import innovacionImg1 from '../../assets/greenerpackLogoColor.avif'; // Cambia por tu imagen
-import innovacionImg2 from '../../assets/logosWebGreenerpack.avif'; // Cambia por tu imagen
+import innovacionImg1 from '../../assets/greenerpackLogoColor.avif'; 
+import innovacionImg2 from '../../assets/logosWebGreenerpack.avif'; 
+import innovacionImg3 from '../../assets/logosWebGreenerpack1.avif'; 
+import innovacionImg4 from '../../assets/logosWebGreenerpack2.avif'; 
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
@@ -110,12 +112,27 @@ export default function Innovacion() {
         Un coating interno para los wraps y flat bags que se realiza con ceras vegetales biodegradables 100% y cumple con las siguientes condiciones:
       </div>
       <div className="innovacion-img-container">
-        <img
-          ref={img2Ref}
-          src={innovacionImg2}
-          alt="Innovación secundaria"
-          className={`innovacion-img-2 fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
-        />
+        {isMobile ? (
+          <div className="innovacion-img-mobile-overlap">
+            <img
+              src={innovacionImg3}
+              alt="Innovación secundaria mobile 1"
+              className={`innovacion-img-2 fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+            />
+            <img
+              src={innovacionImg4}
+              alt="Innovación secundaria mobile 2"
+              className={`innovacion-img-2 innovacion-img-2-overlap fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+            />
+          </div>
+        ) : (
+          <img
+            ref={img2Ref}
+            src={innovacionImg2}
+            alt="Innovación secundaria"
+            className={`innovacion-img-2 fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+          />
+        )}
       </div>
       <div
         ref={listRef}
