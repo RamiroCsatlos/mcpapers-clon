@@ -61,10 +61,8 @@ export default function Tecnologia() {
           >
             <h3 className="tecnologia-subtitle">{sec.title}</h3>
             <p className="tecnologia-text">{sec.text}</p>
-            <div className="tecnologia-imgs-row">
-              <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnologia-img" />
-              <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnologia-img" />
-            </div>
+            <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnologia-img tecnologia-img-first" />
+            <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnologia-img tecnologia-img-second" />
           </section>
         );
       })}

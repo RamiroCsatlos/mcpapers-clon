@@ -55,7 +55,9 @@
 
 /* Layout para las imágenes separadas de la primera sección en desktop */
 .tecnica-img-first, 
-.tecnica-img-second {
+.tecnica-img-second,
+.tecnologia-img-first,
+.tecnologia-img-second {
   flex: 1 1 0;
   max-width: 45%;
   width: 45%;
@@ -69,11 +71,13 @@
   width: 90%;
 }
 
-.tecnica-img-first {
+.tecnica-img-first,
+.tecnologia-img-first {
   margin-right: 1.5rem;
 }
 
-.tecnica-img-second {
+.tecnica-img-second,
+.tecnologia-img-second {
   margin-left: 1.5rem;
 }
 
@@ -111,19 +115,29 @@
     align-items: center;
   }
 
-  .tecnica-subtitle {
+  .tecnologia-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tecnica-subtitle,
+  .tecnologia-subtitle {
     order: 0;
   }
 
-  .tecnica-img-first {
+  .tecnica-img-first,
+  .tecnologia-img-first {
     order: 1;    
   }
 
-  .tecnica-text {
+  .tecnica-text,
+  .tecnologia-text {
     order: 2;
   }
 
-  .tecnica-img-second {
+  .tecnica-img-second,
+  .tecnologia-img-second {
     order: 3;
   }
 }
