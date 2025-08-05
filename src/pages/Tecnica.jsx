@@ -25,29 +25,30 @@ const sections = [
   },
 ];
 
-export default function Tecnologia() {
+export default function Tecnica() {
   const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   return (
-    <main className="tecnologia-main">
+    <main className="tecnica-main">
       <h2
         ref={h2Ref}
-        className={`tecnologia-title section-title fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
+        className={`tecnica-title section-title fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
       >
-        Tecnología
+        Técnica
       </h2>
       {sections.map((sec, idx) => {
         const { ref: secRef, inView: secInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+        const isSecondSection = idx === 1;
         return (
           <section
             key={idx}
             ref={secRef}
-            className={`tecnologia-section fade-in-up${secInView ? ' fade-in-visible' : ''}`}
+            className={`tecnica-section${isSecondSection ? ' tecnica-section-second' : ''} fade-in-up${secInView ? ' fade-in-visible' : ''}`}
           >
-            <h3 className="tecnologia-subtitle">{sec.title}</h3>
-            <p className="tecnologia-text">{sec.text}</p>
-            <div className="tecnologia-imgs-row">
-              <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnologia-img" />
-              <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnologia-img" />
+            <h3 className={`tecnica-subtitle${isSecondSection ? ' tecnica-subtitle-second' : ''}`}>{sec.title}</h3>
+            <p className={`tecnica-text${isSecondSection ? ' tecnica-text-second' : ''}`}>{sec.text}</p>
+            <div className={`tecnica-imgs-row${isSecondSection ? ' tecnica-imgs-row-second' : ''}`}>
+              <img src={sec.img1} alt={sec.title + ' imagen 1'} className={`tecnica-img${isSecondSection ? ' tecnica-img1-second' : ''}`} />
+              <img src={sec.img2} alt={sec.title + ' imagen 2'} className={`tecnica-img${isSecondSection ? ' tecnica-img2-second' : ''}`} />
             </div>
           </section>
         );

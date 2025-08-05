@@ -1,25 +1,25 @@
 /* Pagina de tecnologia: layout y responsive */
-.tecnologia-main {
+.tecnologia-main, .tecnica-main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
-.tecnologia-title {
+.tecnologia-title, .tecnica-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
 }
-.tecnologia-section {
+.tecnologia-section, .tecnica-section {
   margin-bottom: 3rem;
 }
-.tecnologia-subtitle {
+.tecnologia-subtitle, .tecnica-subtitle {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 /* Desktop: images side by side, together 90vw */
 /* Desktop: images side by side, together 80vw, more gap */
-.tecnologia-imgs-row {
+.tecnologia-imgs-row, .tecnica-imgs-row {
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -32,7 +32,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.tecnologia-img {
+.tecnologia-img, .tecnica-img {
   flex: 1 1 0;
   max-width: 39vw;
   width: 100%;
@@ -43,7 +43,7 @@
   display: block;
 }
 
-.tecnologia-text {
+.tecnologia-text, .tecnica-text {
   font-size: 1.1rem;
   line-height: 1.7;
   text-align: center;
@@ -51,11 +51,14 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
 @media (max-width: 768px) {
-  .tecnologia-text {
+  .tecnologia-text, .tecnica-text {
     max-width: 80vw;
   }
-  .tecnologia-imgs-row {
+  .tecnologia-imgs-row, .tecnica-imgs-row {
     flex-direction: column;
     gap: 0;
     margin-top: 1.2rem;
@@ -65,14 +68,14 @@
     align-items: center;
     justify-content: center;
   }
-  .tecnologia-img {
+  .tecnologia-img, .tecnica-img {
     max-width: 340px;
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
-  .tecnologia-img:last-child {
+  .tecnologia-img:last-child, .tecnica-img:last-child {
     margin-bottom: 0;
   }
 }
