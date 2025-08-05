@@ -51,8 +51,8 @@ export default function Tecnica() {
             <img src={sections[1].img1} alt={sections[1].title + ' imagen 1'} className="equipamiento-img-rect" />
           </div>
           <div className="equipamiento-special-content-col">
-            <p className="equipamiento-text">{sections[1].text}</p>
-            <img src={sections[1].img2} alt={sections[1].title + ' imagen 2'} className="equipamiento-img" style={{objectFit: 'contain'}} />
+            <p className="equipamiento-text-2">{sections[1].text}</p>
+            <img src={sections[1].img2} alt={sections[1].title + ' imagen 2'} className="equipamiento-img-2" style={{objectFit: 'contain'}} />
           </div>
         </div>
       </section>
