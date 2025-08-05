@@ -130,7 +130,9 @@ function Header() {
             <li>
               <Link to="/novedades" className="navbar-link">Novedades</Link>
             </li>
-            <li><a href="#">Responsabilidad Social</a></li>
+            <li>
+              <Link to="/responsabilidad-social" className="navbar-link">Responsabilidad Social</Link>
+            </li>
             <li className="dropdown">
               <div
                 className="dropdown-toggle-wrapper"

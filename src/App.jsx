@@ -29,6 +29,7 @@ import ControlDeCalidad from './pages/ControlDeCalidad';
 import Novedades from './pages/Novedades';
 import Novedad1 from './pages/Novedad1';
 import Novedad2 from './pages/Novedad2';
+import rSocial from './pages/ResponsabilidadSocial';
 
 function App() {
   return (
@@ -104,6 +105,7 @@ function App() {
         <Route path="/novedades" element={<Novedades />} />
         <Route path="/novedad1" element={<Novedad1 />} />
         <Route path="/novedad2" element={<Novedad2 />} />
+        <Route path="/responsabilidad-social" element={<rSocial />} />
       </Routes>
       </div>
       <Footer />
