@@ -1,6 +1,5 @@
 /* ===== NOVEDADES PAGE ===== */
 .novedades-main {
-  min-height: 100vh;
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -20,11 +19,11 @@
 .novedad-container {
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.3s ease;
 }
 
 .novedad-container:hover {
-  opacity: 0.8;
+  text-decoration: none;
+  color: inherit;
 }
 
 .novedad-img {
