@@ -10,43 +10,44 @@ import img1 from '../assets/reconocimiento.avif';
 
 export default function Novedad1() {
   const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: articleRef, inView: articleInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+  const { ref: contentRef, inView: contentInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
 
   return (
     <main className="novedad-main">
-      <Link to="/novedades" className="novedad-back">← Volver a Novedades</Link>
-      
       <article
-        ref={articleRef}
-        className={`novedad-article fade-in-up${articleInView ? ' fade-in-visible' : ''}`}
+        ref={contentRef}
+        className={`novedad-single-column fade-in-up${contentInView ? ' fade-in-visible' : ''}`}
       >
-        <h1
+        <h2
           ref={h2Ref}
-          className={`novedad-article-title fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
+          className={`novedad-title-main fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
         >
-          Reconocimiento en la Industria
-        </h1>
+          Reconocimiento Gestión de Calidad 2024
+        </h2>
         
-        <img src={img1} alt="Reconocimiento MCPapers" className="novedad-article-img" />
+        <h3 className="novedad-subtitle-main">
+          PREMIOS
+        </h3>
         
-        <div className="novedad-article-content">
-          <p>
-            MCPapers ha sido reconocida como una de las empresas líderes en innovación 
-            dentro del sector del packaging sostenible. Este reconocimiento destaca 
-            nuestro compromiso continuo con la excelencia y la sustentabilidad.
-          </p>
-          
-          <p>
-            Nuestro enfoque en tecnologías avanzadas y procesos respetuosos con el 
-            medio ambiente nos ha posicionado como referentes en la industria. 
-            Este logro es el resultado del trabajo dedicado de todo nuestro equipo.
-          </p>
-          
-          <p>
-            Seguimos comprometidos con la innovación y la calidad, buscando siempre 
-            nuevas formas de mejorar nuestros productos y servicios para nuestros clientes.
-          </p>
-        </div>
+        <h3 className="novedad-subtitle-main">
+          6/25/2025 ° 1 min leer
+        </h3>
+        
+        <div className="novedad-separator"></div>
+        
+        <p className="novedad-text-bold">
+          ¡Un logro que nos llena de orgullo!
+        </p>
+        
+        <p className="novedad-text-regular">
+          Queremos compartir con ustedes que hemos sido reconocidos por nuestra destacada gestión de calidad, un hito que reafirma nuestro compromiso con la excelencia en cada proceso, servicio que ofrecemos y brindar la máxima calidad.
+        </p>
+        
+        <p className="novedad-text-regular">
+          Nos sentimos profundamente agradecidos por este logro, que nos impulsa a seguir innovando y mejorando día a día.
+        </p>
+        
+        <img src={img1} alt="Reconocimiento MCPapers" className="novedad-image-main" />
       </article>
     </main>
   );
