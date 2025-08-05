@@ -64,10 +64,8 @@ export default function Tecnica() {
               // Layout normal para la primera sección
               <>
                 <p className="tecnica-text">{sec.text}</p>
-                <div className="tecnica-imgs-row">
-                  <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnica-img" />
-                  <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnica-img" />
-                </div>
+                <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnica-img tecnica-img-first" />
+                <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnica-img tecnica-img-second" />
               </>
             )}
           </section>

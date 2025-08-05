@@ -35,7 +35,7 @@
 }
 .tecnologia-img, .tecnica-img {
   flex: 1 1 0;
-  max-width: 450px;
+  max-width: 45%;
   width: 100%;
   height: auto;
   border-radius: 1rem;
