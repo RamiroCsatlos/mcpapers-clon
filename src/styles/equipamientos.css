@@ -53,6 +53,30 @@
   margin-right: auto;
 }
 
+/* Layout para las imágenes separadas de la primera sección en desktop */
+.tecnica-img-first, 
+.tecnica-img-second {
+  flex: 1 1 0;
+  max-width: 45%;
+  width: 45%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  display: inline-block;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 90%;
+}
+
+.tecnica-img-first {
+  margin-right: 1.5rem;
+}
+
+.tecnica-img-second {
+  margin-left: 1.5rem;
+}
+
 
 
 
@@ -80,6 +104,28 @@
   .tecnologia-img:last-child, .tecnica-img:last-child {
     margin-bottom: 0;
   }
+
+  .tecnica-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tecnica-subtitle {
+    order: 0;
+  }
+
+  .tecnica-img-first {
+    order: 1;    
+  }
+
+  .tecnica-text {
+    order: 2;
+  }
+
+  .tecnica-img-second {
+    order: 3;
+  }
 }
 
 /* Layout especial para la segunda sección de Técnica - Cuadrícula 2x2 */
@@ -92,11 +138,12 @@
   margin-left: auto;
   margin-right: auto;
   align-items: stretch;
+  height: 100%;
 }
 
 .tecnica-left-column {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
@@ -162,8 +209,14 @@
     text-align: center;
     padding: 0.5rem;
   }
+
+  .tecnica-img1-second {
+    width: 40vw;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
   
-  .tecnica-img1-second,
   .tecnica-img2-second {
     max-height: 250px;
     max-width: 340px;
