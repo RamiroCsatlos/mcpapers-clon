@@ -127,7 +127,9 @@ function Header() {
                 </ul>
               )}
             </li>
-            <li><a href="#">Novedades</a></li>
+            <li>
+              <Link to="/novedades" className="navbar-link">Novedades</Link>
+            </li>
             <li><a href="#">Responsabilidad Social</a></li>
             <li className="dropdown">
               <div

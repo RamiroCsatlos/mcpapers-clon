@@ -26,9 +26,9 @@ import EquipamientoPage from './pages/Equipamiento';
 import Tecnologia from './pages/Tecnologia';
 import Tecnica from './pages/Tecnica';  
 import ControlDeCalidad from './pages/ControlDeCalidad';
-// import Novedades from './pages/Novedades';
-// import Novedad1 from './pages/Novedad1';
-// import Novedad2 from './pages/Novedad2';
+import Novedades from './pages/Novedades';
+import Novedad1 from './pages/Novedad1';
+import Novedad2 from './pages/Novedad2';
 
 function App() {
   return (
@@ -100,9 +100,9 @@ function App() {
         <Route path="/tecnologia" element={<Tecnologia />} />
         <Route path="/tecnica" element={<Tecnica />} />
         <Route path="/control-calidad" element={<ControlDeCalidad />} />
-        {/* <Route path="/novedades" element={<Novedades />} />
+        <Route path="/novedades" element={<Novedades />} />
         <Route path="/novedad1" element={<Novedad1 />} />
-        <Route path="/novedad2" element={<Novedad2 />} /> */}
+        <Route path="/novedad2" element={<Novedad2 />} />
       </Routes>
       <Footer />
     </>

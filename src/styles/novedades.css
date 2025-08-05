@@ -1,0 +1,167 @@
+/* ===== NOVEDADES PAGE ===== */
+.novedades-main {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.novedades-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.novedades-section {
+  margin-top: 2rem;
+}
+
+.novedades-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.novedades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.novedad-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.novedad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.novedad-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.novedad-content {
+  padding: 1.5rem;
+}
+
+.novedad-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.novedad-preview {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.novedad-link {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ===== INDIVIDUAL NOVEDAD PAGE ===== */
+.novedad-main {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.novedad-back {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.novedad-back:hover {
+  color: var(--accent-color);
+}
+
+.novedad-article {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.novedad-article-title {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding: 2rem 2rem 0;
+  line-height: 1.3;
+}
+
+.novedad-article-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.novedad-article-content {
+  padding: 2rem;
+}
+
+.novedad-article-content p {
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.novedad-article-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .novedades-main,
+  .novedad-main {
+    padding: 1rem 0.5rem;
+  }
+  
+  .novedades-title {
+    font-size: 2rem;
+  }
+  
+  .novedades-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .novedad-article-title {
+    font-size: 1.8rem;
+    padding: 1.5rem 1.5rem 0;
+  }
+  
+  .novedad-article-content {
+    padding: 1.5rem;
+  }
+  
+  .novedades-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+}
