@@ -45,11 +45,31 @@ export default function Tecnica() {
             className={`tecnica-section${isSecondSection ? ' tecnica-section-second' : ''} fade-in-up${secInView ? ' fade-in-visible' : ''}`}
           >
             <h3 className={`tecnica-subtitle${isSecondSection ? ' tecnica-subtitle-second' : ''}`}>{sec.title}</h3>
-            <p className={`tecnica-text${isSecondSection ? ' tecnica-text-second' : ''}`}>{sec.text}</p>
-            <div className={`tecnica-imgs-row${isSecondSection ? ' tecnica-imgs-row-second' : ''}`}>
-              <img src={sec.img1} alt={sec.title + ' imagen 1'} className={`tecnica-img${isSecondSection ? ' tecnica-img1-second' : ''}`} />
-              <img src={sec.img2} alt={sec.title + ' imagen 2'} className={`tecnica-img${isSecondSection ? ' tecnica-img2-second' : ''}`} />
-            </div>
+            {isSecondSection ? (
+              // Layout especial para la segunda sección: cuadrícula 2x2
+              <div className="tecnica-grid-second">
+                <div className="tecnica-left-column">
+                  <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnica-img1-second" />
+                </div>
+                <div className="tecnica-right-column">
+                  <div className="tecnica-text-container">
+                    <p className="tecnica-text-second">{sec.text}</p>
+                  </div>
+                  <div className="tecnica-img-container">
+                    <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnica-img2-second" />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              // Layout normal para la primera sección
+              <>
+                <p className="tecnica-text">{sec.text}</p>
+                <div className="tecnica-imgs-row">
+                  <img src={sec.img1} alt={sec.title + ' imagen 1'} className="tecnica-img" />
+                  <img src={sec.img2} alt={sec.title + ' imagen 2'} className="tecnica-img" />
+                </div>
+              </>
+            )}
           </section>
         );
       })}

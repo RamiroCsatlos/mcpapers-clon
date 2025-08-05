@@ -27,14 +27,15 @@
   align-items: flex-start;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  width: 80vw;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1rem;
 }
 .tecnologia-img, .tecnica-img {
   flex: 1 1 0;
-  max-width: 39vw;
+  max-width: 450px;
   width: 100%;
   height: auto;
   border-radius: 1rem;
@@ -51,6 +52,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 
@@ -77,5 +79,93 @@
   }
   .tecnologia-img:last-child, .tecnica-img:last-child {
     margin-bottom: 0;
+  }
+}
+
+/* Layout especial para la segunda sección de Técnica - Cuadrícula 2x2 */
+.tecnica-grid-second {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+.tecnica-left-column {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tecnica-right-column {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.tecnica-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tecnica-text-second {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin: 0;
+  padding: 1rem;
+}
+
+.tecnica-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tecnica-img1-second {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  display: block;
+  max-width: 35vw;
+}
+
+.tecnica-img2-second {
+  width: 90%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  object-fit: cover;
+}
+
+/* Responsive para la cuadrícula 2x2 */
+@media (max-width: 768px) {
+  .tecnica-grid-second {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tecnica-right-column {
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+  
+  .tecnica-text-second {
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  .tecnica-img1-second,
+  .tecnica-img2-second {
+    max-height: 250px;
+    max-width: 340px;
   }
 }
