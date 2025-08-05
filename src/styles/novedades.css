@@ -6,76 +6,59 @@
   margin: 0 auto;
 }
 
-.novedades-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-}
-
 .novedades-section {
-  margin-top: 2rem;
-}
-
-.novedades-intro {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 0;
 }
 
 .novedades-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
   margin-top: 2rem;
 }
 
-.novedad-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.novedad-container {
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.3s ease;
 }
 
-.novedad-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+.novedad-container:hover {
+  opacity: 0.8;
 }
 
 .novedad-img {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
-.novedad-content {
-  padding: 1.5rem;
+.novedad-subtitle {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .novedad-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
   font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
 }
 
-.novedad-preview {
+.novedad-text {
   color: var(--text-color);
   line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.novedad-link {
-  color: var(--accent-color);
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  text-align: left;
 }
 
 /* ===== INDIVIDUAL NOVEDAD PAGE ===== */
@@ -139,16 +122,26 @@
 @media (max-width: 768px) {
   .novedades-main,
   .novedad-main {
-    padding: 1rem 0.5rem;
-  }
-  
-  .novedades-title {
-    font-size: 2rem;
+    padding: 1rem;
   }
   
   .novedades-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .novedad-img {
+    height: auto;
+    min-height: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .novedad-title {
+    font-size: 1.5rem;
+  }
+  
+  .novedad-subtitle {
+    font-size: 0.8rem;
   }
   
   .novedad-article-title {
@@ -158,10 +151,5 @@
   
   .novedad-article-content {
     padding: 1.5rem;
-  }
-  
-  .novedades-intro {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
   }
 }
