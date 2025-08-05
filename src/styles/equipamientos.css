@@ -1,15 +1,15 @@
 /* Pagina de tecnologia: layout y responsive */
-.tecnologia-main, .tecnica-main {
+.tecnologia-main, .tecnica-main, .control-calidad-main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
-.tecnologia-title, .tecnica-title {
+.tecnologia-title, .tecnica-title, .control-calidad-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
 }
-.tecnologia-section, .tecnica-section {
+.tecnologia-section, .tecnica-section, .control-calidad-section {
   margin-bottom: 3rem;
 }
 .tecnologia-subtitle, .tecnica-subtitle {
@@ -234,5 +234,89 @@
   .tecnica-img2-second {
     max-height: 250px;
     max-width: 340px;
+  }
+}
+
+/* Layout para página de Control de Calidad */
+.control-calidad-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0 auto 2rem auto;
+  max-width: 900px;
+}
+
+.control-calidad-img {
+  width: 45%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  display: inline-block;
+  margin: 1rem;
+}
+
+/* Desktop: Texto primero, luego cuadrícula 2x2 */
+.control-calidad-section {
+  text-align: center;
+}
+
+.control-calidad-img {
+  width: 45%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: top;
+}
+
+/* Contenedor para las imágenes en cuadrícula */
+.control-calidad-img-1,
+.control-calidad-img-2 {
+  margin-bottom: 0.5rem;
+}
+
+.control-calidad-img-3,
+.control-calidad-img-4 {
+  margin-top: 0.5rem;
+}
+
+/* Mobile: 2 imágenes → texto → 2 imágenes */
+@media (max-width: 768px) {
+  .control-calidad-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .control-calidad-img {
+    width: 80%;
+    max-width: 340px;
+    margin: 0.75rem auto;
+    display: block;
+  }
+  
+  .control-calidad-img-1 {
+    order: 1;
+  }
+  
+  .control-calidad-img-2 {
+    order: 2;
+  }
+  
+  .control-calidad-text {
+    order: 3;
+    max-width: 80vw;
+    margin: 1.5rem auto;
+  }
+  
+  .control-calidad-img-3 {
+    order: 4;
+  }
+  
+  .control-calidad-img-4 {
+    order: 5;
   }
 }
