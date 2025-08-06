@@ -42,7 +42,6 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
   };
 
   const handleSubmit = async (e) => {
-    console.log('handleSubmit ejecutado'); 
     e.preventDefault();
     e.stopPropagation(); 
     
@@ -69,7 +68,6 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
         mensaje: formData.message
       };
       
-      console.log('enviando', backendData);
       try {
         await sendContact(backendData);
         setSubmitStatus('success');

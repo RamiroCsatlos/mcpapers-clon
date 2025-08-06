@@ -1,8 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ImageGallery from '../components/common/ImageGallery/ImageGallery';
-import { useState } from 'react';
 import { galleryImages } from '../constants/galleryImages';
 import Lightbox from '../components/common/Lightbox';
 import useInViewAnimation from '../hooks/useInViewAnimation';

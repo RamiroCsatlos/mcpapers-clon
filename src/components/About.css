@@ -114,6 +114,10 @@
   font-size: clamp(0.8rem, 2vw, 1.5rem);
 }
 
+.empresa-img-container .badge.bottom-right {
+  background-color: var(--secondary-blue) !important;  
+}
+
 
 
 .badge-number {

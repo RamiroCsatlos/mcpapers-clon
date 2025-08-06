@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import '../styles/main.css';

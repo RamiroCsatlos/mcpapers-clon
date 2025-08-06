@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Productos = () => {
-  console.log('Renderizando Productos.jsx');
   return (
     <main>
       <Suspense fallback={<LoadingSpinner />}>
