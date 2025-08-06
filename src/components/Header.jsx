@@ -44,7 +44,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <a href="/">
+        <a href="/mcpapers-clon/">
           <img src={logoHeader} alt="Logo MC Papers" className="logo-header" />
         </a>
 

@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <a href="/">
+        <a href="/mcpapers-clon/">
           <img src={logoHeader} alt="Logo MC Papers" className="logo-footer" />
         </a>
 
