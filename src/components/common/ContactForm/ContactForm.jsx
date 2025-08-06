@@ -14,6 +14,7 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
 
   const [errors, setErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [isSubmitting, setIsSubmitting] = useState(false); // Estado local de envío
 
   const validateField = (name, value) => {
     switch (name) {
@@ -41,8 +42,10 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
   };
 
   const handleSubmit = async (e) => {
-    console.log('handleSubmit ejecutado'); // <-- PRUEBA RAPIDA
+    console.log('handleSubmit ejecutado'); 
     e.preventDefault();
+    e.stopPropagation(); 
+    
     // Validar todos los campos
     const newErrors = {};
     Object.keys(formData).forEach(key => {
@@ -52,10 +55,12 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
       }
     });
     setErrors(newErrors);
+    
     // Si no hay errores, enviar formulario
     if (Object.keys(newErrors).length === 0) {
       setSubmitStatus(null);
-      // Mapear los campos al formato que espera el backend
+      setIsSubmitting(true);
+      
       const backendData = {
         nombre: formData.name,
         email: formData.email,
@@ -63,19 +68,26 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
         empresa: formData.company,
         mensaje: formData.message
       };
-      console.log('enviando', backendData); // <-- LOG PARA DEPURAR
+      
+      console.log('enviando', backendData);
       try {
         await sendContact(backendData);
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', company: '', message: '' });
       } catch (err) {
+        console.error('Error enviando formulario:', err);
         setSubmitStatus('error');
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form 
+      className="contact-form" 
+      onSubmit={handleSubmit}
+    >
       <div className="form-group">
         <label htmlFor="name" className="form-label">
           Nombre *
@@ -164,10 +176,14 @@ const ContactForm = ({ onSubmit, isLoading = false }) => {
 
       <button 
         type="submit" 
-        className="btn btn-primary" // Usar clase global de botón
-        disabled={isLoading}
+        className="btn btn-primary contact-submit-btn"
+        disabled={isLoading || isSubmitting}
+        style={{
+          WebkitTapHighlightColor: 'transparent',
+          touchAction: 'manipulation'
+        }}
       >
-        {isLoading ? 'Enviando...' : 'Enviar Mensaje'}
+        {(isLoading || isSubmitting) ? 'Enviando...' : 'Enviar Mensaje'}
       </button>
       {submitStatus === 'success' && (
         <div className="form-success">¡Mensaje enviado correctamente!</div>

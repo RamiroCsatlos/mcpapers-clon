@@ -38,3 +38,45 @@
 .form-button:hover {
   background: #2985d5;
 }
+
+/* Estilos específicos para dispositivos táctiles */
+.contact-submit-btn {
+  min-height: 48px; /* Tamaño mínimo recomendado para touch */
+  touch-action: manipulation; /* Optimizar para touch */
+  -webkit-tap-highlight-color: transparent; /* Quitar highlight en tablets */
+  position: relative; /* Asegurar que esté en el flujo */
+  z-index: 10; /* Asegurar que esté por encima de otros elementos */
+  pointer-events: auto; /* Asegurar que sea clickeable */
+  cursor: pointer; /* Mostrar cursor pointer */
+}
+
+/* Mejoras para tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .form-input,
+  .form-textarea {
+    font-size: 16px; /* Prevenir zoom en iOS */
+    padding: 12px;
+  }
+  
+  .contact-submit-btn {
+    padding: 16px 24px;
+    font-size: 18px;
+    min-height: 56px; /* Tamaño más grande para tablets */
+    width: 100%; /* Botón de ancho completo */
+    margin-top: 20px;
+  }
+  
+  /* Asegurar que el form no tenga problemas de z-index */
+  .contact-form {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* Para dispositivos móviles pequeños */
+@media (max-width: 767px) {
+  .form-input,
+  .form-textarea {
+    font-size: 16px; /* Prevenir zoom automático */
+  }
+}
