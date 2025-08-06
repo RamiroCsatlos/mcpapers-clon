@@ -39,17 +39,25 @@ const rSocialImages = [
 ];
 
 export default function RSocial() {
+  // Solo las 8 imágenes de la galería
+  const galleryImages = [
+    { src: rSocial2a, alt: 'Imagen 2A' },
+    { src: rSocial2b, alt: 'Imagen 2B' },
+    { src: rSocial2c, alt: 'Imagen 2C' },
+    { src: rSocial2d, alt: 'Imagen 2D' },
+    { src: rSocial2e, alt: 'Imagen 2E' },
+    { src: rSocial2f, alt: 'Imagen 2F' },
+    { src: rSocial2g, alt: 'Imagen 2G' },
+    { src: rSocial2h, alt: 'Imagen 2H' }
+  ];
   const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: contentRef, inView: contentInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
-
   const handleImageClick = (idx) => {
     setCurrentImg(idx);
     setLightboxOpen(true);
   };
-
   return (
     <main className="rSocial-main">
       <article
@@ -59,17 +67,14 @@ export default function RSocial() {
         {/* Título principal */}
         <h2
           ref={h2Ref}
-          className={`rSocial-title-main fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
+          className={`rSocial-title-main section-title fade-in-up${h2InView ? ' fade-in-visible' : ''}`}
         >
           Responsabilidad Social
         </h2>
-
-        {/* Imagen destacada */}
-        <img src={rSocialBanner} alt="Banner Responsabilidad Social" className="rSocial-image-main" loading="lazy" />
-
-        {/* Otra imagen */}
+        {/* Imagen principal (La casa de Ronald McDonald) */}
         <img src={rSocial0} alt="La casa de Ronald McDonald" className="rSocial-image-secondary" loading="lazy" />
-
+        {/* Imagen banner más grande */}
+        <img src={rSocialBanner} alt="Banner Responsabilidad Social" className="rSocial-image-banner" loading="lazy" />
         {/* Dos textos */}
         <p className="rSocial-text-regular">
           Nuestra colaboración con la Casa Ronald McDonald en Argentina es un pilar fundamental de nuestro compromiso social. Juntos, trabajamos para brindar apoyo a las familias de niños enfermos, ofreciendo un espacio acogedor y lleno de esperanza. A través de diversas iniciativas y actividades, buscamos no solo proporcionar recursos y asistencia, sino también crear un ambiente donde las familias puedan encontrar consuelo y acompañamiento. 
@@ -77,17 +82,14 @@ export default function RSocial() {
         <p className="rSocial-text-regular">
           Nuestro equipo se involucra en eventos y donaciones, promoviendo la importancia de la solidaridad y la empatía. Creemos firmemente que, al unir fuerzas, podemos marcar una diferencia significativa en la vida de estos niños y sus seres queridos. La Casa Ronald McDonald se convierte así en un símbolo de amor y apoyo, y nos sentimos orgullosos de ser parte de esta noble causa. Juntos, continuamos trabajando para hacer de esta experiencia un camino más llevadero y esperanzador.
         </p>
-
         {/* Fila de 3 imágenes */}
         <div className="rSocial-row-images">
           <img src={rSocial1a} alt="Banner" className="rSocial-row-image" loading="lazy" />
           <img src={rSocial1b} alt="Imagen 1B" className="rSocial-row-image" loading="lazy" />
           <img src={rSocial1c} alt="Imagen 1C" className="rSocial-row-image" loading="lazy" />
         </div>
-
         {/* Segundo título */}
         <h3 className="rSocial-title-section">Sala Familiar</h3>
-
         {/* Sección con 3 párrafos y una imagen */}
         <div className="rSocial-section-columns">
           <div className="rSocial-section-texts">
@@ -99,17 +101,16 @@ export default function RSocial() {
             <img src={rSocial2a} alt="Imagen 2A" loading="lazy" />
           </div>
         </div>
-
         {/* Galería 2x4 con lightbox */}
         <div className="rSocial-gallery">
-          {rSocialImages.slice(4, 12).map((img, idx) => {
+          {galleryImages.map((img, idx) => {
             const { ref: imgRef, inView: imgInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
             return (
               <div
                 key={idx}
                 ref={imgRef}
                 className={`rSocial-gallery-item fade-in-up${imgInView ? ' fade-in-visible' : ''}`}
-                onClick={() => handleImageClick(idx + 4)}
+                onClick={() => handleImageClick(idx)}
                 style={{ cursor: 'pointer' }}
               >
                 <img
@@ -122,16 +123,14 @@ export default function RSocial() {
             );
           })}
         </div>
-
         {/* Tercer título y una imagen */}
         <h3 className="rSocial-title-end">Premio Compassion & Care 2023</h3>
         <img src={rSocial3} alt="Imagen 3" className="rSocial-image-end" loading="lazy" />
       </article>
-
       {/* Lightbox para galería */}
       {lightboxOpen && (
         <Lightbox
-          images={rSocialImages}
+          images={galleryImages}
           open={lightboxOpen}
           current={currentImg}
           setOpen={setLightboxOpen}

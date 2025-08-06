@@ -1,3 +1,11 @@
+.rSocial-image-banner {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  margin: 2.5rem auto 2rem auto;
+  display: block;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
 /* ===== RESPONSABILIDAD SOCIAL PAGE ===== */
 .rSocial-main {
   min-height: 100vh;
@@ -29,11 +37,11 @@
 }
 
 .rSocial-image-secondary {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
-  margin: 1rem auto 2rem auto;
-  display: block;
+width: 80%;
+max-width: 320px;
+border-radius: 8px;
+margin: 1rem auto 2rem auto;
+display: block;
 }
 
 .rSocial-text-regular {
@@ -77,14 +85,14 @@
 
 .rSocial-section-texts p {
   margin-bottom: 1.2rem;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: var(--text-color);
   text-align: left;
 }
 
 .rSocial-section-image img {
   width: 100%;
-  max-width: 220px;
+  max-width: 350px;
   border-radius: 8px;
   object-fit: cover;
   margin: 0 auto;
@@ -135,10 +143,12 @@
 .rSocial-image-end {
   width: 100%;
   max-width: 400px;
-  border-radius: 8px;
+  border-radius: 0 35% 0 35%;
   margin: 1rem auto 2rem auto;
   display: block;
 }
+
+
 
 @media (max-width: 900px) {
   .rSocial-main {
