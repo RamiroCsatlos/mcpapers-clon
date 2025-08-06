@@ -17,7 +17,7 @@ const products = [
       bolsasFondoFlatBobinas,
       bolsasFondoFlatArmadas
     ],
-    link: '/mcpapers-clon/bolsas-flat'
+    link: '/bolsas-flat'
   },
   {
     title: 'Bolsas Fondo\nCuadrado',
@@ -25,7 +25,7 @@ const products = [
       bolsaCuadrada1,
       bolsaCuadrada2
     ],
-    link: '/mcpapers-clon/bolsas-cuadrado'
+    link: '/bolsas-cuadrado'
   },
   {
     title: 'Láminas',
@@ -33,7 +33,7 @@ const products = [
       laminasBobinas,
       laminas2
     ],
-    link: '/mcpapers-clon/laminas'
+    link: '/laminas'
   }
 ];
 
@@ -56,20 +56,20 @@ function ProductsSection() {
               <div className="product-images">
                 {/* Primera imagen */}
                 <div className={`image-wrapper first-image first-image-${idx}`}>
-                  <a href={prod.link} className="image-link">
+                  <Link to={prod.link} className="image-link">
                     <img src={prod.images[0]} alt={prod.title} />
-                  </a>
+                  </Link>
                 </div>
                 {/* Lado derecho: título+botón y segunda imagen */}
                 <div className="product-right">
                   <div className="product-info">
                     <h3>{prod.title}</h3>
-                    <a href={prod.link} className="see-more-btn">Ver más</a>
+                    <Link to={prod.link} className="see-more-btn">Ver más</Link>
                   </div>
                   <div className={`image-wrapper second-image second-image-${idx}`}>
-                    <a href={prod.link} className="image-link">
+                    <Link to={prod.link} className="image-link">
                       <img src={prod.images[1]} alt={prod.title} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

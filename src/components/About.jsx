@@ -1,6 +1,7 @@
 import './About.css';
 import '../styles/ScrollAnimations.css';
 import useInViewAnimation from '../hooks/useInViewAnimation';
+import { Link } from 'react-router-dom';
 import empresaImage from '../assets/foto-empresa.jpg';
 import logoImage from '../assets/logo.png';
 
@@ -22,16 +23,16 @@ const About = () => {
             </br>
             Especializada en fast food packaging y en sugar confectionery.
           </p>
-          <a href="./nosotros" className="ver-mas-btn">Ver más</a>
+          <Link to="/nosotros" className="ver-mas-btn">Ver más</Link>
         </div>
         <div 
           ref={imageRef}
           className={`empresa-img-container scale-in animation-delay-200 ${imageAnimClass}`}
         >
           <div className="empresa-img-padding">
-            <a href="./nosotros" className="empresa-img-link">
+            <Link to="/nosotros" className="empresa-img-link">
               <img src={empresaImage} alt="Empresa" className="empresa-img" />
-            </a>
+            </Link>
           </div>
           <span className="badge top-left">Empresa líder del mercado</span>
           <span className="badge bottom-right">

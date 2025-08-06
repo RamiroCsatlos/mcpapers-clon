@@ -1,6 +1,7 @@
 import './GreenerPack.css';
 import './ScrollAnimations.css';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import greenerImg from '../assets/greenerpackLogoColor.png';
 
 const GreenerPack = () => {
@@ -59,9 +60,9 @@ const GreenerPack = () => {
           ref={logoRef}
           className={`greenerpack-img-container scale-in ${logoInView ? 'fade-in-visible' : ''}`}
         >
-          <a href="./greenerpack">
+          <Link to="/greenerpack">
               <img src={greenerImg} alt="GreenerPack" className="greenerpack-img" />
-          </a>
+          </Link>
         </div>
         <div 
           ref={textRef}

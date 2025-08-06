@@ -1,6 +1,7 @@
 import './Equipamiento.css';
 import './ScrollAnimations.css';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 // Importar las imágenes de equipamiento
 import controlDeCalidad from '../assets/controlDeCalidad.avif';
@@ -13,21 +14,21 @@ const equipos = [
     title: 'Control de Calidad',
     image: controlDeCalidad,
     badge: 'Control de Calidad',
-    link: './control-calidad'
+    link: '/control-calidad'
   },
   {
     id: 2,
     title: 'Técnica',
     image: tecnica,
     badge: 'Técnica',
-    link: './tecnica'
+    link: '/tecnica'
   },
   {
     id: 3,
     title: 'Tecnología',
     image: tecnologia,
     badge: 'Tecnología',
-    link: './tecnologia'
+    link: '/tecnologia'
   }
 ];
 
@@ -39,14 +40,14 @@ function Equipamiento() {
 
   return (
     <section className="equipamiento-section">
-      <a href="./equipamiento" className="title-link">
+      <Link to="/equipamiento" className="title-link">
         <h2 
           ref={titleRef}
           className={`equipamiento-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
         >
           Equipamiento
         </h2>
-      </a>
+      </Link>
       <div className="equipamiento-gallery">
         {equipos.map((equipo, idx) => {
           // Hook individual para cada tarjeta de equipo
@@ -62,13 +63,13 @@ function Equipamiento() {
               key={equipo.id}
             >
               <div className="equipo-image-container">
-                <a href={equipo.link} className="equipo-image-link">
+                <Link to={equipo.link} className="equipo-image-link">
                   <img src={equipo.image} alt={equipo.title} className="equipo-image" />
-                </a>
+                </Link>
                 <div className="equipo-badge">{equipo.badge}</div>
               </div>
               <div className="equipo-info">
-                <a href={equipo.link} className="equipo-ver-mas-btn">Ver más</a>
+                <Link to={equipo.link} className="equipo-ver-mas-btn">Ver más</Link>
               </div>
             </div>
           );
