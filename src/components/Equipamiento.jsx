@@ -13,21 +13,21 @@ const equipos = [
     title: 'Control de Calidad',
     image: controlDeCalidad,
     badge: 'Control de Calidad',
-    link: '/equipamiento/control-calidad'
+    link: './control-calidad'
   },
   {
     id: 2,
     title: 'Técnica',
     image: tecnica,
     badge: 'Técnica',
-    link: '/equipamiento/tecnica'
+    link: './tecnica'
   },
   {
     id: 3,
     title: 'Tecnología',
     image: tecnologia,
     badge: 'Tecnología',
-    link: '/equipamiento/tecnologia'
+    link: './tecnologia'
   }
 ];
 
@@ -39,7 +39,7 @@ function Equipamiento() {
 
   return (
     <section className="equipamiento-section">
-      <a href="/ruta-del-producto" className="title-link">
+      <a href="./equipamiento" className="title-link">
         <h2 
           ref={titleRef}
           className={`equipamiento-title fade-in-up ${titleInView ? 'fade-in-visible' : ''}`}
@@ -68,7 +68,7 @@ function Equipamiento() {
                 <div className="equipo-badge">{equipo.badge}</div>
               </div>
               <div className="equipo-info">
-                <button className="equipo-ver-mas-btn">Ver más</button>
+                <a href={equipo.link} className="equipo-ver-mas-btn">Ver más</a>
               </div>
             </div>
           );

@@ -18,22 +18,22 @@ const ResponsabilidadSocial = () => {
     {
       src: responsabilidadSocial1,
       alt: 'Responsabilidad Social 1',
-      link: '#responsabilidad-1'
+      link: './responsabilidad-social'
     },
     {
       src: responsabilidadSocial2,
       alt: 'Responsabilidad Social 2',
-      link: '#responsabilidad-2'
+      link: './responsabilidad-social'
     },
     {
       src: responsabilidadSocial3,
       alt: 'Responsabilidad Social 3',
-      link: '#responsabilidad-3'
+      link: './responsabilidad-social'
     },
     {
       src: responsabilidadSocial4,
       alt: 'Responsabilidad Social 4',
-      link: '#responsabilidad-4'
+      link: './responsabilidad-social'
     }
   ];
 

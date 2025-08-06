@@ -34,6 +34,10 @@
   opacity: 1 !important;
 }
 
+.equipo-card {
+  background-color: transparent !important;
+}
+
 /* Media query para ir directamente a 1 columna */
 @media (max-width: 900px) {
   .equipamiento-gallery {

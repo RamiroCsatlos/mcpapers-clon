@@ -280,3 +280,28 @@
     width: 60px; height: 40px;
   }
 }
+
+/* ===== GREENERPACK PAGE ===== */
+.greenerpack-page {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.greenerpack-page .innovacion-section {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.greenerpack-page .nosotros-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Responsive para página GreenerPack */
+@media (max-width: 768px) {
+  .greenerpack-page .nosotros-section {
+    padding: 1rem;
+  }
+}

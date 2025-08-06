@@ -59,7 +59,7 @@ const GreenerPack = () => {
           ref={logoRef}
           className={`greenerpack-img-container scale-in ${logoInView ? 'fade-in-visible' : ''}`}
         >
-          <a href="/">
+          <a href="./greenerpack">
               <img src={greenerImg} alt="GreenerPack" className="greenerpack-img" />
           </a>
         </div>

@@ -30,6 +30,7 @@ import Novedades from './pages/Novedades';
 import Novedad1 from './pages/Novedad1';
 import Novedad2 from './pages/Novedad2';
 import RSocial from './pages/ResponsabilidadSocial';
+import GreenerPackPage from './pages/GreenerPack';
 
 function App() {
   return (
@@ -105,6 +106,7 @@ function App() {
         <Route path="/novedades" element={<Novedades />} />
         <Route path="/novedad1" element={<Novedad1 />} />
         <Route path="/novedad2" element={<Novedad2 />} />
+        <Route path="/greenerpack" element={<GreenerPackPage />} />
         <Route path="/responsabilidad-social" element={<RSocial />} />
       </Routes>
       </div>

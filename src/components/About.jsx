@@ -22,14 +22,14 @@ const About = () => {
             </br>
             Especializada en fast food packaging y en sugar confectionery.
           </p>
-          <button className="ver-mas-btn">Ver más</button>
+          <a href="./nosotros" className="ver-mas-btn">Ver más</a>
         </div>
         <div 
           ref={imageRef}
           className={`empresa-img-container scale-in animation-delay-200 ${imageAnimClass}`}
         >
           <div className="empresa-img-padding">
-            <a href="/sobre-nosotros" className="empresa-img-link">
+            <a href="./nosotros" className="empresa-img-link">
               <img src={empresaImage} alt="Empresa" className="empresa-img" />
             </a>
           </div>
