@@ -148,9 +148,7 @@ display: block;
   display: block;
 }
 
-
-
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .rSocial-main {
     padding: 1rem;
     max-width: 90vw;
@@ -174,6 +172,6 @@ display: block;
   .rSocial-gallery {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    max-width: 100%;
+    max-width: 80%;
   }
 }
