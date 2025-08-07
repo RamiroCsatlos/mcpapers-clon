@@ -4,6 +4,7 @@
 .responsabilidad-social {
   width: 100%;
   padding: var(--section-padding-y) var(--section-padding-x);
+  padding-bottom: calc(var(--section-padding-y) + 2rem); /* Padding bottom adicional para separar del footer */
   background-color: var(--background-light);
   box-sizing: border-box;
 }
@@ -37,12 +38,12 @@
 /* Layout principal para pantallas grandes */
 .responsabilidad-social-gallery {
   display: grid;
-  grid-template-columns: 30% 40% 25%;
+  grid-template-columns: 28% 44% 28%; /* Ajustado para dar más espacio a las columnas laterales */
   grid-template-rows: 1fr 1fr;
-  gap: 1.2rem;
+  gap: 1rem; /* Reducido gap para menor separación */
   height: 380px;
   width: 100%;
-  max-width: 1920px; /* Actualizado de 1200px a 1920px */
+  max-width: 1200px; /* Reducido de 1920px a 1200px para mejor control */
   margin: 0 auto; /* Centrar el grid */
   box-sizing: border-box;
   visibility: visible;
@@ -161,6 +162,7 @@
 @media (max-width: 1920px) {
   .responsabilidad-social {
     padding: 3rem 2rem;
+    padding-bottom: 5rem; /* Padding bottom adicional para pantallas grandes */
   }
   
   .responsabilidad-social-container {
@@ -183,6 +185,7 @@
 @media (min-width: 1921px) {
   .responsabilidad-social {
     padding: 4rem calc((100vw - 1920px) / 2 + 2.5rem);
+    padding-bottom: 6rem; /* Padding bottom mayor para pantallas muy grandes */
   }
   
   .responsabilidad-social-container {
@@ -207,6 +210,7 @@
 @media (max-width: 900px) {
   .responsabilidad-social {
     padding: 2rem 1.5rem;
+    padding-bottom: 4rem; /* Padding bottom para móvil */
   }
   
   .responsabilidad-social-container {
@@ -301,6 +305,7 @@
 @media (max-width: 400px) {
   .responsabilidad-social {
     padding: 1.5rem 0.8rem;
+    padding-bottom: 3.5rem; /* Padding bottom para pantallas muy pequeñas */
   }
   
   .responsabilidad-social-container {
@@ -336,9 +341,21 @@
   }
 }
 
+/* Media query para pantallas grandes - control de crecimiento */
+@media (min-width: 1400px) {
+  .responsabilidad-social-gallery {
+    max-width: 1200px; /* Mantener el límite en pantallas grandes */
+    gap: 1.2rem; /* Gap ligeramente mayor para pantallas grandes pero controlado */
+  }
+}
+
 /* Pantallas muy grandes - mejor aprovechamiento del espacio */
 @media (min-width: 1921px) {
   .responsabilidad-social {
     padding: var(--section-padding-y) calc((100vw - 1920px) / 2 + var(--section-padding-x));
+  }
+  
+  .responsabilidad-social-gallery {
+    max-width: 1200px; /* Mantener límite fijo incluso en pantallas muy grandes */
   }
 }
