@@ -133,16 +133,16 @@
 /* === RESPONSIVE HELPERS === */
 @media (max-width: 768px) {
   .mobile-stack {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   
   .mobile-center {
-    text-align: center !important;
+    text-align: center;
   }
   
   .mobile-full-width {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
   }
 }
 

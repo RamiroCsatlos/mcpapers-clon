@@ -52,20 +52,20 @@
 
 .ver-mas-btn {
   padding: var(--space-sm) var(--space-xl);
-  background-color: white !important;
-  color: var(--text-primary) !important;
-  border: 1px solid var(--text-primary) !important;
+  background-color: white;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
   border-radius: var(--border-radius-full);
   cursor: pointer;
-  transition: all var(--transition-fast) !important; /* Cambiar a 'all' para que anime todo */
+  transition: all var(--transition-fast);
   font-size: var(--font-size-sm);
 }
 
 .ver-mas-btn:hover {
-  transform: scale(1.1) !important;
-  background-color: var(--secondary-blue) !important; /* Forzar el color azul suave */
-  color: white !important; /* Cambiar texto a blanco */
-  border-color: var(--secondary-blue) !important; /* Cambiar el borde también */
+  transform: scale(1.1);
+  background-color: var(--secondary-blue);
+  color: white;
+  border-color: var(--secondary-blue);
 }
 
 .empresa-img-container {
