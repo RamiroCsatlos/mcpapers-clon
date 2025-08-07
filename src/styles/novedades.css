@@ -30,7 +30,7 @@
   width: 100%;
   height: auto; /* Cambiado de altura fija a automática para mantener proporciones */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   margin-bottom: 1.5rem;
 }
 
@@ -129,7 +129,7 @@
 .novedad-image-main {
   width: 100%;
   height: auto; /* Removido max-width para evitar restricciones innecesarias */
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   margin-top: 2rem;
   display: block;
   margin-left: auto;
@@ -149,7 +149,7 @@
 }
 
 .novedad-gallery-item {
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -183,8 +183,8 @@
 /* Estilos antiguos para mantener compatibilidad con Novedad2 */
 .novedad-article {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 

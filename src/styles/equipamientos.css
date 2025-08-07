@@ -36,8 +36,8 @@
   max-width: 45%;
   width: 100%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   object-fit: contain;
   display: block;
   background: none;
@@ -80,8 +80,8 @@
   width: 100%;
   max-width: 400px;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   object-fit: contain;
   background: none;
   display: block;
@@ -123,8 +123,8 @@
   margin-left: auto;
   margin-right: auto;
   background: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border-radius: 1rem;
+  box-shadow: var(--shadow-base);
+  border-radius: var(--border-radius-lg);
   padding: 0;
 }
 
@@ -137,7 +137,7 @@
   margin-right: auto;
   display: block;
   background: none;
-  border-radius: 1rem;
+  border-radius: var(--border-radius-lg);
   margin-top: 2rem;
 }
 
@@ -219,8 +219,8 @@
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-base);
     height: auto;
     display: block;
   }
@@ -270,8 +270,8 @@
   max-width: 45%;
   width: 100%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   display: block;
 }
 
@@ -293,8 +293,8 @@
   max-width: 45%;
   width: 45%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   background: #fff;
   display: inline-block;
   margin-top: 1.5rem;
@@ -422,8 +422,8 @@
 .tecnica-img1-second {
   width: 100%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   background: #fff;
   display: block;
   max-width: 35vw;
@@ -432,8 +432,8 @@
 .tecnica-img2-second {
   width: 90%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   background: #fff;
   object-fit: cover;
 }
@@ -480,8 +480,8 @@
 .control-calidad-img {
   width: 45%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   background: #fff;
   display: inline-block;
   margin: 1rem;
@@ -495,8 +495,8 @@
 .control-calidad-img {
   width: 45%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
   background: #fff;
   display: inline-block;
   margin: 1rem;

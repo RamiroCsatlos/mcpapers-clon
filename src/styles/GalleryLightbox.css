@@ -17,9 +17,9 @@
 }
 .gallery-item {
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-base);
   transition: transform 0.2s;
   will-change: transform;
   background: #fff;
@@ -46,9 +46,9 @@
 .lightbox-content {
   position: relative;
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--border-radius-xl);
   padding: 2rem;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  box-shadow: var(--shadow-xl);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -56,8 +56,8 @@
 .lightbox-img {
   max-width: 500px;
   max-height: 70vh;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-base);
 }
 .lightbox-close, .lightbox-prev, .lightbox-next {
   background: none;
