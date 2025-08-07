@@ -17,27 +17,49 @@ function Nosotros() {
         <img src={logoImage} alt="Logo" style={{maxWidth: '40vw', width: '100%', height: 'auto', margin: '0 auto'}} />
       </div>
       <div style={{width: '100%'}}>
-        <LazySection rootMargin="200px">
+        <LazySection 
+          priority="high" 
+          rootMargin="300px"
+          preload={true}
+          threshold={0.1}
+        >
           <Suspense fallback={<LoadingSpinner />}>
             <Trayectoria />
           </Suspense>
         </LazySection>
-        <LazySection rootMargin="200px">
+        <LazySection 
+          priority="high" 
+          rootMargin="250px"
+          preload={true}
+          threshold={0.15}
+        >
           <Suspense fallback={<LoadingSpinner />}>
             <Filosofia />
           </Suspense>
         </LazySection>
-        <LazySection rootMargin="200px">
+        <LazySection 
+          priority="normal" 
+          rootMargin="200px"
+          threshold={0.2}
+        >
           <Suspense fallback={<LoadingSpinner />}>
             <Innovacion />
           </Suspense>
         </LazySection>
-        <LazySection rootMargin="200px">
+        <LazySection 
+          priority="normal" 
+          rootMargin="150px"
+          threshold={0.25}
+        >
           <Suspense fallback={<LoadingSpinner />}>
             <Certificaciones />
           </Suspense>
         </LazySection>
-        <LazySection rootMargin="200px">
+        <LazySection 
+          priority="low" 
+          rootMargin="100px"
+          threshold={0.3}
+        >
           <Suspense fallback={<LoadingSpinner />}>
             <Marcas />
           </Suspense>

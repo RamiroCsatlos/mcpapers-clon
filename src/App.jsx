@@ -1,11 +1,20 @@
 import './App.css'
+import './styles/LazyLoading.css'
 import Header from './components/Header';
 import AnimatedWaveBanner from './components/AnimatedWaveBanner';
 import LazySection from './components/LazySection';
 import LoadingSpinner from './components/LoadingSpinner';
+import ImagePreloader from './components/ImagePreloader';
 import { Suspense, lazy } from 'react';
 import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
+
+// Precargar recursos críticos para la página principal
+const criticalImages = [
+  '/src/assets/logoHeader.png',
+  '/src/assets/foto-empresa.jpg',
+  '/src/assets/logo.png'
+];
 
 // Lazy load de los componentes principales
 import About from './components/About';
@@ -35,6 +44,14 @@ import GreenerPackPage from './pages/GreenerPack';
 function App() {
   return (
     <>
+      {/* Precargar recursos críticos */}
+      <ImagePreloader 
+        images={criticalImages} 
+        priority="high"
+        onComplete={() => console.log('✅ Critical resources preloaded')}
+        onError={(error) => console.warn('⚠️ Critical resource preload failed:', error)}
+      />
+      
       <Header />
       <div className="main-content">
         <Routes>
@@ -49,32 +66,58 @@ function App() {
                 </h2>
               </AnimatedWaveBanner>
               <About />
-              <LazySection rootMargin="200px">
+              <LazySection 
+                priority="high" 
+                rootMargin="300px"
+                preload={true}
+                threshold={0.1}
+              >
                 <Suspense fallback={<LoadingSpinner />}>
                   <GreenerPack />
                 </Suspense>
               </LazySection>
-              <LazySection rootMargin="200px">
+              <LazySection 
+                priority="high" 
+                rootMargin="250px"
+                preload={true}
+                threshold={0.15}
+              >
                 <Suspense fallback={<LoadingSpinner />}>
                   <ProductsSection />
                 </Suspense>
               </LazySection>
-              <LazySection rootMargin="200px">
+              <LazySection 
+                priority="normal" 
+                rootMargin="200px"
+                threshold={0.2}
+              >
                 <Suspense fallback={<LoadingSpinner />}>
                   <Slider />
                 </Suspense>
               </LazySection>
-              <LazySection rootMargin="200px">
+              <LazySection 
+                priority="normal" 
+                rootMargin="150px"
+                threshold={0.25}
+              >
                 <Suspense fallback={<LoadingSpinner />}>
                   <Equipamiento />
                 </Suspense>
               </LazySection>
-              <LazySection rootMargin="200px">
+              <LazySection 
+                priority="low" 
+                rootMargin="100px"
+                threshold={0.3}
+              >
                 <Suspense fallback={<LoadingSpinner />}>
                   <GaleriaInstagram />
                 </Suspense>
               </LazySection>
-              <LazySection rootMargin="200px">
+              <LazySection 
+                priority="low" 
+                rootMargin="50px"
+                threshold={0.3}
+              >
                 <Suspense fallback={<LoadingSpinner />}>
                   <ResponsabilidadSocial />
                 </Suspense>

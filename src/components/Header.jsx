@@ -1,6 +1,7 @@
 import './Header.css';
 import { useState } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
+import { useImagePreloader } from './ImagePreloader';
 import logoHeader from '../assets/logoHeader.png';
 import flagAR from '../assets/ar.svg';
 import flagUS from '../assets/us.svg';
@@ -8,6 +9,9 @@ import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function Header() {
+  // Precargar assets críticos del header
+  useImagePreloader([logoHeader, flagAR, flagUS], 'high');
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // 'productos', 'equipamiento', 'idioma', o null
   const isMobile = useIsMobile(900);

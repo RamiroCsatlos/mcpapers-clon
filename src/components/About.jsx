@@ -2,10 +2,14 @@ import './About.css';
 import '../styles/ScrollAnimations.css';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import { Link } from 'react-router-dom';
+import { useImagePreloader } from './ImagePreloader';
 import empresaImage from '../assets/foto-empresa.jpg';
 import logoImage from '../assets/logo.png';
 
 const About = () => {
+  // Precargar imágenes críticas de About (above-the-fold)
+  useImagePreloader([empresaImage, logoImage], 'high');
+
   const { ref: textRef, className: textAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: imageRef, className: imageAnimClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
 

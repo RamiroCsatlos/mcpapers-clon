@@ -2,6 +2,7 @@ import './GaleriaInstagram.css';
 import './ScrollAnimations.css';
 import { Instagram } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import LazyImage from './LazyImage';
 
 // Importar las imágenes de Instagram
 import instagram1 from '../assets/instagram1.jpg';
@@ -77,10 +78,15 @@ function GaleriaInstagram() {
                   rel="noopener noreferrer"
                   className="instagram-image-link"
                 >
-                  <img 
+                  <LazyImage
                     src={item.image} 
                     alt={item.alt} 
-                    className="instagram-image" 
+                    className="instagram-image"
+                    priority={idx < 2 ? 'high' : 'normal'}
+                    threshold={0.2}
+                    rootMargin="100px"
+                    progressive={true}
+                    showLoader={true}
                   />
                   <div className="instagram-overlay">
                     <div className="instagram-icon">📷</div>

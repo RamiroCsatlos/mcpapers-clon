@@ -1,0 +1,260 @@
+/* ==============================================
+   LAZY LOADING ANIMATIONS & EFFECTS
+   ============================================== */
+
+/* Contenedor base para lazy loading */
+.lazy-section {
+  transition: all 0.3s ease-in-out;
+}
+
+.lazy-section[data-loading="true"] {
+  opacity: 0.9;
+  transform: translateY(10px);
+}
+
+.lazy-section[data-loaded="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Prioridades visuales */
+.lazy-section[data-priority="high"] {
+  animation: lazy-load-high 0.4s ease-out;
+}
+
+.lazy-section[data-priority="normal"] {
+  animation: lazy-load-normal 0.6s ease-out;
+}
+
+.lazy-section[data-priority="low"] {
+  animation: lazy-load-low 0.8s ease-out;
+}
+
+/* Keyframes para diferentes prioridades */
+@keyframes lazy-load-high {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lazy-load-normal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lazy-load-low {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==============================================
+   LAZY IMAGE LOADING EFFECTS
+   ============================================== */
+
+.lazy-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.lazy-image-container[data-loading="true"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.lazy-image-container[data-loaded="true"] {
+  background: transparent;
+}
+
+/* Efecto shimmer para imágenes cargando */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Loader por defecto para imágenes */
+.lazy-image-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+.lazy-image-loader::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e0e0e0;
+  border-top: 3px solid #666;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estados de error para imágenes lazy */
+.lazy-image-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  color: #999;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.lazy-image-error button {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.lazy-image-error button:hover {
+  background-color: #0056b3;
+}
+
+/* ==============================================
+   RESPONSIVE LAZY LOADING
+   ============================================== */
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .lazy-section[data-priority="high"] {
+    animation-duration: 0.3s;
+  }
+  
+  .lazy-section[data-priority="normal"] {
+    animation-duration: 0.4s;
+  }
+  
+  .lazy-section[data-priority="low"] {
+    animation-duration: 0.5s;
+  }
+  
+  .lazy-image-container {
+    border-radius: 4px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .lazy-section,
+  .lazy-image-container {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .lazy-image-container[data-loading="true"] {
+    background: #f0f0f0;
+    animation: none;
+  }
+}
+
+/* ==============================================
+   PERFORMANCE INDICATORS
+   ============================================== */
+
+/* Visual indicator for preloaded content */
+.preloaded-content::before {
+  content: '⚡';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #28a745;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  z-index: 10;
+  opacity: 0;
+  animation: preload-indicator 0.5s ease-in-out;
+}
+
+@keyframes preload-indicator {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* Development mode indicators */
+.dev-mode .lazy-section {
+  border: 1px dashed rgba(255, 0, 0, 0.2);
+  position: relative;
+}
+
+.dev-mode .lazy-section::after {
+  content: attr(data-priority);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 100;
+}
+
+/* Priority color coding in dev mode */
+.dev-mode .lazy-section[data-priority="high"]::after {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.dev-mode .lazy-section[data-priority="normal"]::after {
+  background-color: rgba(255, 165, 0, 0.8);
+}
+
+.dev-mode .lazy-section[data-priority="low"]::after {
+  background-color: rgba(0, 128, 0, 0.8);
+}
