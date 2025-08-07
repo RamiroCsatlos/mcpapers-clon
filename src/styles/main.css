@@ -104,7 +104,7 @@ img {
 }
 
 /* === RANGO INTERMEDIO - TABLET/DESKTOP PEQUEÑO Y MEDIANO === */
-@media (min-width: 901px) and (max-width: 1440px) {
+@media (min-width: 901px) and (max-width: 1920px) {
   .products-section .product-images {
     width: 98vw; /* Usar más ancho en pantallas medianas */
     gap: 1.5rem; /* Gap más pequeño */
@@ -675,8 +675,8 @@ a:focus {
   }
 }
 
-/* === OPTIMIZACIÓN PARA RANGO INTERMEDIO 901px-1440px === */
-@media (min-width: 901px) and (max-width: 1440px) {
+/* === OPTIMIZACIÓN PARA RANGO INTERMEDIO 901px-1920px === */
+@media (min-width: 901px) and (max-width: 1920px) {
   .products-section .product-images {
     width: 95vw !important; /* Usar más espacio en pantallas medianas */
     max-width: none !important; /* Sin límite máximo */
@@ -702,31 +702,31 @@ a:focus {
   }
 }
 
-/* Límites adicionales para pantallas muy grandes - Solo para 1440px+ */
-@media (min-width: 1441px) {
+/* Límites adicionales para pantallas muy grandes - Solo para 1920px+ */
+@media (min-width: 1921px) {
   .products-section .product-images {
     width: 98vw !important; /* Usar viewport width pero con límite máximo */
-    max-width: 1440px !important; /* Límite máximo de 1440px - no crece más */
-    gap: 1.5rem !important; /* Mantener el mismo gap que en 1440px */
+    max-width: 1920px !important; /* Límite máximo de 1920px - no crece más */
+    gap: 1.5rem !important; /* Mantener el mismo gap que en 1920px */
     margin: 0 auto !important; /* Centrar el contenedor */
   }
   
   .products-section .first-image {
     max-width: none !important; /* Sin límite, usar flex dentro del contenedor limitado */
-    min-width: 300px !important; /* Mantener el mismo mínimo que en 1440px */
-    flex: 2 1 auto !important; /* Mantener la misma proporción que en 1440px */
+    min-width: 300px !important; /* Mantener el mismo mínimo que en 1920px */
+    flex: 2 1 auto !important; /* Mantener la misma proporción que en 1920px */
   }
   
   .products-section .product-right {
     max-width: none !important; /* Sin límite, usar flex dentro del contenedor limitado */
-    min-width: 250px !important; /* Mantener el mismo mínimo que en 1440px */
-    flex: 1 1 auto !important; /* Mantener la misma proporción que en 1440px */
+    min-width: 250px !important; /* Mantener el mismo mínimo que en 1920px */
+    flex: 1 1 auto !important; /* Mantener la misma proporción que en 1920px */
   }
   
   .products-section .second-image {
     max-width: none !important; /* Sin límite máximo dentro del contenedor limitado */
-    min-width: 200px !important; /* Mantener el mismo mínimo que en 1440px */
-    flex: 1 1 auto !important; /* Mantener flexible igual que en 1440px */
+    min-width: 200px !important; /* Mantener el mismo mínimo que en 1920px */
+    flex: 1 1 auto !important; /* Mantener flexible igual que en 1920px */
   }
 }
 

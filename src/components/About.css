@@ -30,7 +30,6 @@
   text-align: center;     
   flex: 1;
   min-width: 280px;
-  max-width: 500px;
   color: var(--text-primary);
   padding: var(--space-xl);
 }
@@ -72,7 +71,6 @@
   flex: 1;
   min-width: 280px;
   position: relative;
-  max-width: 700px; /* Restaurar max-width */
   padding: 0;
   width: 100%;
 }
@@ -152,7 +150,7 @@
 /* Media queries para responsive */
 
 /* Tablet grande - transición */
-@media (max-width: 1440px) {
+@media (max-width: 1920px) {
   .about-section {
     padding: 3rem 2rem;
   }
@@ -171,13 +169,13 @@
 }
 
 /* Pantallas muy grandes - padding fijo */
-@media (min-width: 1441px) {
+@media (min-width: 1921px) {
   .about-section {
     padding: 4rem calc((100vw - 1440px) / 2 + 2.5rem);
   }
   
   .about-content {
-    max-width: 1440px;
+    max-width: 1920px;
   }
 }
 

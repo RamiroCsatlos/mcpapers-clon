@@ -158,7 +158,7 @@
 }
 
 /* Tablet grande - transición */
-@media (max-width: 1440px) {
+@media (max-width: 1920px) {
   .responsabilidad-social {
     padding: 3rem 2rem;
   }
@@ -180,13 +180,13 @@
 }
 
 /* Pantallas muy grandes - padding fijo */
-@media (min-width: 1441px) {
+@media (min-width: 1921px) {
   .responsabilidad-social {
-    padding: 4rem calc((100vw - 1440px) / 2 + 2.5rem);
+    padding: 4rem calc((100vw - 1920px) / 2 + 2.5rem);
   }
   
   .responsabilidad-social-container {
-    max-width: 1440px;
+    max-width: 1920px;
   }
 }
 

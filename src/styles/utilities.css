@@ -7,7 +7,7 @@
   .mobile-xs-flex { display: flex; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .mobile-hidden { display: none; }
   .mobile-block { display: block; }
   .mobile-flex { display: flex; }
@@ -34,7 +34,7 @@
   .desktop-flex { display: flex; }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1920px) {
   .large-hidden { display: none; }
   .large-block { display: block; }
   .large-flex { display: flex; }
@@ -59,7 +59,7 @@
   gap: var(--space-md);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .grid-2,
   .grid-3,
   .grid-4 {

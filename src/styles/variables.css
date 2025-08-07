@@ -52,7 +52,7 @@
   /* === BREAKPOINTS === */
   --breakpoint-mobile: 480px;
   --breakpoint-tablet: 900px;
-  --breakpoint-desktop: 1440px;
+  --breakpoint-desktop: 1920px;  /* Actualizado de 1440px a 1920px */
   
   /* === SPACING SYSTEM === */
   --space-xs: 0.25rem;   /* 4px */
@@ -67,7 +67,7 @@
   /* === RESPONSIVE SPACING === */
   --section-padding-x: clamp(1rem, 3vw, 2.5rem);
   --section-padding-y: clamp(2rem, 5vw, 4rem);
-  --container-max-width: 1440px;
+  --container-max-width: 1920px;  /* Actualizado de 1440px a 1920px */
   --container-padding: 5rem;
   
   /* === TYPOGRAPHY === */
@@ -126,7 +126,7 @@
   
   /* === RESPONSIVE BREAKPOINTS === */
   --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
+  --breakpoint-md: 900px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;

@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 var(--section-padding-x); /* Agregado padding lateral */
 }
 
 .innovation-section {
@@ -18,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 var(--section-padding-x); /* Agregado padding lateral */
 }
 
 
@@ -94,16 +96,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1920px; /* Actualizado de 1200px a 1920px */
   width: 100%;
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-xl) var(--space-xl); /* Incrementado padding lateral de var(--space-sm) a var(--space-xl) */
   gap: var(--space-lg);
+  margin: 0 auto; /* Centrar el contenedor */
 }
 
 .greenerpack-img-container {
-  flex: 1;
-  min-width: 220px;
-  max-width: 400px;
+  flex: 2; /* Aumentado de 1 a 2 para hacer la imagen más grande */
+  min-width: 320px; /* Aumentado de 220px */
+  max-width: 600px; /* Aumentado de 400px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +117,7 @@
 }
 
 .greenerpack-text {
-  flex: 2;
+  flex: 1; /* Reducido de 2 a 1 para dar menos espacio al texto */
   color: #1a3d1a;
   font-size: var(--font-size-xl);
   font-weight: bold;
@@ -139,7 +142,7 @@
   }
   
   .greenerpack-img-container {
-    width: 70vw; /* Escalar la imagen a 80% del viewport width en mobile */
+    width: 85vw; /* Aumentado de 70vw a 85vw para que la imagen sea más grande también en móvil */
   }
 }
 
@@ -150,5 +153,27 @@
   }
   .greenerpack-text h2 {
     font-size: 1.2rem;
+  }
+}
+
+/* Pantallas muy grandes - mejor aprovechamiento del espacio */
+@media (min-width: 1921px) {
+  .greenerpack-section,
+  .innovation-section {
+    padding: 0 calc((100vw - 1920px) / 2);
+  }
+  
+  .greenerpack-content {
+    padding: var(--space-2xl) var(--space-lg);
+    gap: var(--space-2xl);
+  }
+  
+  .greenerpack-text {
+    font-size: var(--font-size-2xl);
+    padding: var(--space-2xl) var(--space-xl);
+  }
+  
+  .greenerpack-text h2 {
+    font-size: var(--font-size-2xl);
   }
 }

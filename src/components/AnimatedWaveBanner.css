@@ -34,15 +34,15 @@
   z-index: 3;
   color: #fff;
   text-align: left;
-  padding: 3rem 2rem;
+  padding: 3rem 4rem 3rem 4rem; /* Aumentado padding lateral de 2rem a 4rem */
   width: 100%;
-  max-width: 1440px;
+  max-width: 1920px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .wave-banner-content h1 {
   font-size: 4rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem 1rem; /* Agregado margin-left de 1rem para separar del borde izquierdo */
   font-weight: 700;
   background: linear-gradient(45deg, #ffffff, #e3f2fd, #ffffff);
   background-size: 200% 200%;
@@ -55,7 +55,7 @@
 .wave-banner-content h2 {
   font-size: 1.8rem;
   font-weight: 400;
-  margin: 0;
+  margin: 0 0 0 1rem; /* Agregado margin-left de 1rem para alinear con h1 */
   opacity: 0.95;
   line-height: 1.4;
 }

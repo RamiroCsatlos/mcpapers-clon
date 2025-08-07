@@ -35,7 +35,7 @@
   }
 }
 .marcas-text {
-  max-width: 700px;
+  max-width: 1000px; /* Actualizado de 700px para mejor proporción con el nuevo límite */
   margin: 0 auto;
   font-size: 1.1rem;
   text-align: center;
@@ -61,7 +61,7 @@
   width: 100%;
 }
 .certificaciones-img {
-  max-width: 80vw;
+  max-width: 800px; /* Cambiado de 80vw a un tamaño fijo más controlado */
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -97,8 +97,9 @@
   }
 }
 .nosotros-section {
-    max-width: 90vw;
+    max-width: 1920px; /* Actualizado de 90vw a 1920px */
     margin: 0 auto;
+    padding: 0 var(--section-padding-x); /* Agregado padding lateral */
 }
 
 .section-title {
@@ -116,7 +117,7 @@
 
 .filosofia-image {
   padding: 1.5rem 0;
-  max-width: 50vw;
+  max-width: 600px; /* Cambiado de 50vw a un tamaño fijo más razonable */
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -146,6 +147,8 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
+  max-width: 1200px; /* Agregado max-width para limitar el ancho */
+  margin: 0 auto; /* Centrar el contenedor */
 }
 .innovacion-list-columns ul {
   flex: 1;
@@ -218,7 +221,7 @@
 }
 
 .innovacion-text {
-  max-width: 70vw;
+  max-width: 1200px; /* Cambiado de 70vw a un tamaño fijo para respetar el límite de 1920px */
   margin: 0 auto;
   padding: 1rem;
   font-size: 1.1rem;
@@ -298,7 +301,7 @@
 }
 
 .greenerpack-page .nosotros-section {
-  max-width: 1200px;
+  max-width: 1920px; /* Actualizado de 1200px a 1920px */
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -307,5 +310,16 @@
 @media (max-width: 900px) {
   .greenerpack-page .nosotros-section {
     padding: 1rem;
+  }
+}
+
+/* Pantallas muy grandes - mejor aprovechamiento del espacio */
+@media (min-width: 1921px) {
+  .nosotros-section {
+    padding: 0 calc((100vw - 1920px) / 2);
+  }
+  
+  .greenerpack-page .nosotros-section {
+    padding: 2rem calc((100vw - 1920px) / 2);
   }
 }
