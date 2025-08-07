@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/main.css';
 import '../../styles/nosotros.css';
-import useInViewAnimation from '../../hooks/useInViewAnimation';
+import { useInfoSectionAnimations } from '../../hooks/useAnimations';
 import useIsMobile from '../../hooks/useIsMobile';
 import '../../styles/ScrollAnimations.css';
 
@@ -9,14 +9,13 @@ import filosofia from '../../assets/filosofia.avif';
 
 export default function Filosofia() {
   const isMobile = useIsMobile(900);
-  // Animación para el título y la imagen
-  const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: imgRef, inView: imgInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+  
+  // Hook centralizado para animaciones de sección de información
+  const { h2Ref, h2InView, imgRef, imgInView } = useInfoSectionAnimations();
 
-  // Helper para cada item de la línea de tiempo
+  // Helper para cada item con animaciones individuales
   function InfoItem({ title, text, className = "" }) {
-    const { ref: h3Ref, inView: h3InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-    const { ref: pRef, inView: pInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+    const { h3Ref, h3InView, pRef, pInView } = useInfoSectionAnimations();
     return (
       <div className={`filosofia-item ${className}`}>
         <h3 ref={h3Ref} className={`h3-title fade-in-up${h3InView ? ' fade-in-visible' : ''}`}>{title}</h3>

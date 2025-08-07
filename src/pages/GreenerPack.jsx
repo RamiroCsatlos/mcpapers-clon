@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/main.css';
 import '../styles/nosotros.css';
-import useInViewAnimation from '../hooks/useInViewAnimation';
+import { useCommonSectionAnimations } from '../hooks/useAnimations';
 import useIsMobile from '../hooks/useIsMobile';
 import DecorativeBackground from '../components/DecorativeBackground';
 import '../styles/ScrollAnimations.css';
@@ -28,12 +28,16 @@ const innovacionList = [
 
 export default function GreenerPackPage() {
   const isMobile = useIsMobile(900);
-  const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: img1Ref, inView: img1InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: textRef, inView: textInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: img2Ref, inView: img2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: mobileImagesRef, inView: mobileImagesInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
-  const { ref: listRef, inView: listInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+  
+  // Hook centralizado para animaciones comunes
+  const {
+    h2Ref, h2InView,
+    img1Ref, img1InView,
+    textRef, textInView,
+    img2Ref, img2InView,
+    mobileImagesRef, mobileImagesInView,
+    listRef, listInView
+  } = useCommonSectionAnimations();
 
   // Divide la lista en dos columnas
   const mid = Math.ceil(innovacionList.length / 2);
