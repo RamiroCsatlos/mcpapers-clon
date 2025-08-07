@@ -8,8 +8,8 @@ import '../../components/GreenerPack.css';
 
 import innovacionImg1 from '../../assets/greenerpackLogoColor.avif'; 
 import innovacionImg2 from '../../assets/logosWebGreenerpack.avif'; 
-import innovacionImg3 from '../../assets/logosWebGreenerpack1.avif'; 
-import innovacionImg4 from '../../assets/logosWebGreenerpack2.avif'; 
+import innovacionImg3 from '../../assets/logosWebGreenerpack1.png'; 
+import innovacionImg4 from '../../assets/logosWebGreenerpack2.png'; 
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
@@ -113,7 +113,7 @@ export default function Innovacion() {
       </div>
       <div className="innovacion-img-container">
         {isMobile ? (
-          <div className="innovacion-img-mobile-overlap">
+          <div className="innovacion-img-mobile-block">
             <img
               src={innovacionImg3}
               alt="Innovación secundaria mobile 1"
@@ -122,7 +122,7 @@ export default function Innovacion() {
             <img
               src={innovacionImg4}
               alt="Innovación secundaria mobile 2"
-              className={`innovacion-img-2 innovacion-img-2-overlap fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+              className={`innovacion-img-2 fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
             />
           </div>
         ) : (

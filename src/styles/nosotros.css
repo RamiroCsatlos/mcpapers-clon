@@ -67,37 +67,27 @@
   margin-right: auto;
   display: block;
 }
-/* Solapamiento de imágenes en mobile para Innovacion */
-.innovacion-img-mobile-overlap {
-  position: relative;
-  width: 100%;
-  height: auto;
+/* Imágenes en bloque para mobile en Innovacion */
+.innovacion-img-mobile-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  min-height: 200px; /* Asegurar altura mínima para evitar solapamientos */
-  margin-bottom: 40px; /* Espacio adicional después del contenedor */
+  gap: 2rem; /* Más espacio entre las imágenes */
+  width: 100%;
+  margin-top: 2rem; /* Espacio con el texto anterior */
+  margin-bottom: 2rem; /* Espacio con el contenido siguiente */
 }
-.innovacion-img-mobile-overlap img {
+
+.innovacion-img-mobile-block img {
   width: 70%;
   max-width: 270px;
   height: auto;
   display: block;
+  margin: 0;
 }
-.innovacion-img-2-overlap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40%; /* Reducir solapamiento vertical */
-  z-index: 2;
-  width: 70%;
-  max-width: 270px;
-  opacity: 1;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
+
 @media (min-width: 769px) {
-  .innovacion-img-mobile-overlap {
+  .innovacion-img-mobile-block {
     display: none;
   }
 }
