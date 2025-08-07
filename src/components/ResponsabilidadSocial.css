@@ -42,7 +42,7 @@
   gap: 1.2rem;
   height: 380px;
   width: 100%;
-  max-width: 1200px; /* Limitar el ancho máximo */
+  max-width: 1920px; /* Actualizado de 1200px a 1920px */
   margin: 0 auto; /* Centrar el grid */
   box-sizing: border-box;
   visibility: visible;
@@ -333,5 +333,12 @@
   .gallery-item-1 {
     max-width: calc(100vw - 2rem) !important;
     max-height: 160px !important;
+  }
+}
+
+/* Pantallas muy grandes - mejor aprovechamiento del espacio */
+@media (min-width: 1921px) {
+  .responsabilidad-social {
+    padding: var(--section-padding-y) calc((100vw - 1920px) / 2 + var(--section-padding-x));
   }
 }

@@ -83,7 +83,7 @@ img {
     flex-direction: row;
     gap: 2rem;
     width: 95vw;
-    max-width: 1400px;
+    max-width: 1920px; /* Actualizado de 1400px a 1920px */
     margin: 0 auto;
     align-items: flex-end;
   }
@@ -388,7 +388,7 @@ img {
   flex-direction: row;
   gap: 2rem;
   width: 95vw;
-  max-width: 1400px;
+  max-width: 1920px; /* Actualizado de 1400px a 1920px */
   margin: 0 auto;
   align-items: flex-end;
 }
@@ -618,7 +618,7 @@ a:focus {
 @media (min-width: 901px) {
   /* Contenedor principal más flexible */
   .products-section .product-images {
-    max-width: 1400px; /* Reducir para evitar desborde */
+    max-width: 1920px; /* Actualizado de 1400px a 1920px */
     width: 90vw; /* Reducir el ancho para contener mejor */
     margin: 0 auto;
     overflow: hidden;

@@ -1,7 +1,7 @@
 /* ===== NOVEDADES PAGE ===== */
 .novedades-main {
-  padding: 2rem 1rem;
-  max-width: 1200px;
+  padding: 2rem var(--section-padding-x); /* Actualizado padding para usar variable responsiva */
+  max-width: 1920px; /* Actualizado de 1200px a 1920px */
   margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@
 
 .novedad-img {
   width: 100%;
-  height: 300px;
+  height: auto; /* Cambiado de altura fija a automática para mantener proporciones */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1.5rem;
@@ -63,8 +63,8 @@
 /* ===== INDIVIDUAL NOVEDAD PAGE ===== */
 .novedad-main {
   min-height: 100vh;
-  padding: 2rem 1rem;
-  max-width: 800px;
+  padding: 2rem var(--section-padding-x); /* Usar padding responsivo consistente */
+  max-width: 1200px; /* Aumentado de 800px a 1200px para mejor proporción */
   margin: 0 auto;
 }
 
@@ -128,7 +128,7 @@
 
 .novedad-image-main {
   width: 100%;
-  height: auto;
+  height: auto; /* Removido max-width para evitar restricciones innecesarias */
   border-radius: 8px;
   margin-top: 2rem;
   display: block;
@@ -143,7 +143,7 @@
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
   margin-top: 2rem;
-  max-width: 600px;
+  width: 100%; /* Removido max-width para usar todo el espacio disponible */
   margin-left: auto;
   margin-right: auto;
 }
@@ -198,7 +198,7 @@
 
 .novedad-article-img {
   width: 100%;
-  height: 300px;
+  height: auto; /* Cambiado de altura fija a automática */
   object-fit: cover;
 }
 
@@ -219,9 +219,13 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .novedades-main,
+  .novedades-main {
+    padding: 1rem;
+  }
+  
   .novedad-main {
     padding: 1rem;
+    max-width: 90vw; /* En móvil usar viewport width para mejor aprovechamiento */
   }
   
   .novedades-grid {
@@ -230,8 +234,7 @@
   }
   
   .novedad-img {
-    height: auto;
-    min-height: 200px;
+    height: auto; /* Removido altura fija para mantener proporciones naturales */
     margin-bottom: 1rem;
   }
   
@@ -268,5 +271,22 @@
   
   .novedad-article-content {
     padding: 1.5rem;
+  }
+  
+  /* Responsive para imágenes principales */
+  .novedad-image-main {
+    width: 100%; /* En móvil usar todo el ancho disponible sin restricciones */
+  }
+  
+  .novedad-gallery {
+    width: 100%; /* En móvil la galería usa todo el espacio */
+  }
+}
+
+/* Pantallas muy grandes - mejor aprovechamiento del espacio */
+@media (min-width: 1921px) {
+  .novedades-main,
+  .novedad-main {
+    padding: 2rem calc((100vw - 1920px) / 2);
   }
 }

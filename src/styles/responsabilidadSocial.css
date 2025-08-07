@@ -1,6 +1,6 @@
 .rSocial-image-banner {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px; /* Aumentado de 900px a 1200px para mejor proporción */
   border-radius: 16px;
   margin: 2.5rem auto 2rem auto;
   display: block;
@@ -9,8 +9,8 @@
 /* ===== RESPONSABILIDAD SOCIAL PAGE ===== */
 .rSocial-main {
   min-height: 100vh;
-  padding: 2rem 1rem;
-  max-width: 900px;
+  padding: 2rem var(--section-padding-x); /* Actualizado padding para usar variable responsiva */
+  max-width: 1920px; /* Actualizado de 900px a 1920px */
   margin: 0 auto;
 }
 
@@ -30,7 +30,7 @@
 
 .rSocial-image-main {
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px; /* Aumentado de 700px a 1000px para mejor proporción */
   border-radius: 12px;
   margin: 2rem auto 1rem auto;
   display: block;
@@ -61,7 +61,7 @@ display: block;
 
 .rSocial-row-image {
   width: 32%;
-  max-width: 220px;
+  max-width: 400px;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
@@ -78,9 +78,10 @@ display: block;
 .rSocial-section-columns {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 2rem;
+  gap: 1.5rem; /* Reducido de 2rem a 1.5rem para que sea más compacta */
   align-items: center;
-  margin: 2rem 0;
+  margin: 2rem auto; /* Centrar el contenedor */
+  max-width: 1200px; /* Limitar el ancho máximo para que sea más fina */
 }
 
 .rSocial-section-texts p {
@@ -92,7 +93,7 @@ display: block;
 
 .rSocial-section-image img {
   width: 100%;
-  max-width: 350px;
+  max-width: 350px; /* Reducido de 450px a 350px para que sea más proporcional */
   border-radius: 8px;
   object-fit: cover;
   margin: 0 auto;
@@ -112,7 +113,7 @@ display: block;
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   margin: 2rem auto;
-  max-width: 800px;
+  max-width: 80vw;
 }
 
 .rSocial-gallery-item {
@@ -142,7 +143,7 @@ display: block;
 
 .rSocial-image-end {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 0 35% 0 35%;
   margin: 1rem auto 2rem auto;
   display: block;
@@ -173,5 +174,12 @@ display: block;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     max-width: 80%;
+  }
+}
+
+/* Pantallas muy grandes - mejor aprovechamiento del espacio */
+@media (min-width: 1921px) {
+  .rSocial-main {
+    padding: 2rem calc((100vw - 1920px) / 2);
   }
 }
