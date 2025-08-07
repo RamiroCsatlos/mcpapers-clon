@@ -10,6 +10,7 @@
 .fade-in-visible {
   opacity: 1 !important;
   transform: none !important;
+  will-change: auto; /* Liberar will-change después de la animación */
 }
 
 .scale-in {
@@ -22,6 +23,7 @@
 .scale-in.fade-in-visible {
   opacity: 1 !important;
   transform: scale(1) !important;
+  will-change: auto; /* Liberar will-change después de la animación */
 }
 
 .animation-delay-200 {

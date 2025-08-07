@@ -9,7 +9,7 @@
 .form-textarea {
   width: 100%;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: var(--border-radius-sm);
   border: 1px solid #ccc;
   margin-top: 4px;
   font-size: 1rem;
@@ -28,7 +28,7 @@
   background: #0b3d91;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--border-radius-sm);
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
@@ -51,7 +51,7 @@
 }
 
 /* Mejoras para tablets */
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1440px) and (min-width: 901px) {
   .form-input,
   .form-textarea {
     font-size: 16px; /* Prevenir zoom en iOS */
@@ -74,7 +74,7 @@
 }
 
 /* Para dispositivos móviles pequeños */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .form-input,
   .form-textarea {
     font-size: 16px; /* Prevenir zoom automático */

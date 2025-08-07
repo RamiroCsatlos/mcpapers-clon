@@ -10,7 +10,7 @@ import innovacionImg2 from '../assets/logosWebGreenerpack.avif';
 import innovacionImg3 from '../assets/logosWebGreenerpack1.avif'; 
 import innovacionImg4 from '../assets/logosWebGreenerpack2.avif'; 
 
-function useIsMobile(breakpoint = 768) {
+function useIsMobile(breakpoint = 900) {
   const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
   React.useEffect(() => {
     function handleResize() {
@@ -37,11 +37,12 @@ const innovacionList = [
 ];
 
 export default function GreenerPackPage() {
-  const isMobile = useIsMobile(768);
+  const isMobile = useIsMobile(900);
   const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: img1Ref, inView: img1InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: textRef, inView: textInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: img2Ref, inView: img2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
+  const { ref: mobileImagesRef, inView: mobileImagesInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: listRef, inView: listInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
 
   // Divide la lista en dos columnas
@@ -113,16 +114,18 @@ export default function GreenerPackPage() {
         </div>
         <div className="innovacion-img-container">
           {isMobile ? (
-            <div className="innovacion-img-mobile-overlap">
+            <div ref={mobileImagesRef} className="innovacion-img-mobile-overlap">
               <img
                 src={innovacionImg3}
                 alt="Innovación secundaria mobile 1"
-                className={`innovacion-img-2 fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+                className={`innovacion-img-2 fade-in-up${mobileImagesInView ? ' fade-in-visible' : ''}`}
+                loading="lazy"
               />
               <img
                 src={innovacionImg4}
                 alt="Innovación secundaria mobile 2"
-                className={`innovacion-img-2 innovacion-img-2-overlap fade-in-up${img2InView ? ' fade-in-visible' : ''}`}
+                className={`innovacion-img-2 innovacion-img-2-overlap fade-in-up${mobileImagesInView ? ' fade-in-visible' : ''}`}
+                loading="lazy"
               />
             </div>
           ) : (

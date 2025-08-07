@@ -49,6 +49,11 @@
   --background-section: var(--color-gray-100);
   --border-color: var(--color-border);
   
+  /* === BREAKPOINTS === */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 900px;
+  --breakpoint-desktop: 1440px;
+  
   /* === SPACING SYSTEM === */
   --space-xs: 0.25rem;   /* 4px */
   --space-sm: 0.5rem;    /* 8px */

@@ -16,7 +16,7 @@
   object-fit: contain;
   background: transparent;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .marcas-img-row {
     flex-direction: column;
     gap: 0;
@@ -42,7 +42,7 @@
   padding: 1rem 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .marcas-img-row {
     flex-direction: column;
     gap: 1.2rem;
@@ -84,9 +84,14 @@
   height: auto;
   display: block;
   margin: 0;
+  /* Optimización específica para imágenes móviles */
+  object-fit: contain;
+  /* Prevenir problemas de rendering durante animaciones */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
   .innovacion-img-mobile-block {
     display: none;
   }
@@ -204,6 +209,12 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+  /* Optimización para carga de imágenes */
+  max-width: 100%;
+  object-fit: contain;
+  /* Evitar problemas de carga con animaciones */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .innovacion-text {
@@ -232,7 +243,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .certificaciones-img {
     max-width: 320px;
   }
@@ -293,7 +304,7 @@
 }
 
 /* Responsive para página GreenerPack */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .greenerpack-page .nosotros-section {
     padding: 1rem;
   }

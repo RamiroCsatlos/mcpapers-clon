@@ -148,7 +148,7 @@ display: block;
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .rSocial-main {
     padding: 1rem;
     max-width: 90vw;

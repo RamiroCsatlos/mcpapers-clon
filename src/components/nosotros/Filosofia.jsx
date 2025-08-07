@@ -7,7 +7,7 @@ import '../../styles/ScrollAnimations.css';
 import filosofia from '../../assets/filosofia.avif';
 
 // Hook para detectar si es mobile
-function useIsMobile(breakpoint = 768) {
+function useIsMobile(breakpoint = 900) {
   const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
   React.useEffect(() => {
     function handleResize() {
@@ -20,7 +20,7 @@ function useIsMobile(breakpoint = 768) {
 }
 
 export default function Filosofia() {
-  const isMobile = useIsMobile(768);
+  const isMobile = useIsMobile(900);
   // Animación para el título y la imagen
   const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: imgRef, inView: imgInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });

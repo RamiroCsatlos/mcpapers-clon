@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
  * @param {number} breakpoint - Ancho del breakpoint en px
  * @returns {boolean} - Si la pantalla es menor al breakpoint
  */
-export const useResponsive = (breakpoint = 768) => {
+export const useResponsive = (breakpoint = 900) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

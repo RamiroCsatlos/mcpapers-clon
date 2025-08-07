@@ -7,7 +7,7 @@ import '../../styles/ScrollAnimations.css';
 import certificadosH from '../../assets/certificadosH.avif';
 import certificadosV from '../../assets/certificadosV.avif';
 
-function useIsMobile(breakpoint = 768) {
+function useIsMobile(breakpoint = 900) {
   const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
   React.useEffect(() => {
     function handleResize() {
@@ -20,7 +20,7 @@ function useIsMobile(breakpoint = 768) {
 }
 
 export default function Certificaciones() {
-  const isMobile = useIsMobile(768);
+  const isMobile = useIsMobile(900);
   const { ref: h2Ref, inView: h2InView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: imgRef, inView: imgInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: textRef, inView: textInView } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });

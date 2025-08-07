@@ -150,7 +150,7 @@
   margin-right: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .equipamiento-imgs-row {
     flex-direction: column;
     gap: 0;
@@ -315,7 +315,7 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .tecnologia-text, .tecnica-text {
     max-width: 80vw;
   }
@@ -439,7 +439,7 @@
 }
 
 /* Responsive para la cuadrícula 2x2 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .tecnica-grid-second {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -515,7 +515,7 @@
 }
 
 /* Mobile: 2 imágenes → texto → 2 imágenes */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .control-calidad-section {
     display: flex;
     flex-direction: column;
