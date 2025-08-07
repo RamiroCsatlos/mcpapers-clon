@@ -2,23 +2,11 @@ import React from 'react';
 import '../../styles/main.css';
 import '../../styles/nosotros.css';
 import useInViewAnimation from '../../hooks/useInViewAnimation';
+import useIsMobile from '../../hooks/useIsMobile';
 import '../../styles/ScrollAnimations.css';
 
 import trayectoriaH from '../../assets/trayectoriaH.avif';
 import trayectoriaV from '../../assets/trayectoriaV.avif';
-
-// Hook para detectar si es mobile
-function useIsMobile(breakpoint = 900) {
-  const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
-  React.useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= breakpoint);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [breakpoint]);
-  return isMobile;
-}
 
 
 export default function Trayectoria() {

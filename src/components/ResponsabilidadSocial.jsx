@@ -3,19 +3,7 @@ import './ResponsabilidadSocial.css';
 import './ScrollAnimations.css';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-
-// Hook para detectar mobile
-function useIsMobile(breakpoint = 900) {
-  const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
-  React.useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= breakpoint);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [breakpoint]);
-  return isMobile;
-}
+import useIsMobile from '../hooks/useIsMobile';
 
 // Importar las imágenes
 import responsabilidadSocial1 from '../assets/responsabilidadSocial1.avif';

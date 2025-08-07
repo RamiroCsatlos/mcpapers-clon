@@ -1,5 +1,6 @@
 import './Header.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import useIsMobile from '../hooks/useIsMobile';
 import logoHeader from '../assets/logoHeader.png';
 import flagAR from '../assets/ar.svg';
 import flagUS from '../assets/us.svg';
@@ -9,19 +10,7 @@ import { Link } from 'react-router-dom';
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // 'productos', 'equipamiento', 'idioma', o null
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detectar si estamos en móvil
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 900);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const isMobile = useIsMobile(900);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 

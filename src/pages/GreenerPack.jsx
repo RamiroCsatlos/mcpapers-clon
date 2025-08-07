@@ -2,25 +2,14 @@ import React from 'react';
 import '../styles/main.css';
 import '../styles/nosotros.css';
 import useInViewAnimation from '../hooks/useInViewAnimation';
+import useIsMobile from '../hooks/useIsMobile';
 import '../styles/ScrollAnimations.css';
 import '../components/GreenerPack.css';
 
 import innovacionImg1 from '../assets/greenerpackLogoColor.avif'; 
 import innovacionImg2 from '../assets/logosWebGreenerpack.avif'; 
 import innovacionImg3 from '../assets/logosWebGreenerpack1.avif'; 
-import innovacionImg4 from '../assets/logosWebGreenerpack2.avif'; 
-
-function useIsMobile(breakpoint = 900) {
-  const [isMobile, setIsMobile] = React.useState(() => window.innerWidth <= breakpoint);
-  React.useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= breakpoint);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [breakpoint]);
-  return isMobile;
-}
+import innovacionImg4 from '../assets/logosWebGreenerpack2.avif';
 
 const innovacionList = [
   'Biodegradabilidad de todos los componentes.',
