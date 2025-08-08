@@ -1,5 +1,5 @@
 import './Header.css';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
 import { useImagePreloader } from './ImagePreloader';
 import logoHeader from '../assets/logoHeader.png';
@@ -15,6 +15,9 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // 'productos', 'equipamiento', 'idioma', o null
   const isMobile = useIsMobile(900);
+  
+  // Ref para el contenedor del menú
+  const menuRef = useRef(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -34,8 +37,29 @@ function Header() {
     }
   };
 
+  // Cerrar menú al hacer click fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobile && isMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+        setOpenDropdown(null); // También cerrar cualquier dropdown abierto
+      }
+    };
+
+    // Solo agregar el listener si el menú está abierto en mobile
+    if (isMobile && isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMobile, isMenuOpen]);
+
   return (
-    <header className="header">
+    <header className="header" ref={menuRef}>
       <div className="header-inner">
         <Link to="/">
           <img src={logoHeader} alt="Logo MC Papers" className="logo-header" />

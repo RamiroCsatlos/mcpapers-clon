@@ -361,6 +361,14 @@ button.dropdown-toggle:active {
     /* Removido left: 20% para mejor centrado con justify-content: center */
     margin: 0 auto; /* Asegurar centrado horizontal */
     transition: color 0.2s ease, transform 0.2s ease;
+    /* Eliminar highlight azul en mobile */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   /* Hover suave para dropdown */
@@ -403,6 +411,9 @@ button.dropdown-toggle:active {
     margin-left: 0 !important; /* Eliminado margen */
     left: auto !important;
     transform: translateY(-50%) rotate(0deg) !important; /* Centrado vertical perfecto */
+    /* Eliminar highlight azul en la flecha */
+    -webkit-tap-highlight-color: transparent !important;
+    pointer-events: none !important; /* La flecha no debe ser clickeable separadamente */
   }
 
   .dropdown-toggle.open::after {
@@ -468,6 +479,14 @@ button.dropdown-toggle:active {
   .dropdown-menu .dropdown-item {
     font-size: 1.1rem !important; /* Aumentado para items del dropdown */
     transition: color 0.2s ease, transform 0.2s ease;
+    /* Eliminar highlight azul en mobile */
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .dropdown-menu .dropdown-item:hover {
@@ -486,6 +505,14 @@ button.dropdown-toggle:active {
     text-decoration: none;
     color: #333;
     transition: color 0.2s ease, transform 0.2s ease;
+    /* Eliminar highlight azul en mobile */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .navbar li a:not(.dropdown-toggle):hover {
