@@ -104,8 +104,8 @@ const Slider = () => {
       </div>
 
       {/* Navigation arrows */}
-      <ArrowButton direction="left" onClick={prevSlide} className="slider-arrow slider-arrow-left" ariaLabel="Anterior" />
-      <ArrowButton direction="right" onClick={nextSlide} className="slider-arrow slider-arrow-right" ariaLabel="Siguiente" />
+      <ArrowButton direction="left" onClick={prevSlide} className="common-arrow common-arrow-left slider-arrow" ariaLabel="Anterior" />
+      <ArrowButton direction="right" onClick={nextSlide} className="common-arrow common-arrow-right slider-arrow" ariaLabel="Siguiente" />
     </div>
   );
 };

@@ -44,7 +44,7 @@ const Lightbox = ({ images, open, current, setOpen, setCurrent }) => {
   const lightboxContent = (
     <div className="lightbox-overlay" onClick={handleClose}>
       <button className="lightbox-close" onClick={handleClose}>&times;</button>
-      <ArrowButton direction="left" onClick={e => { e.stopPropagation(); prev(); }} className="lightbox-prev" ariaLabel="Anterior" />
+      <ArrowButton direction="left" onClick={e => { e.stopPropagation(); prev(); }} className="common-arrow common-arrow-left lightbox-arrow" ariaLabel="Anterior" />
       <img
         key={current}
         src={images[current].src}
@@ -58,7 +58,7 @@ const Lightbox = ({ images, open, current, setOpen, setCurrent }) => {
           }
         }}
       />
-      <ArrowButton direction="right" onClick={e => { e.stopPropagation(); next(); }} className="lightbox-next" ariaLabel="Siguiente" />
+      <ArrowButton direction="right" onClick={e => { e.stopPropagation(); next(); }} className="common-arrow common-arrow-right lightbox-arrow" ariaLabel="Siguiente" />
     </div>
   );
   

@@ -1,0 +1,97 @@
+/* Estilos comunes para flechas - Compartidos entre Lightbox y Slider */
+
+/* Estilos base para todas las flechas */
+.common-arrow,
+.common-arrow.arrow-btn {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) translateZ(0) !important;
+  -webkit-transform: translateY(-50%) translateZ(0) !important;
+  background: none !important;
+  border: none !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* Touch optimization */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  /* Reset ArrowButton default styles */
+  padding: 0 !important;
+  font-size: 0 !important;
+}
+
+/* Efectos hover para todas las flechas */
+.common-arrow:hover,
+.common-arrow:active,
+.common-arrow.arrow-btn:hover,
+.common-arrow.arrow-btn:active {
+  background: none !important;
+}
+
+.common-arrow:hover svg,
+.common-arrow:active svg,
+.common-arrow.arrow-btn:hover svg,
+.common-arrow.arrow-btn:active svg {
+  stroke: #ff5252 !important;
+}
+
+/* Estilos para el SVG dentro de las flechas */
+.common-arrow svg,
+.common-arrow.arrow-btn svg {
+  stroke: #fff !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Posicionamiento izquierda */
+.common-arrow-left,
+.common-arrow-left.arrow-btn {
+  left: 1rem !important;
+}
+
+/* Posicionamiento derecha */
+.common-arrow-right,
+.common-arrow-right.arrow-btn {
+  right: 1rem !important;
+}
+
+/* Estilos específicos para mobile */
+@media (max-width: 768px) {
+  .common-arrow,
+  .common-arrow.arrow-btn {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .common-arrow svg,
+  .common-arrow.arrow-btn svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .common-arrow-left,
+  .common-arrow-left.arrow-btn {
+    left: 0.5rem !important;
+  }
+  
+  .common-arrow-right,
+  .common-arrow-right.arrow-btn {
+    right: 0.5rem !important;
+  }
+}
+
+/* Z-index específico para lightbox (mayor prioridad) */
+.lightbox-arrow,
+.lightbox-arrow.arrow-btn {
+  z-index: 10001 !important;
+}
+
+/* Z-index específico para slider */
+.slider-arrow,
+.slider-arrow.arrow-btn {
+  z-index: 1010 !important;
+}

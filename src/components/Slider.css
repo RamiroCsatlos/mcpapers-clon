@@ -1,4 +1,5 @@
 @import '../styles/variables.css';
+@import '../styles/ArrowButtons.css';
 
 .slider-container {
   position: relative;
@@ -80,6 +81,4 @@
   .slide {
     min-height: 200px;
   }
-  
-
 }

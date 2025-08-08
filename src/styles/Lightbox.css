@@ -1,4 +1,5 @@
 /* Lightbox styles - Optimizado para moviles reales */
+@import './ArrowButtons.css';
 .lightbox-overlay {
   position: fixed !important;
   top: 0 !important;
@@ -47,60 +48,6 @@
 .lightbox-close:hover, .lightbox-close:active {
   color: #ff5252 !important;
   background: none !important;
-}
-
-.lightbox-prev:hover, .lightbox-next:hover,
-.lightbox-prev:active, .lightbox-next:active,
-.lightbox-prev.arrow-btn:hover, .lightbox-next.arrow-btn:hover,
-.lightbox-prev.arrow-btn:active, .lightbox-next.arrow-btn:active {
-  background: none !important;
-}
-
-.lightbox-prev:hover svg, .lightbox-next:hover svg,
-.lightbox-prev:active svg, .lightbox-next:active svg,
-.lightbox-prev.arrow-btn:hover svg, .lightbox-next.arrow-btn:hover svg,
-.lightbox-prev.arrow-btn:active svg, .lightbox-next.arrow-btn:active svg {
-  stroke: #ff5252 !important;
-}
-
-.lightbox-prev, .lightbox-next,
-.lightbox-prev.arrow-btn, .lightbox-next.arrow-btn {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) translateZ(0) !important;
-  -webkit-transform: translateY(-50%) translateZ(0) !important;
-  background: none !important;
-  border: none !important;
-  color: #fff !important;
-  cursor: pointer !important;
-  z-index: 10001 !important;
-  width: 50px !important;
-  height: 50px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  /* Touch optimization */
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  /* Reset ArrowButton default styles */
-  padding: 0 !important;
-  font-size: 0 !important;
-}
-
-/* Estilos para el SVG dentro del ArrowButton */
-.lightbox-prev svg, .lightbox-next svg,
-.lightbox-prev.arrow-btn svg, .lightbox-next.arrow-btn svg {
-  stroke: #fff !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.lightbox-prev, .lightbox-prev.arrow-btn {
-  left: 1rem !important;
-}
-
-.lightbox-next, .lightbox-next.arrow-btn {
-  right: 1rem !important;
 }
 
 .lightbox-img {
