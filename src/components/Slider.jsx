@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import './Slider.css';
 import ArrowButton from './common/ArrowButton';
-import sliderBobina from '../assets/sliderBobina.webp';
-import sliderFabrica from '../assets/sliderFabrica.webp';
+import sliderBobina from '../assets/sliderBobina_cleanup.png';
+import sliderFabrica from '../assets/sliderFabrica_cleanup.png';
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(1); // Comenzamos en 1 (primer slide real)
