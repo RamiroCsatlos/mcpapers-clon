@@ -155,3 +155,10 @@
     padding: 2rem calc((100vw - 1920px) / 2);
   }
 }
+
+/* Mobile - títulos más pequeños */
+@media (max-width: 768px) {
+  .tecnica-title {
+    font-size: 2rem; /* Reducido desde 2.5rem */
+  }
+}

@@ -25,7 +25,7 @@ const BolsasFlat = () => {
         {(() => {
           const { ref, className: animClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
           return (
-            <h1 ref={ref} className={`page-title fade-in-up ${animClass}`}>Trabajos Realizados en Bolsas Flats</h1>
+            <h1 ref={ref} className={`page-title fade-in-up ${animClass}`}>Bolsas Flats</h1>
           );
         })()}
         <div className="bolsas-flat-gallery-wrapper">

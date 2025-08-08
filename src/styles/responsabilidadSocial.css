@@ -92,7 +92,7 @@ display: block;
   margin-bottom: 1.2rem;
   font-size: 0.95rem;
   color: var(--text-color);
-  text-align: left;
+  text-align: center;
 }
 
 .rSocial-section-image img {
@@ -213,5 +213,12 @@ display: block;
   
   .rSocial-gallery {
     max-width: 1000px;
+  }
+}
+
+/* Mobile - títulos más pequeños */
+@media (max-width: 768px) {
+  .rSocial-title-main {
+    font-size: 1.8rem; /* Reducido desde 2.2rem */
   }
 }

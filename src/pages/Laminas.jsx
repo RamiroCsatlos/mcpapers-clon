@@ -24,7 +24,7 @@ const Laminas = () => {
         {(() => {
           const { ref, className: animClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
           return (
-            <h1 ref={ref} className={`page-title fade-in-up ${animClass}`}>Trabajos Realizados en Laminas</h1>
+            <h1 ref={ref} className={`page-title fade-in-up ${animClass}`}>Laminas</h1>
           );
         })()}
         <div className="gallery-wrapper">

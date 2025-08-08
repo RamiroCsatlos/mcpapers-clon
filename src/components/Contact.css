@@ -164,6 +164,11 @@
     padding-right: 6vw;
     box-sizing: border-box;
   }
+  
+  /* Título más pequeño en mobile */
+  .contact-title {
+    font-size: 2.2rem; /* Reducido desde 3.2rem */
+  }
 }
 
 

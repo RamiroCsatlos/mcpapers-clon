@@ -25,7 +25,7 @@ const BolsasCuadrado = () => {
         {(() => {
           const { ref, className: animClass } = useInViewAnimation({ threshold: 0.2, triggerOnce: true });
           return (
-            <h1 ref={ref} className={`page-title fade-in-up ${animClass}`}>Trabajos Realizados en Bolsas de Fondo Cuadrado</h1>
+            <h1 ref={ref} className={`page-title fade-in-up ${animClass}`}>Bolsas de Fondo Cuadrado</h1>
           );
         })()}
         <div className="gallery-wrapper">

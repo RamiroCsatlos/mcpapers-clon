@@ -1,6 +1,6 @@
 import './Footer.css';
 import logoHeader from '../assets/logoHeader.png';
-import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, X } from 'lucide-react';
 
 function Footer() {
   return (
@@ -36,7 +36,7 @@ function Footer() {
             className="social-link twitter"
             aria-label="X (Twitter)"
           >
-            <Twitter size={24} />
+            <X size={24} />
           </a>
         </div>
       </div>
