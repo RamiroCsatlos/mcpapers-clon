@@ -37,9 +37,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <a href="/mcpapers-clon/">
+        <Link to="/">
           <img src={logoHeader} alt="Logo MC Papers" className="logo-header" />
-        </a>
+        </Link>
 
         <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
           <ul>

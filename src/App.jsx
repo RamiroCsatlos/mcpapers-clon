@@ -5,19 +5,51 @@ import AnimatedWaveBanner from './components/AnimatedWaveBanner';
 import LazySection from './components/LazySection';
 import LoadingSpinner from './components/LoadingSpinner';
 import ImagePreloader from './components/ImagePreloader';
-import { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
+
+// Simple Error Boundary
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.warn('Performance Dashboard Error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || <div>Something went wrong with Performance Dashboard</div>;
+    }
+    return this.props.children;
+  }
+}
 
 // 🎯 FASE 3.2.2 - Bundle Optimization & Code Splitting
 import { createOptimizedLazy } from './utils/chunkAnalyzer';
 import useChunkPreloader from './hooks/useChunkPreloader';
 
+// 🎯 FASE 3.2.3 - Advanced Performance Optimization & Monitoring
+import './utils/webVitals'; // Inicializar Web Vitals automáticamente
+import PerformanceDashboard from './components/PerformanceDashboard';
+import { usePerformanceMetrics } from './hooks/usePerformanceMetrics';
+
 // Precargar recursos críticos para la página principal
+import logoHeaderImg from './assets/logoHeader.png';
+import fotoEmpresaImg from './assets/foto-empresa.jpg';
+import logoImg from './assets/logo.png';
+
 const criticalImages = [
-  '/src/assets/logoHeader.png',
-  '/src/assets/foto-empresa.jpg',
-  '/src/assets/logo.png'
+  logoHeaderImg,
+  fotoEmpresaImg,
+  logoImg
 ];
 
 // Core components (ya incluidos en core-components chunk)
@@ -121,12 +153,36 @@ function App() {
   // 🎯 Hook para precarga inteligente de chunks
   const { preload } = useChunkPreloader();
   
+  // 🎯 FASE 3.2.3 - Performance Dashboard State
+  const [showDashboard, setShowDashboard] = useState(false);
+  // const { metrics } = usePerformanceMetrics(); // Temporalmente deshabilitado para debugging
+  
   // Log de inicio en desarrollo
   useEffect(() => {
     if (import.meta.env.DEV) {
-      console.log('🚀 FASE 3.2.2 - Bundle Optimization Active');
-      console.log('📊 Chunk preloading and analytics enabled');
+      console.log('🚀 FASE 3.2.3 - Advanced Performance Optimization Active');
+      console.log('📊 Web Vitals monitoring, chunk analytics, and performance dashboard enabled');
+      
+      // Mostrar dashboard automáticamente en desarrollo después de 3 segundos
+      const timer = setTimeout(() => {
+        setShowDashboard(true);
+      }, 3000);
+      
+      return () => clearTimeout(timer);
     }
+  }, []);
+
+  // Keyboard shortcut para toggle del dashboard (Ctrl/Cmd + Shift + P)
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'P') {
+        event.preventDefault();
+        setShowDashboard(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
@@ -315,6 +371,42 @@ function App() {
       </Routes>
       </div>
       <Footer />
+      
+      {/* 🎯 FASE 3.2.3 - Performance Dashboard (temporalmente deshabilitado para debugging) */}
+      {false && import.meta.env.DEV && (
+        <ErrorBoundary fallback={<div>Performance Dashboard Error</div>}>
+          <PerformanceDashboard 
+            isVisible={showDashboard}
+            onClose={() => setShowDashboard(false)}
+          />
+        </ErrorBoundary>
+      )}
+      
+      {/* Performance Dashboard Toggle Button (solo en desarrollo) */}
+      {import.meta.env.DEV && (
+        <button
+          onClick={() => setShowDashboard(!showDashboard)}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            background: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '50%',
+            width: '50px',
+            height: '50px',
+            cursor: 'pointer',
+            fontSize: '20px',
+            zIndex: 9999,
+            boxShadow: '0 4px 12px rgba(0, 123, 255, 0.3)',
+            transition: 'all 0.2s ease'
+          }}
+          title="Toggle Performance Dashboard (Ctrl+Shift+P)"
+        >
+          📊
+        </button>
+      )}
     </>
   );
 }

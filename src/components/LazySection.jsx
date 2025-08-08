@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import useIsMobile from '../hooks/useIsMobile';
 
@@ -51,16 +51,20 @@ export const useLazyLoad = ({
   const { ref: loadRef, inView: shouldLoadView } = useInView(config);
   const { ref: preloadRef, inView: shouldPreloadView } = useInView(enablePreload ? preloadConfig : { threshold: 0 });
 
+  // Memoizar callbacks para evitar bucles infinitos
+  const memoizedOnLoad = useCallback(onLoad, []);
+  const memoizedOnError = useCallback(onError, []);
+
   // Efectos de carga principal
   useEffect(() => {
     if (shouldLoadView && !shouldLoad) {
       setShouldLoad(true);
       setTimeout(() => {
         setHasLoaded(true);
-        onLoad();
+        memoizedOnLoad();
       }, priority === 'high' ? 0 : priority === 'normal' ? 50 : 100);
     }
-  }, [shouldLoadView, shouldLoad, priority, onLoad]);
+  }, [shouldLoadView, shouldLoad, priority, memoizedOnLoad]);
 
   // Efectos de precarga
   useEffect(() => {
@@ -72,7 +76,7 @@ export const useLazyLoad = ({
   // Manejo de errores
   const handleError = (error) => {
     setHasError(true);
-    onError(error);
+    memoizedOnError(error);
   };
 
   // Combinamos las refs
