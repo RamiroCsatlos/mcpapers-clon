@@ -1,0 +1,2 @@
+import{j as r}from"./core-components-C3Y6Zd2H.js";import{r as o}from"./router-vendor-CD4PIEfi.js";import i from"./Equipamiento-ZVk4F2TE.js";import{L as t}from"./ui-components-BV9uXqnP.js";import"./react-vendor-DJG_os-6.js";import"./media-components-BdmkOHxN.js";import"./product-pages-CdVgywL1.js";const f=()=>r.jsx("main",{children:r.jsx(o.Suspense,{fallback:r.jsx(t,{}),children:r.jsx(i,{})})});export{f as default};
+//# sourceMappingURL=Equipamiento-CKT63vXQ.js.map
