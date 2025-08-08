@@ -155,7 +155,7 @@ function App() {
   
   // 🎯 FASE 3.2.3 - Performance Dashboard State
   const [showDashboard, setShowDashboard] = useState(false);
-  // const { metrics } = usePerformanceMetrics(); // Temporalmente deshabilitado para debugging
+  const { metrics } = usePerformanceMetrics();
   
   // Log de inicio en desarrollo
   useEffect(() => {
@@ -372,8 +372,8 @@ function App() {
       </div>
       <Footer />
       
-      {/* 🎯 FASE 3.2.3 - Performance Dashboard (temporalmente deshabilitado para debugging) */}
-      {false && import.meta.env.DEV && (
+      {/* 🎯 FASE 3.2.3 - Performance Dashboard */}
+      {import.meta.env.DEV && (
         <ErrorBoundary fallback={<div>Performance Dashboard Error</div>}>
           <PerformanceDashboard 
             isVisible={showDashboard}

@@ -232,7 +232,7 @@ export const usePerformanceAlerts = (thresholds = {}) => {
   const { metrics } = usePerformanceMetrics();
   const { memoryInfo } = useMemoryMetrics();
 
-  // Umbrales por defecto
+  // Umbrales por defecto memorizados con valores específicos
   const defaultThresholds = useMemo(() => ({
     LCP: 4000,
     INP: 300,
@@ -241,57 +241,63 @@ export const usePerformanceAlerts = (thresholds = {}) => {
     ...thresholds
   }), [thresholds]);
 
+  // Memoizar valores específicos para evitar recreaciones
+  const lcpValue = useMemo(() => metrics.LCP?.value, [metrics.LCP?.value]);
+  const inpValue = useMemo(() => metrics.INP?.value, [metrics.INP?.value]);
+  const clsValue = useMemo(() => metrics.CLS?.value, [metrics.CLS?.value]);
+  const memoryUsage = useMemo(() => memoryInfo?.usagePercentage, [memoryInfo?.usagePercentage]);
+
   useEffect(() => {
     const newAlerts = [];
 
     // Verificar LCP
-    if (metrics.LCP && metrics.LCP.value > defaultThresholds.LCP) {
+    if (lcpValue && lcpValue > defaultThresholds.LCP) {
       newAlerts.push({
         type: 'warning',
         metric: 'LCP',
-        message: `Largest Contentful Paint is slow (${metrics.LCP.value}ms)`,
+        message: `Largest Contentful Paint is slow (${lcpValue}ms)`,
         recommendation: 'Optimize images and reduce server response times'
       });
     }
 
     // Verificar INP
-    if (metrics.INP && metrics.INP.value > defaultThresholds.INP) {
+    if (inpValue && inpValue > defaultThresholds.INP) {
       newAlerts.push({
         type: 'error',
         metric: 'INP',
-        message: `Interaction to Next Paint is poor (${metrics.INP.value}ms)`,
+        message: `Interaction to Next Paint is poor (${inpValue}ms)`,
         recommendation: 'Reduce JavaScript execution time and optimize interactions'
       });
     }
 
     // Verificar CLS
-    if (metrics.CLS && metrics.CLS.value > defaultThresholds.CLS) {
+    if (clsValue && clsValue > defaultThresholds.CLS) {
       newAlerts.push({
         type: 'warning',
         metric: 'CLS',
-        message: `Cumulative Layout Shift is high (${metrics.CLS.value})`,
+        message: `Cumulative Layout Shift is high (${clsValue})`,
         recommendation: 'Set explicit dimensions for images'
       });
     }
 
     // Verificar memoria
-    if (memoryInfo && memoryInfo.usagePercentage > defaultThresholds.memoryUsage) {
+    if (memoryUsage && memoryUsage > defaultThresholds.memoryUsage) {
       newAlerts.push({
         type: 'warning',
         metric: 'MEMORY',
-        message: `Memory usage is high (${memoryInfo.usagePercentage}%)`,
+        message: `Memory usage is high (${memoryUsage}%)`,
         recommendation: 'Implement memory cleanup strategies'
       });
     }
 
-    setAlerts(newAlerts);
-  }, [
-    metrics.LCP?.value, 
-    metrics.INP?.value, 
-    metrics.CLS?.value, 
-    memoryInfo?.usagePercentage, 
-    defaultThresholds
-  ]);
+    // Solo actualizar si las alertas cambiaron realmente
+    setAlerts(prevAlerts => {
+      if (JSON.stringify(prevAlerts) !== JSON.stringify(newAlerts)) {
+        return newAlerts;
+      }
+      return prevAlerts;
+    });
+  }, [lcpValue, inpValue, clsValue, memoryUsage, defaultThresholds]);
 
   return useMemo(() => ({
     alerts,

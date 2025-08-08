@@ -3,7 +3,7 @@
  * Dashboard interactivo para visualizar métricas de performance y Web Vitals
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { 
   usePerformanceMetrics, 
   useCoreWebVitals, 
@@ -26,6 +26,19 @@ const PerformanceDashboard = ({ isVisible, onClose }) => {
   const { networkInfo, connectionQuality } = useNetworkMetrics();
   const { alerts, hasAlerts } = usePerformanceAlerts();
 
+  // Memoizar callbacks para evitar re-renders innecesarios
+  const handleTabChange = useCallback((tab) => {
+    setActiveTab(tab);
+  }, []);
+
+  const handleToggleMinimize = useCallback(() => {
+    setIsMinimized(prev => !prev);
+  }, []);
+
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
   if (!isVisible) return null;
 
   return (
@@ -39,14 +52,14 @@ const PerformanceDashboard = ({ isVisible, onClose }) => {
         <div className="dashboard-controls">
           <button 
             className="minimize-btn"
-            onClick={() => setIsMinimized(!isMinimized)}
+            onClick={handleToggleMinimize}
             title={isMinimized ? 'Expand' : 'Minimize'}
           >
             {isMinimized ? '📈' : '📉'}
           </button>
           <button 
             className="close-btn"
-            onClick={onClose}
+            onClick={handleClose}
             title="Close"
           >
             ✕
@@ -59,25 +72,25 @@ const PerformanceDashboard = ({ isVisible, onClose }) => {
           <div className="dashboard-tabs">
             <button 
               className={`tab ${activeTab === 'vitals' ? 'active' : ''}`}
-              onClick={() => setActiveTab('vitals')}
+              onClick={() => handleTabChange('vitals')}
             >
               Core Vitals
             </button>
             <button 
               className={`tab ${activeTab === 'system' ? 'active' : ''}`}
-              onClick={() => setActiveTab('system')}
+              onClick={() => handleTabChange('system')}
             >
               System
             </button>
             <button 
               className={`tab ${activeTab === 'alerts' ? 'active' : ''}`}
-              onClick={() => setActiveTab('alerts')}
+              onClick={() => handleTabChange('alerts')}
             >
               Alerts {hasAlerts && `(${alerts.length})`}
             </button>
             <button 
               className={`tab ${activeTab === 'report' ? 'active' : ''}`}
-              onClick={() => setActiveTab('report')}
+              onClick={() => handleTabChange('report')}
             >
               Report
             </button>
