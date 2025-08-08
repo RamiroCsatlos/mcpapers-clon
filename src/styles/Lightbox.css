@@ -1,4 +1,4 @@
-/* Lightbox styles - Optimizado para móviles reales */
+/* Lightbox styles - Optimizado para moviles reales */
 .lightbox-overlay {
   position: fixed !important;
   top: 0 !important;
@@ -12,7 +12,7 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  /* Forzar rendering layer en móviles */
+  /* Forzar rendering layer en moviles */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   will-change: opacity;
@@ -25,9 +25,8 @@
   position: absolute !important;
   top: env(safe-area-inset-top, 1rem) !important;
   right: 1rem !important;
-  background: rgba(0, 0, 0, 0.7) !important;
-  border: 2px solid white !important;
-  border-radius: 50% !important;
+  background: none !important;
+  border: none !important;
   font-size: 1.5rem !important;
   color: #fff !important;
   cursor: pointer !important;
@@ -46,17 +45,32 @@
 }
 
 .lightbox-close:hover, .lightbox-close:active {
-  background: rgba(255, 82, 82, 0.8) !important;
+  color: #ff5252 !important;
+  background: none !important;
 }
 
-.lightbox-prev, .lightbox-next {
+.lightbox-prev:hover, .lightbox-next:hover,
+.lightbox-prev:active, .lightbox-next:active,
+.lightbox-prev.arrow-btn:hover, .lightbox-next.arrow-btn:hover,
+.lightbox-prev.arrow-btn:active, .lightbox-next.arrow-btn:active {
+  background: none !important;
+}
+
+.lightbox-prev:hover svg, .lightbox-next:hover svg,
+.lightbox-prev:active svg, .lightbox-next:active svg,
+.lightbox-prev.arrow-btn:hover svg, .lightbox-next.arrow-btn:hover svg,
+.lightbox-prev.arrow-btn:active svg, .lightbox-next.arrow-btn:active svg {
+  stroke: #ff5252 !important;
+}
+
+.lightbox-prev, .lightbox-next,
+.lightbox-prev.arrow-btn, .lightbox-next.arrow-btn {
   position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) translateZ(0) !important;
   -webkit-transform: translateY(-50%) translateZ(0) !important;
-  background: rgba(0, 0, 0, 0.7) !important;
-  border: 2px solid white !important;
-  border-radius: 50% !important;
+  background: none !important;
+  border: none !important;
   color: #fff !important;
   cursor: pointer !important;
   z-index: 10001 !important;
@@ -68,18 +82,29 @@
   /* Touch optimization */
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  /* Reset ArrowButton default styles */
+  padding: 0 !important;
+  font-size: 0 !important;
 }
 
-.lightbox-prev {
+/* Estilos para el SVG dentro del ArrowButton */
+.lightbox-prev svg, .lightbox-next svg,
+.lightbox-prev.arrow-btn svg, .lightbox-next.arrow-btn svg {
+  stroke: #fff !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.lightbox-prev, .lightbox-prev.arrow-btn {
   left: 1rem !important;
 }
 
-.lightbox-next {
+.lightbox-next, .lightbox-next.arrow-btn {
   right: 1rem !important;
 }
 
 .lightbox-img {
-  max-width: 90vw !important;
+  max-width: 85vw !important;
   max-height: 80vh !important;
   width: auto !important;
   height: auto !important;
@@ -89,33 +114,28 @@
   /* Forzar rendering layer */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  /* Prevenir zoom accidental en móvil */
+  /* Prevenir zoom accidental en movil */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* Prevenir menú contextual en móvil */
+  /* Prevenir menu contextual en movil */
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
 }
 
-/* Media queries específicas para móviles */
+/* Media queries especificas para moviles */
 @media screen and (max-width: 768px) {
   .lightbox-overlay {
-    /* Forzar posicionamiento en viewport móvil */
+    /* Forzar posicionamiento en viewport movil */
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    /* Prevenir zoom */
-    min-zoom: 1;
-    max-zoom: 1;
-    user-zoom: fixed;
   }
   
   .lightbox-close {
@@ -126,16 +146,23 @@
     font-size: 1.2rem !important;
   }
   
-  .lightbox-prev, .lightbox-next {
+  .lightbox-prev, .lightbox-next,
+  .lightbox-prev.arrow-btn, .lightbox-next.arrow-btn {
     width: 60px !important;
     height: 60px !important;
   }
   
-  .lightbox-prev {
+  .lightbox-prev svg, .lightbox-next svg,
+  .lightbox-prev.arrow-btn svg, .lightbox-next.arrow-btn svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .lightbox-prev, .lightbox-prev.arrow-btn {
     left: 0.5rem !important;
   }
   
-  .lightbox-next {
+  .lightbox-next, .lightbox-next.arrow-btn {
     right: 0.5rem !important;
   }
   
@@ -145,7 +172,7 @@
   }
 }
 
-/* Específico para iOS Safari */
+/* Especifico para iOS Safari */
 @supports (-webkit-touch-callout: none) {
   .lightbox-overlay {
     /* iOS Safari viewport fix */
