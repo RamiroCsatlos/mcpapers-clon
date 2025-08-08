@@ -11,7 +11,15 @@ import { preloader } from '../utils/chunkAnalyzer';
  * Hook para precargar chunks de manera inteligente
  */
 export const useChunkPreloader = () => {
-  const location = useLocation();
+  let location = null;
+  
+  // Intentar usar useLocation de manera segura
+  try {
+    location = useLocation();
+  } catch (error) {
+    // Si no hay contexto de Router, location será null
+    console.warn('useChunkPreloader: Router context not available');
+  }
 
   /**
    * Precarga chunks basado en la ruta actual

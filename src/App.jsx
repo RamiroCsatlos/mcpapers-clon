@@ -34,7 +34,7 @@ class ErrorBoundary extends React.Component {
 
 // 🎯 FASE 3.2.2 - Bundle Optimization & Code Splitting
 import { createOptimizedLazy } from './utils/chunkAnalyzer';
-import useChunkPreloader from './hooks/useChunkPreloader';
+// import useChunkPreloader from './hooks/useChunkPreloader'; // Temporalmente desactivado por debug
 
 // 🎯 FASE 3.2.3 - Advanced Performance Optimization & Monitoring
 import './utils/webVitals'; // Inicializar Web Vitals automáticamente
@@ -150,12 +150,12 @@ const GreenerPackPage = lazy(createOptimizedLazy(
 ));
 
 function App() {
-  // 🎯 Hook para precarga inteligente de chunks
-  const { preload } = useChunkPreloader();
-  
   // 🎯 FASE 3.2.3 - Performance Dashboard State
   const [showDashboard, setShowDashboard] = useState(false);
   const { metrics } = usePerformanceMetrics();
+  
+  // 🎯 Hook para precarga inteligente de chunks (temporalmente desactivado por debug)
+  // const { preload } = useChunkPreloader();
   
   // Log de inicio en desarrollo
   useEffect(() => {
