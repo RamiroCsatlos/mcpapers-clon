@@ -4,7 +4,7 @@ import '../../styles/nosotros.css';
 import useInViewAnimation from '../../hooks/useInViewAnimation';
 import '../../styles/ScrollAnimations.css';
 
-import certificadosH from '../../assets/certificadosH.avif';
+import certificadosH from '../../assets/certificadosH.png';
 import certificadosV from '../../assets/certificadosV.avif';
 
 function useIsMobile(breakpoint = 900) {
